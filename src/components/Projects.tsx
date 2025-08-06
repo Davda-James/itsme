@@ -10,6 +10,7 @@ import project3Image from "@/assets/project3.jpg";
 import project4Image from "@/assets/project4.jpg";
 import project5Image from "@/assets/project5.jpg";
 import project6Image from "@/assets/project6.jpg"; 
+import project7Image from "@/assets/project7.jpg";
 
 const Projects = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
@@ -25,6 +26,9 @@ const Projects = () => {
       github: "https://github.com/Davda-James/freelancing-marketplace",
       live: "#",
       featured: true,
+      live_link: false,
+      date: "July 2025",
+      award: "",
       achievements: [
         "Built complete Web3 freelancing marketplace with wallet integration",
         "Implemented smart contracts for trustless payment escrow system",
@@ -40,11 +44,31 @@ const Projects = () => {
       github: "https://github.com/Davda-James/pikachu",
       live: "#",
       featured: true,
+      live_link: false,
+      date: "May 2025",
+      award: "3rd Position in CrowdFlow PS",
       achievements: [
         "Fine Tuned the YoLov8 and YoLov11 model for dense traffic detection",
         "Understands the flow of dense traffic real time",
         "Tracks the complete path of a person in traffic",
         "Detects the stampede and real time gmail alerts to authorities"
+      ]
+    },
+    {
+      title: "AptoSupply",
+      description: "AptoSupply is a decentralized supply chain management platform built on Aptos blockchain.",
+      image: project7Image,
+      technologies: ["Aptos", "Move", "Smart Contracts" ,"NextJs"],
+      github: "https://github.com/Voldemort271/aptos-hackathon",
+      live: "#",
+      featured: true,
+      live_link: false,
+      date: "October 2024",
+      award: "1st Prize Winner, 500 USD",
+      achievements: [
+        "Implemented smart contracts for product tracking and verification",
+        "Ensured end-to-end traceability of products using blockchain",
+        "Enhanced supply chain transparency and reduced fraud"
       ]
     },
     {
@@ -55,6 +79,9 @@ const Projects = () => {
       github: "https://github.com/Davda-James/CryptoCoders",
       live: "#",
       featured: true,
+      live_link: false,
+      date: "April 2025",
+      award: "",
       achievements: [
         "Fetches the best k papers from web based on user query",
         "Generates a comprehensive report for each paper summarizing them",
@@ -70,6 +97,9 @@ const Projects = () => {
       github: "https://github.com/Davda-James/Whiskey-Goggles",
       live: "#",
       featured: true,
+      live_link: false,
+      date: "April 2025",
+      award: "Got access to dev group",
       achievements: [
         "Converts the image to embeddings using openai/clip-vit-base-patch32",
         "Provides the gradio frontend to upload the image and display results",
@@ -84,9 +114,14 @@ const Projects = () => {
       github: "https://github.com/Davda-James/Agent_BOB",
       live: "https://baxus-7z5a.onrender.com/",
       featured: true,
+      live_link: true,
+      date: "April 2025",
+      award: "Got access to dev group",
       achievements: [
         "REST endpoint that sends the recommendations as response",
+        "Uses the user purchase history and budget to recommend the best whiskey",
         "Includes some rule based conditions as well",
+        
       ]
     },
     {
@@ -95,14 +130,17 @@ const Projects = () => {
       image: project6Image,
       technologies: ["Flutter", "Google Maps API", "Firebase", "Dart"],
       github: "https://github.com/Davda-James/dp",
-      live: "",
+      live: "#",
       featured: true,
+      live_link: false,
+      date: "November 2024",
+      award: "",
       achievements: [
         "Uses the Google Maps API and flutter library geolocator to track the buses real time",
         "Uses the firebase real time database to store the bus data",
         "Provides the real time notifications to the users using cloud firestore"
       ]
-    },
+    }
   ];
 
   return (
@@ -147,14 +185,46 @@ const Projects = () => {
                     alt={project.title}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
-                  {project.featured && (
+                  {/* Dark overlay for better text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-background/20"></div>
+                  
+                  {/* Date Badge - Top Left */}
+                  {project.date && (
+                    <div className="absolute top-4 left-4">
+                      <div className="flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1.5">
+                        <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                        <span className="text-xs font-medium text-foreground">{project.date}</span>
+                      </div>
+                    </div>
+                  )}
+                  
+                  {/* Award Badge - Top Right */}
+                  {project.award && (
                     <div className="absolute top-4 right-4">
-                      <Badge className="bg-primary/90 text-primary-foreground border-none">
+                      <div className="group/award relative">
+                        {/* Glow effect */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-accent/30 rounded-full blur-sm group-hover/award:blur-md transition-all duration-300"></div>
+                        {/* Main badge */}
+                        <div className="relative bg-card/80 backdrop-blur-glass border border-primary/30 text-primary px-3 py-1.5 rounded-full text-xs font-semibold shadow-elegant hover:shadow-glow transition-all duration-300 hover:border-primary/50 hover:bg-card/90">
+                          <div className="flex items-center gap-2">
+                            <div className="w-2 h-2 bg-gradient-primary rounded-full animate-pulse"></div>
+                            <span className="bg-gradient-primary bg-clip-text text-transparent font-medium">
+                              {project.award}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                  
+                  {/* Featured Badge - Bottom Right */}
+                  {/* {project.featured && (
+                    <div className="absolute bottom-4 right-4">
+                      <Badge className="bg-primary/90 backdrop-blur-sm text-primary-foreground border border-primary/30 shadow-lg">
                         Featured
                       </Badge>
                     </div>
-                  )}
+                  )} */}
                 </div>
                 
                 <div className="p-6 space-y-4">
@@ -207,14 +277,16 @@ const Projects = () => {
                       <SiGithub className="mr-2 h-4 w-4" />
                       Code
                     </Button>
-                    <Button 
-                      size="sm" 
-                      className="bg-gradient-primary hover:shadow-glow transition-all duration-300"
-                      onClick={() => window.open(project.live, '_blank')}
-                    >
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      {project.featured ? 'Live Demo' : 'View'}
-                    </Button>
+                    {project.live_link && (
+                      <Button 
+                        size="sm" 
+                        className="bg-gradient-primary hover:shadow-glow transition-all duration-300"
+                        onClick={() => window.open(project.live, '_blank')}
+                      >
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        {project.featured ? 'Live Demo' : 'View'}
+                      </Button>
+                    )}
                   </div>
                 </div>
               </Card>
