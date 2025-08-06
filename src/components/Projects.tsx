@@ -1,0 +1,229 @@
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { ExternalLink, Star, TrendingUp, Users, Award } from "lucide-react";
+import { SiGithub } from '@icons-pack/react-simple-icons'; 
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import project1Image from "@/assets/project1.png";
+import project2Image from "@/assets/project2.jpg";
+import project3Image from "@/assets/project3.jpg";
+import project4Image from "@/assets/project4.jpg";
+import project5Image from "@/assets/project5.jpg";
+import project6Image from "@/assets/project6.jpg"; 
+
+const Projects = () => {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { ref: featuredRef, isVisible: featuredVisible } = useScrollAnimation({ rootMargin: '0px 0px -100px 0px' });
+  const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation({ rootMargin: '0px 0px -50px 0px' });
+
+  const projects = [
+    {
+      title: "FreelanceHub",
+      description: "A decentralized freelance platform that enables clients and freelancers to seamlessly connect, post and apply for jobs, and manage projects with on-chain transparency. Leveraging wallet-based authentication and smart contracts, it ensures trustless interactions, ownership, and verifiable project delivery in a Web3-native environment.",
+      image: project1Image,
+      technologies: ["React", "TypeScript", "IPFS", "ethers.js", "Solidity", "Clerk", "Node.js", "Express.js"],
+      github: "https://github.com/Davda-James/freelancing-marketplace",
+      live: "#",
+      featured: true,
+      achievements: [
+        "Built complete Web3 freelancing marketplace with wallet integration",
+        "Implemented smart contracts for trustless payment escrow system",
+        "Integrated IPFS for decentralized file storage and project delivery",
+        "Created seamless onboarding flow with Clerk authentication"
+      ]
+    },
+    {
+      title: "Pikachoo",
+      description: "Mobile flutter app that understands the flow of people in traffic, tracks their complete trajectory and detects the conditions of stampede in real time. Build in HCLTech Hackathon organized as part of CS671 Deep Learning course.",
+      image: project2Image,
+      technologies: ["Flutter", "Python", "FastAPI", "Deep Learning", "Computer Vision"],
+      github: "https://github.com/Davda-James/pikachu",
+      live: "#",
+      featured: true,
+      achievements: [
+        "Fine Tuned the YoLov8 and YoLov11 model for dense traffic detection",
+        "Understands the flow of dense traffic real time",
+        "Tracks the complete path of a person in traffic",
+        "Detects the stampede and real time gmail alerts to authorities"
+      ]
+    },
+    {
+      title: "QuestGenie",
+      description: "Research AI Agent build in FrostHack2025 Hackathon",
+      image: project3Image,
+      technologies: ["React", "Python", "FastAPI", "MongoDB", "HuggingFace", "arxiv"],
+      github: "https://github.com/Davda-James/CryptoCoders",
+      live: "#",
+      featured: true,
+      achievements: [
+        "Fetches the best k papers from web based on user query",
+        "Generates a comprehensive report for each paper summarizing them",
+        "Caches the queries for faster retrieval of results",
+        "Provides a chat bot to chat on each paper and ask questions"
+      ]
+    },
+    {
+      title: "Whiskey Goggles",
+      description: "Fetches the top k bottle matches from database along with metadata based on user provided bottle image using computer vision. Built for bounty.",
+      image: project4Image,
+      technologies: ["Python", "HuggingFace", "Gradio", "Pandas", "Numpy"],
+      github: "https://github.com/Davda-James/Whiskey-Goggles",
+      live: "#",
+      featured: true,
+      achievements: [
+        "Converts the image to embeddings using openai/clip-vit-base-patch32",
+        "Provides the gradio frontend to upload the image and display results",
+        "Fetches the top k matches and displays metadata in frontend"
+      ]
+    },
+    {
+      title: "AgentBOB",
+      description: "Advanced Whiskey Recommendation System based on previous user purchases and their budgets and other factors. Built for bounty.",
+      image: project5Image,
+      technologies: ["Python", "HuggingFace", "FASTAPI"],
+      github: "https://github.com/Davda-James/Agent_BOB",
+      live: "https://baxus-7z5a.onrender.com/",
+      featured: true,
+      achievements: [
+        "REST endpoint that sends the recommendations as response",
+        "Includes some rule based conditions as well",
+      ]
+    },
+    {
+      title: "Garud",
+      description: "A mobile app for IIT Mandi to track IIT Mandi's buses real time location and get real time notifications from drivers. Besides these can check the bus real time speed and time it will take to reach the destination.",
+      image: project6Image,
+      technologies: ["Flutter", "Google Maps API", "Firebase", "Dart"],
+      github: "https://github.com/Davda-James/dp",
+      live: "",
+      featured: true,
+      achievements: [
+        "Uses the Google Maps API and flutter library geolocator to track the buses real time",
+        "Uses the firebase real time database to store the bus data",
+        "Provides the real time notifications to the users using cloud firestore"
+      ]
+    },
+  ];
+
+  return (
+    <section id="projects" className="py-20 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
+      
+      <div className="container mx-auto px-6">
+        <div 
+          ref={headerRef}
+          className={`text-center mb-16 transition-all duration-1000 ${
+            headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
+          <h2 className="text-4xl lg:text-5xl font-bold font-inter mb-4">
+            Featured <span className="bg-gradient-primary bg-clip-text text-transparent">Projects</span>
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            A collection of projects that showcase my expertise in development.
+          </p>
+        </div>
+        
+        <div ref={featuredRef} className="space-y-8">
+          {/* All Projects - Unified Grid */}
+          <div 
+            className={`grid md:grid-cols-2 gap-8 transition-all duration-1000 ${
+              featuredVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
+            {projects.map((project, index) => (
+              <Card 
+                key={project.title}
+                className={`overflow-hidden bg-card/30 backdrop-blur-glass border border-white/10 hover:bg-card/50 hover:shadow-elegant transition-all duration-700 group ${
+                  featuredVisible ? 'animate-scale-in opacity-100' : 'opacity-0 scale-90'
+                }`}
+                style={{ animationDelay: featuredVisible ? `${index * 0.2}s` : '0s' }}
+              >
+                <div className="relative">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+                  {project.featured && (
+                    <div className="absolute top-4 right-4">
+                      <Badge className="bg-primary/90 text-primary-foreground border-none">
+                        Featured
+                      </Badge>
+                    </div>
+                  )}
+                </div>
+                
+                <div className="p-6 space-y-4">
+                  <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
+                    {project.description}
+                  </p>
+                  
+                  {/* Technologies */}
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.slice(0, 4).map((tech) => (
+                      <Badge 
+                        key={tech} 
+                        variant="secondary"
+                        className="text-xs bg-primary/10 text-primary border-none"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                  
+                  {/* Key Achievements - Only for featured projects */}
+                  {project.featured && project.achievements && (
+                    <div className="space-y-2 ml-4">
+                      <h4 className="font-semibold flex items-center gap-2 text-sm">
+                        <Award className="h-3 w-3 text-primary" />
+                        Key Highlights
+                      </h4>
+                      <ul className="space-y-1">
+                        {project.achievements.map((achievement, achIndex) => (
+                          <li key={achIndex} className="flex items-start gap-2 text-muted-foreground">
+                            <div className="w-1 h-1 bg-primary rounded-full mt-1.5 flex-shrink-0"></div>
+                            <span className="text-xs leading-relaxed">{achievement}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  
+                  {/* Links */}
+                  <div className="flex gap-3 pt-2">
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      className="border-primary/50 hover:border-primary hover:bg-primary/10 transition-all duration-300"
+                      onClick={() => window.open(project.github, '_blank')}
+                    >
+                      <SiGithub className="mr-2 h-4 w-4" />
+                      Code
+                    </Button>
+                    <Button 
+                      size="sm" 
+                      className="bg-gradient-primary hover:shadow-glow transition-all duration-300"
+                      onClick={() => window.open(project.live, '_blank')}
+                    >
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      {project.featured ? 'Live Demo' : 'View'}
+                    </Button>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;
