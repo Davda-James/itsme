@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Star, TrendingUp, Users, Award } from "lucide-react";
-import { SiGithub } from '@icons-pack/react-simple-icons'; 
+import { SiGithub , SiYoutube } from '@icons-pack/react-simple-icons'; 
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import project1Image from "@/assets/project1.png";
 import project2Image from "@/assets/project2.jpg";
@@ -11,6 +11,7 @@ import project4Image from "@/assets/project4.jpg";
 import project5Image from "@/assets/project5.jpg";
 import project6Image from "@/assets/project6.jpg"; 
 import project7Image from "@/assets/project7.jpg";
+import Achievements from "./Achievements";
 
 const Projects = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
@@ -27,6 +28,7 @@ const Projects = () => {
       live: "#",
       featured: true,
       live_link: false,
+      // youtube: "https://www.youtube.com/watch?v=your-video-id", 
       date: "July 2025",
       award: "",
       achievements: [
@@ -45,6 +47,7 @@ const Projects = () => {
       live: "#",
       featured: true,
       live_link: false,
+      // youtube: "",
       date: "May 2025",
       award: "3rd Position in CrowdFlow PS",
       achievements: [
@@ -72,6 +75,26 @@ const Projects = () => {
       ]
     },
     {
+      title: "Data Alchemist",
+      description: "Build a Next.js application that allows users to upload CSV files specific format (shown in video) and perform various data operations",
+      image: project1Image,
+      technologies: ["NextJs", "Gemini", "AI", "Parsing"],
+      github: "https://github.com/Davda-James/data-alchemist",
+      live: "https://data-alchemist-alpha.vercel.app/",
+      featured: true,
+      live_link: true,
+      youtube: "https://youtu.be/6kwyDdlHWG8",
+      date: "June 2025",
+      award: "Pre-Intern Assignment Digitalyz",
+      achievements: [
+        "Displays a user-friendly interface for visualizing all csv's",
+        "Natural language editing of any row or cell of tables as well as natural language addition of rules, operations and constraints on tables cols or rows",
+        "Shows AI suggestions if there is cyclic dependency and resolves if possible",
+        "Can Export rules json, imroved csv and much more, see the video for more details",
+      ]
+      
+    },
+    {
       title: "QuestGenie",
       description: "Research AI Agent build in FrostHack2025 Hackathon",
       image: project3Image,
@@ -80,6 +103,7 @@ const Projects = () => {
       live: "#",
       featured: true,
       live_link: false,
+      youtube: "https://youtu.be/XMh5Vm8Xtbc",
       date: "April 2025",
       award: "",
       achievements: [
@@ -98,6 +122,7 @@ const Projects = () => {
       live: "#",
       featured: true,
       live_link: false,
+      youtube: "https://www.youtube.com/watch?v=fy34lF9Ts1M&t=1s",
       date: "April 2025",
       award: "Got access to dev group",
       achievements: [
@@ -115,6 +140,7 @@ const Projects = () => {
       live: "https://baxus-7z5a.onrender.com/",
       featured: true,
       live_link: true,
+      youtube: "",
       date: "April 2025",
       award: "Got access to dev group",
       achievements: [
@@ -285,6 +311,17 @@ const Projects = () => {
                       >
                         <ExternalLink className="mr-2 h-4 w-4" />
                         {project.featured ? 'Live Demo' : 'View'}
+                      </Button>
+                    )}
+                    {project.youtube && (
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="border-red-500/50 hover:border-red-500 hover:bg-red-500/10 text-red-500 hover:text-red-400 transition-all duration-300"
+                        onClick={() => window.open(project.youtube, '_blank')}
+                      >
+                        <SiYoutube className="mr-2 h-4 w-4" />
+                        Demo
                       </Button>
                     )}
                   </div>
