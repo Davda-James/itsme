@@ -11,6 +11,7 @@ import project4Image from "@/assets/project4.jpg";
 import project5Image from "@/assets/project5.jpg";
 import project6Image from "@/assets/project6.jpg"; 
 import project7Image from "@/assets/project7.jpg";
+import project8Image from "@/assets/project8.png";
 import Achievements from "./Achievements";
 
 const Projects = () => {
@@ -77,7 +78,7 @@ const Projects = () => {
     {
       title: "Data Alchemist",
       description: "Build a Next.js application that allows users to upload CSV files specific format (shown in video) and perform various data operations",
-      image: project1Image,
+      image: project8Image,
       technologies: ["NextJs", "Gemini", "AI", "Parsing"],
       github: "https://github.com/Davda-James/data-alchemist",
       live: "https://data-alchemist-alpha.vercel.app/",
