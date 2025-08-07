@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -28,6 +28,20 @@ const HireModal = ({ isOpen, onClose }: HireModalProps) => {
     type: 'success' | 'error' | null;
     message: string;
   }>({ type: null, message: '' });
+
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup function to restore scroll when component unmounts
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -125,15 +139,15 @@ const HireModal = ({ isOpen, onClose }: HireModalProps) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 overflow-hidden">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 overflow-hidden bg-background/80 backdrop-blur-sm">
       {/* Backdrop */}
       <div 
-        className="absolute inset-0 bg-background/80 backdrop-blur-sm animate-fade-in"
+        className="absolute inset-0"
         onClick={handleClose}
       />
       
       {/* Modal */}
-      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto scrollbar-hide animate-fade-in-up">
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto scrollbar-hide animate-fade-in-up z-10">
         <div className="bg-card/30 backdrop-blur-glass border border-white/10 rounded-2xl p-6 shadow-elegant">
           {/* Header */}
           <div className="flex items-center justify-between mb-6">

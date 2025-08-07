@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -7,11 +8,14 @@ import Achievements from "@/components/Achievements";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import HireModal from "@/components/HireModal";
 
 const Index = () => {
+  const [isHireModalOpen, setIsHireModalOpen] = useState(false);
+
   return (
     <div className="min-h-screen font-inter">
-      <Navigation />
+      <Navigation onHireClick={() => setIsHireModalOpen(true)} />
       <main>
         <section id="home">
           <Hero />
@@ -24,6 +28,12 @@ const Index = () => {
         <Contact />
       </main>
       <Footer />
+      
+      {/* Global Hire Modal */}
+      <HireModal 
+        isOpen={isHireModalOpen} 
+        onClose={() => setIsHireModalOpen(false)} 
+      />
     </div>
   );
 };
