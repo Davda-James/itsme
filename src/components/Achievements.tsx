@@ -20,7 +20,7 @@ const Achievements = () => {
     },
     {
       title: "HCLTech Hackathon",
-      position: "2nd Place",
+      position: "3rd Place in CrowdFlow PS",
       description: "Built a solution using deep learning and computer vision for CrowdFlow problem statement",
       date: "May 2025",
       prize: "Certificate of Excellence",
