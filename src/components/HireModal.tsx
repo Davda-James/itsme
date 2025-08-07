@@ -63,7 +63,7 @@ const HireModal = ({ isOpen, onClose }: HireModalProps) => {
 
       // Template parameters that match your EmailJS template
       const templateParams = {
-        from_name: formData.name,
+        name: formData.name,
         email: formData.email,
         company: formData.company,
         workType: formData.workType,
