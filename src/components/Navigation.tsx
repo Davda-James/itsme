@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import HireModal from "./HireModal";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isHireModalOpen, setIsHireModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,6 +74,7 @@ const Navigation = () => {
             <Button 
               variant="outline" 
               className="border-primary/50 hover:border-primary hover:bg-primary/10 transition-all duration-300"
+              onClick={() => setIsHireModalOpen(true)}
             >
               Hire Me
             </Button>
@@ -106,7 +109,10 @@ const Navigation = () => {
               ))}
               <Button 
                 className="bg-gradient-primary hover:shadow-glow transition-all duration-300 mt-4"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  setIsHireModalOpen(true);
+                }}
               >
                 Hire Me
               </Button>
@@ -114,6 +120,12 @@ const Navigation = () => {
           </div>
         )}
       </div>
+      
+      {/* Hire Modal */}
+      <HireModal 
+        isOpen={isHireModalOpen} 
+        onClose={() => setIsHireModalOpen(false)} 
+      />
     </nav>
   );
 };
