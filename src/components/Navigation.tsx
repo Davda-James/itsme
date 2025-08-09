@@ -35,6 +35,7 @@ const Navigation = ({ onHireClick }: NavigationProps) => {
     { name: "Skills", href: "#skills" },
     { name: "Experience", href: "#experience" },
     { name: "Achievements", href: "#achievements" },
+    { name: "Open Source", href: "#open-source" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
   ];

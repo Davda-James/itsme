@@ -32,7 +32,7 @@ const Experience = () => {
         "Implemented \"Frequency vs Energy\" plot for real-time audio using Fourier Coefficients, and integrated it into the existing GUI to maintain UX consistency [PR #94](https://github.com/Soumya-Kushwaha/SoundScape/pull/94)",
       ],
       technologies: ["Python", "Mathematical Modelling", "Fourier Transform", "Data Visualization"]
-    },
+    }
   ];
 
   return (
