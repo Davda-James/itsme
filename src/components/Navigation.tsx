@@ -59,7 +59,7 @@ const Navigation = ({ onHireClick }: NavigationProps) => {
           </button>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
               <button
                 key={item.name}
@@ -73,10 +73,10 @@ const Navigation = ({ onHireClick }: NavigationProps) => {
           </div>
           
           {/* CTA Button */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <Button 
               variant="outline" 
-              className="border-primary/50 hover:border-primary hover:bg-primary/10 transition-all duration-300"
+              className="border-primary/50 hover:border-primary hover:bg-primary/10 transition-all duration-300 text-primary hover:text-primary focus:text-primary active:text-primary"
               onClick={onHireClick}
             >
               Hire Me
@@ -87,7 +87,7 @@ const Navigation = ({ onHireClick }: NavigationProps) => {
           <Button
             variant="ghost"
             size="sm"
-            className="md:hidden"
+            className="lg:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -96,7 +96,7 @@ const Navigation = ({ onHireClick }: NavigationProps) => {
         
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 animate-fade-in-up">
+          <div className="lg:hidden mt-4 pb-4 animate-fade-in-up">
             <div className="flex flex-col space-y-4 bg-card/30 backdrop-blur-glass border border-white/10 rounded-2xl p-6">
               {navItems.map((item) => (
                 <button
@@ -111,7 +111,7 @@ const Navigation = ({ onHireClick }: NavigationProps) => {
                 </button>
               ))}
               <Button 
-                className="bg-gradient-primary hover:shadow-glow transition-all duration-300 mt-4"
+                className="bg-gradient-primary hover:shadow-glow transition-all duration-300 mt-4 text-white hover:text-white focus:text-white active:text-white"
                 onClick={() => {
                   setIsMobileMenuOpen(false);
                   onHireClick();
