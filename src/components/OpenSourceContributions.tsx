@@ -5,6 +5,15 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, X } from "lucide-react";
 
 const contributions = [
+    {
+        repo: "Soumya-Kushwaha/SoundScape",
+        title: "feat: added feature of Frequency Vs Energy Plot of real time audio",
+        url: "https://github.com/pulls?q=is:pr+author:Davda-James+is:merged",
+        status: "merged",   
+        date: "July 13, 2025",
+        description: "Added feature of Frequency Vs Energy Plot of real time audio using Fourier Coefficients method implemented in existing GUI"
+        
+    },
 	{
 		repo: "OWASP/Nettacker",
 		title: "fix: issue of select all profiles button",
@@ -22,29 +31,13 @@ const contributions = [
         description: " Installation of the setuptools and wheel command were missing and they are required for fire"
     },
     {
-        repo: "KamandPrompt",
-        title: "feat: added the k_closest elements problem and also added the complexity analysis of every solution",
-        url: "https://github.com/KamandPrompt/HackQuest/pull/11",
+        repo: "python-geeks/Automation-scripts",
+        title: "feat: added the AI Bot Script (Gemini) ",
+        url: "https://github.com/python-geeks/Automation-scripts/pull/991",
         status: "merged",
-        date: "",
-        description: "Added missing TypeScript types for API hooks.",
+        date: "October 13, 2025",
+        description: "Python script designed to interact with users and generate responses using the Google Generative AI API. This script allows users to input queries or prompts and receive contextual and coherent responses from the AI mode"
     },
-	{
-		repo: "nosana",
-		title: "feat: added the templates for multiple models ",
-		url: "https://github.com/nosana-ci/pipeline-templates/pull/54",
-		status: "open",
-		date: "April 2, 2025",
-		description: "Added the templates for nosana ci, to make deployment of models (LLM, VLM etc) easy on GPUs",
-	},
-	{
-		repo: "heurist-ai",
-		title: "feat: created an automated gmail agent using heurist frameworkCreated an automated gmail agent using heurist framework",
-		url: "https://github.com/heurist-network/heurist-agent-framework/pull/72",
-		status: "open",
-		date: "March 31, 2025",
-		description: "Resolved navigation color bug in dark mode.",
-	}
 ];
 
 const statusColor = {
@@ -98,66 +91,18 @@ export default function OpenSourceContributions() {
 						</div>
 					))}
 				</div>
-				<div className="flex justify-center">
-					<Button
-						className="bg-gradient-primary hover:shadow-glow px-8 py-2 text-lg font-semibold"
-						onClick={() => setShowModal(true)}
-					>
-						View All
-					</Button>
-				</div>
-			</div>
-			{/* Modal for all PRs */}
-			{showModal && (
-				<div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-background/80 backdrop-blur-sm animate-fade-in">
-					<div className="absolute inset-0" onClick={() => setShowModal(false)} />
-					<div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto scrollbar-hide bg-card/30 backdrop-blur-glass border border-white/10 rounded-2xl shadow-elegant p-8 z-10 animate-fade-in-up">
-						{/* Violet circular accent in modal */}
-						<div
-							aria-hidden
-							className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[400px] h-[400px] rounded-full bg-gradient-to-br from-[#a259ff33] via-[#6a4cff22] to-transparent blur-2xl opacity-50 z-0"
-						/>
-						<div className="flex items-center justify-between mb-6 relative z-10">
-							<h3 className="text-2xl md:text-3xl font-bold font-inter bg-gradient-primary bg-clip-text text-transparent text-center w-full">
-								All Open Source PRs
-							</h3>
-							<Button
-								variant="ghost"
-								size="sm"
-								onClick={() => setShowModal(false)}
-								className="hover:bg-primary/10 absolute right-0 top-0"
+						<div className="flex justify-center">
+							<a
+								href="https://github.com/pulls?q=is:pr+author:Davda-James+is:merged"
+								target="_blank"
+								rel="noopener noreferrer"
 							>
-								<X className="h-5 w-5" />
-							</Button>
-						</div>
-						<div className="space-y-4 relative z-10">
-							{contributions.map((pr, idx) => (
-								<div
-									key={idx}
-									className="rounded-xl bg-card/40 border border-white/10 p-4 flex flex-col gap-1 transition-all duration-200 hover:scale-[1.015] hover:shadow-glow hover:border-primary/30 hover:bg-card/60"
-								>
-									<div className="flex items-center gap-2 mb-1">
-										<span className="font-semibold text-base flex-1 group-hover:text-primary transition-colors duration-200">
-											{pr.title}
-										</span>
-										<Badge className={`border ${statusColor[pr.status as keyof typeof statusColor]}`}>{pr.status}</Badge>
-									</div>
-									<div className="text-xs text-muted-foreground mb-1">{pr.repo} • {pr.date}</div>
-									<div className="text-sm text-muted-foreground flex-1">{pr.description}</div>
-									<a
-										href={pr.url}
-										target="_blank"
-										rel="noopener noreferrer"
-										className="mt-1 text-primary hover:underline flex items-center gap-1"
-									>
-										View PR <ExternalLink className="h-4 w-4" />
-									</a>
-								</div>
-							))}
+								<Button className="bg-gradient-primary hover:shadow-glow px-8 py-2 text-lg font-semibold">
+									View All
+								</Button>
+							</a>
 						</div>
 					</div>
-				</div>
-			)}
 		</section>
 	);
 }
