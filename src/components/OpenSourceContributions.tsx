@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, X } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const contributions = [
     {
@@ -66,30 +67,39 @@ export default function OpenSourceContributions() {
 				</p>
 				{/* Featured PRs Grid */}
 				<div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10">
-					{featured.map((pr, idx) => (
-						<div
-							key={idx}
-							tabIndex={0}
-							className="group rounded-2xl bg-card/30 backdrop-blur-glass border border-white/10 shadow-elegant p-6 flex flex-col gap-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/40 hover:scale-[1.025] hover:shadow-glow hover:border-primary/30 hover:bg-card/50 cursor-pointer"
-						>
-							<div className="flex items-center gap-2 mb-1">
-								<span className="font-semibold text-lg flex-1 group-hover:text-primary transition-colors duration-200">
-									{pr.title}
-								</span>
-								<Badge className={`border ${statusColor[pr.status as keyof typeof statusColor]}`}>{pr.status}</Badge>
-							</div>
-							<div className="text-xs text-muted-foreground mb-1">{pr.repo} • {pr.date}</div>
-							<div className="text-sm text-muted-foreground flex-1">{pr.description}</div>
-							<a
-								href={pr.url}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="mt-2 text-primary hover:underline flex items-center gap-1"
+					{featured.map((pr, idx) => {
+						const { ref, isVisible } = useScrollAnimation({ rootMargin: '0px 0px -80px 0px' });
+						return (
+							<div
+								key={idx}
+								ref={ref}
+								tabIndex={0}
+								className={
+									`group rounded-2xl bg-card/30 backdrop-blur-glass border border-white/10 shadow-elegant p-6 flex flex-col gap-2 will-change-transform focus:outline-none focus:ring-2 focus:ring-primary/40 cursor-pointer ` +
+									(isVisible ? 'opacity-100 translate-y-0 transition-opacity transition-transform duration-700' : 'opacity-0 translate-y-8 transition-opacity transition-transform duration-700') +
+									' hover:scale-[1.025] hover:shadow-glow hover:border-primary/30 hover:bg-card/50 transition-[box-shadow,border,background,transform] duration-170'
+								}
+								style={{ transitionDelay: `${idx * 80}ms` }}
 							>
-								View PR <ExternalLink className="h-4 w-4" />
-							</a>
-						</div>
-					))}
+								<div className="flex items-center gap-2 mb-1">
+									<span className="font-semibold text-lg flex-1 group-hover:text-primary transition-colors duration-200">
+										{pr.title}
+									</span>
+									<Badge className={`border ${statusColor[pr.status as keyof typeof statusColor]}`}>{pr.status}</Badge>
+								</div>
+								<div className="text-xs text-muted-foreground mb-1">{pr.repo} • {pr.date}</div>
+								<div className="text-sm text-muted-foreground flex-1">{pr.description}</div>
+								<a
+									href={pr.url}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="mt-2 text-primary hover:underline flex items-center gap-1"
+								>
+									View PR <ExternalLink className="h-4 w-4" />
+								</a>
+							</div>
+						);
+					})}
 				</div>
 						<div className="flex justify-center">
 							<a
