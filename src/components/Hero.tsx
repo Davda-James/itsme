@@ -68,7 +68,7 @@ const Hero = () => {
               <div className="relative bg-card/30 backdrop-blur-glass border border-white/10 rounded-3xl p-8 shadow-elegant">
                 <img 
                   src={heroImage} 
-                  alt="James Davda - Full-Stack Developer"
+                  alt="James Davda"
                   className="w-80 h-80 object-cover rounded-2xl"
                 />
               </div>
