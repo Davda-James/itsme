@@ -6,15 +6,23 @@ import { ExternalLink, X } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const contributions = [
-    {
-        repo: "Soumya-Kushwaha/SoundScape",
+	{
+		repo: "Soumya-Kushwaha/SoundScape",
         title: "feat: added feature of Frequency Vs Energy Plot of real time audio",
-        url: "https://github.com/pulls?q=is:pr+author:Davda-James+is:merged",
+        url: "https://github.com/Soumya-Kushwaha/SoundScape/pull/94",
         status: "merged",   
         date: "July 13, 2025",
         description: "Added feature of Frequency Vs Energy Plot of real time audio using Fourier Coefficients method implemented in existing GUI"
         
     },
+	{
+		repo: "Apache/Beam",
+        title: "feat: added support for duration/timeout in test_pipeline",
+        url: "https://github.com/apache/beam/pull/35831",
+        status: "merged",   
+        date: "Aug 12, 2025",
+        description: "Added support for duration/timeout in test_pipeline so that test does not wait infinitely, and after certain time raise error"
+	},
 	{
 		repo: "OWASP/Nettacker",
 		title: "fix: issue of select all profiles button",
