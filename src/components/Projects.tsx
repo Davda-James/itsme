@@ -41,7 +41,7 @@ const Projects = () => {
     },
     {
       title: "Pikachoo",
-      description: "Mobile flutter app that understands the flow of people in traffic, tracks their complete trajectory and detects the conditions of stampede in real time. Build in HCLTech Hackathon organized as part of CS671 Deep Learning course.",
+      description: "Mobile AI flutter app that understands the flow of people in traffic, tracks their complete trajectory and detects the conditions of stampede in real time. Build in HCLTech Hackathon organized as part of CS671 Deep Learning course.",
       image: project2Image,
       technologies: ["Flutter", "Python", "FastAPI", "Deep Learning", "Computer Vision"],
       github: "https://github.com/Davda-James/pikachu",

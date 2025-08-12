@@ -7,7 +7,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const contributions = [
 	{
-		repo: "Soumya-Kushwaha/SoundScape",
+		repo: "Soumya-Kushwaha/SoundScape",	
         title: "feat: added feature of Frequency Vs Energy Plot of real time audio",
         url: "https://github.com/Soumya-Kushwaha/SoundScape/pull/94",
         status: "merged",   
