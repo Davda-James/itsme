@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Star, TrendingUp, Users, Award } from "lucide-react";
 import { SiGithub , SiYoutube } from '@icons-pack/react-simple-icons'; 
+import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import project1Image from "@/assets/project1.png";
 import project2Image from "@/assets/project2.jpg";
@@ -12,7 +13,6 @@ import project5Image from "@/assets/project5.jpg";
 import project6Image from "@/assets/project6.jpg"; 
 import project7Image from "@/assets/project7.jpg";
 import project8Image from "@/assets/project8.png";
-import Achievements from "./Achievements";
 
 const Projects = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
@@ -258,9 +258,22 @@ const Projects = () => {
                   <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
-                    {project.description}
-                  </p>
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <p
+                          className="text-muted-foreground text-sm leading-relaxed line-clamp-3 cursor-pointer"
+                          style={{ overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' }}
+                          tabIndex={0}
+                        >
+                          {project.description}
+                        </p>
+                      </TooltipTrigger>
+                      <TooltipContent side="top" className="max-w-md text-left whitespace-pre-line">
+                        {project.description}
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
                   
                   {/* Technologies */}
                   <div className="flex flex-wrap gap-2">

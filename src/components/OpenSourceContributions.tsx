@@ -22,7 +22,7 @@ const contributions = [
         status: "merged",   
         date: "Aug 12, 2025",
         description: "Added support for duration/timeout in test_pipeline so that test does not wait infinitely, and after certain time raise error"
-	},
+	},	
 	{
 		repo: "OWASP/Nettacker",
 		title: "fix: issue of select all profiles button",
