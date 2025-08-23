@@ -7,6 +7,14 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const contributions = [
 	{
+		repo: "Avaiga/taipy",
+		title: "improvement: pressing enter selects all filtered/remaining contents in selector",
+		url: "https://github.com/Avaiga/taipy/pull/2710",
+		status: "merged",
+		date: "Aug 22, 2025",
+		description: "Pressing enter selects all the filtered/remaining elements in selector automatically"
+	},
+	{
 		repo: "Soumya-Kushwaha/SoundScape",	
         title: "feat: added feature of Frequency Vs Energy Plot of real time audio",
         url: "https://github.com/Soumya-Kushwaha/SoundScape/pull/94",
@@ -31,22 +39,22 @@ const contributions = [
 		date: "August 9, 2025",
 		description: "Select all profiles was selecting every scan methods instead of all profiles",
 	},
-    {
-        repo: "msoedov/agentic-security",
-        title: "fix: dockerfile error of setuptools and wheel",
-        url: "https://github.com/msoedov/agentic_security/pull/215",
-        status: "merged",
-        date: "April 9, 2025",
-        description: " Installation of the setuptools and wheel command were missing and they are required for fire"
-    },
-    {
-        repo: "python-geeks/Automation-scripts",
-        title: "feat: added the AI Bot Script (Gemini) ",
-        url: "https://github.com/python-geeks/Automation-scripts/pull/991",
-        status: "merged",
-        date: "October 13, 2025",
-        description: "Python script designed to interact with users and generate responses using the Google Generative AI API. This script allows users to input queries or prompts and receive contextual and coherent responses from the AI mode"
-    },
+    // {
+    //     repo: "msoedov/agentic-security",
+    //     title: "fix: dockerfile error of setuptools and wheel",
+    //     url: "https://github.com/msoedov/agentic_security/pull/215",
+    //     status: "merged",
+    //     date: "April 9, 2025",
+    //     description: " Installation of the setuptools and wheel command were missing and they are required for fire"
+    // },
+    // {
+    //     repo: "python-geeks/Automation-scripts",
+    //     title: "feat: added the AI Bot Script (Gemini) ",
+    //     url: "https://github.com/python-geeks/Automation-scripts/pull/991",
+    //     status: "merged",
+    //     date: "October 13, 2025",
+    //     description: "Python script designed to interact with users and generate responses using the Google Generative AI API. This script allows users to input queries or prompts and receive contextual and coherent responses from the AI mode"
+    // },
 ];
 
 const statusColor = {
