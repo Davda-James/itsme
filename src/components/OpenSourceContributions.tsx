@@ -119,7 +119,7 @@ export default function OpenSourceContributions() {
 				</div>
 						<div className="flex justify-center">
 							<a
-								href="https://github.com/pulls?q=is:pr+author:Davda-James+is:merged"
+								href="https://github.com/search?q=is%3Apr+author%3ADavda-James+is%3Amerged&type=PullRequests"
 								target="_blank"
 								rel="noopener noreferrer"
 							>
