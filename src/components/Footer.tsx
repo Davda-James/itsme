@@ -52,7 +52,7 @@ const Footer = () => {
         {/* Bottom Border */}
         <div className="mt-8 pt-8 border-t border-white/10">
           <p className="text-center text-muted-foreground text-xs">
-            Designed & Built with modern technologies and lots of coffee ☕
+            Designed & Built with lots of coffee ☕
           </p>
         </div>
       </div>
