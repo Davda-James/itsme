@@ -6,7 +6,7 @@ import heroImage from "@/assets/hero-image.jpg";
 
 const Hero = ({ headingRef }: { headingRef: React.RefObject<HTMLDivElement> }) => {
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 sm:pt-16 md:pt-8">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-card"></div>
       <div className="absolute top-20 left-20 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-float"></div>
