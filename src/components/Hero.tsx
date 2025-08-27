@@ -4,7 +4,7 @@ import { SiGithub } from '@icons-pack/react-simple-icons';
 import { FaLinkedinIn } from 'react-icons/fa';
 import heroImage from "@/assets/hero-image.jpg";
 
-const Hero = () => {
+const Hero = ({ headingRef }: { headingRef: React.RefObject<HTMLDivElement> }) => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Elements */}
@@ -19,7 +19,7 @@ const Hero = () => {
             <div className="space-y-4">
               <p className="text-primary font-medium tracking-wider uppercase text-sm">Hello, I'm</p>
               <div className="space-y-2">
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold font-inter leading-tight">
+                <h1 ref={headingRef} className="text-5xl sm:text-6xl lg:text-7xl font-bold font-inter leading-tight">
                   <span className="bg-gradient-primary bg-clip-text text-transparent">
                     James Davda
                   </span>

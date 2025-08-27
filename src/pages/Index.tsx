@@ -10,16 +10,21 @@ import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import HireModal from "@/components/HireModal";
+import { useElementOnScreen } from "@/hooks/useElementOnScreen";
 
 const Index = () => {
   const [isHireModalOpen, setIsHireModalOpen] = useState(false);
 
+  const { ref: heroHeadingRef, isVisible: isHeroVisible } = useElementOnScreen({
+    threshold: 0.1,
+  });
+
   return (
     <div className="min-h-screen font-inter">
-      <Navigation onHireClick={() => setIsHireModalOpen(true)} />
+      <Navigation onHireClick={() => setIsHireModalOpen(true)} showName={!isHeroVisible} />
       <main>
         <section id="home">
-          <Hero />
+          <Hero headingRef={heroHeadingRef}/>
         </section>
         <About />
         <Skills />

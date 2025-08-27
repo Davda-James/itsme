@@ -4,9 +4,10 @@ import { Menu, X } from "lucide-react";
 
 interface NavigationProps {
   onHireClick: () => void;
+  showName?: boolean;
 }
 
-const Navigation = ({ onHireClick }: NavigationProps) => {
+const Navigation = ({ onHireClick, showName }: NavigationProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -50,12 +51,16 @@ const Navigation = ({ onHireClick }: NavigationProps) => {
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo - Fixed width to prevent layout shift */}
           <button 
             onClick={() => scrollToSection('#home')} 
-            className="text-2xl font-bold font-inter bg-transparent border-none cursor-pointer"
+            className="text-2xl font-bold font-inter bg-transparent border-none cursor-pointer w-20 text-left"
           >
-            <span className="bg-gradient-primary bg-clip-text text-transparent">James</span>
+            <span className={`bg-gradient-primary bg-clip-text text-transparent transition-opacity duration-300 ${
+              showName ? 'opacity-100' : 'opacity-0'
+            }`}>
+              James
+            </span>
           </button>
           
           {/* Desktop Navigation */}

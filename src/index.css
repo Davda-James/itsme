@@ -127,3 +127,7 @@ All colors MUST be HSL.
     display: none;
   }
 }
+
+[data-radix-popper-content-wrapper] {
+  z-index: 10000 !important;
+}
