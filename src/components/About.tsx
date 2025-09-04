@@ -6,29 +6,6 @@ const About = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
   const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation({ rootMargin: '0px 0px -100px 0px' });
 
-  const highlights = [
-    {
-      icon: Code,
-      title: "Innovation",
-      description: "Driving technological evolution by crafting code that challenges conventions, embraces curiosity, and unlocks new possibilities."
-    },
-    {
-      icon: Palette,
-      title: "Curiosity",
-      description: "Fostering a culture of exploration and creativity, where every line of code is a step towards discovering innovative solutions."
-    },
-    {
-      icon: Rocket,
-      title: "Performance",
-      description: "Optimizing applications for speed, accessibility, and user experience."
-    },
-    {
-      icon: Users,
-      title: "Collaboration",
-      description: "Working effectively in teams to deliver exceptional results on time."
-    }
-  ];
-
   return (
     <section id="about" className="py-20 relative overflow-hidden">
       {/* Background Elements */}
@@ -49,7 +26,7 @@ const About = () => {
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+  <div className="flex justify-center items-center">
           {/* Content */}
           <div 
             ref={contentRef}
@@ -65,31 +42,6 @@ const About = () => {
                 When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects. 
               </p>
             </div>
-          </div>
-          
-          {/* Highlights Grid */}
-          <div 
-            className={`grid grid-cols-2 gap-4 transition-all duration-1000 delay-300 ${
-              contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            {highlights.map((highlight, index) => (
-              <Card 
-                key={highlight.title}
-                className="p-6 bg-card/30 backdrop-blur-glass border border-white/10 hover:bg-card/50 hover:shadow-glow transition-all duration-300 group"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <div className="space-y-3">
-                  <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <highlight.icon className="h-6 w-6 text-background" />
-                  </div>
-                  <h4 className="font-semibold text-foreground">{highlight.title}</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {highlight.description}
-                  </p>
-                </div>
-              </Card>
-            ))}
           </div>
         </div>
       </div>
