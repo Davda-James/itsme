@@ -69,7 +69,7 @@ const Achievements = () => {
             <span className="bg-gradient-primary bg-clip-text text-transparent">Achievements</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Recognition and certifications that showcase my commitment to excellence and continuous learning.
+            Recognition and certifications earned along the way.
           </p>
         </div>
 

@@ -187,7 +187,7 @@ const Projects = () => {
             Featured <span className="bg-gradient-primary bg-clip-text text-transparent">Projects</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A collection of projects that showcase my expertise in development.
+            The Workshop
           </p>
         </div>
         

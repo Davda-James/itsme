@@ -52,7 +52,7 @@ const Experience = () => {
             <span className="bg-gradient-primary bg-clip-text text-transparent">Experience</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            My journey through different roles and companies, building expertise and delivering impactful solutions.
+            The Build Log
           </p>
         </div>
 

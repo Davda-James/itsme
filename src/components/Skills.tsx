@@ -53,10 +53,10 @@ const Skills = () => {
           }`}
         >
           <h2 className="text-4xl lg:text-5xl font-bold font-inter mb-4">
-            Skills & <span className="bg-gradient-primary bg-clip-text text-transparent">Expertise</span>
+            <span className="bg-gradient-primary bg-clip-text text-transparent">Skills</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A comprehensive overview of my technical skills and the tools I use to create exceptional digital experiences.
+            Technical skills and tools I use for tinkering.
           </p>
         </div>
 

@@ -79,7 +79,7 @@ export default function OpenSourceContributions() {
 					Open Source Contributions
 				</h2>
 				<p className="text-center text-muted-foreground mb-10 text-lg max-w-2xl mx-auto">
-					Pull Requests and code contributions to the open source community.
+					Code contributions to the open source community.
 				</p>
 				{/* Featured PRs Grid */}
 				<div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10">
