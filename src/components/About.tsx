@@ -19,9 +19,9 @@ const About = () => {
           }`}
         >
           <h2 className="text-4xl lg:text-5xl font-bold font-inter mb-4">
-            About <span className="bg-gradient-primary bg-clip-text text-transparent">Me</span>
+            About <span className="text-foreground">Me</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-foreground/80 text-lg max-w-2xl mx-auto">
             What drives me is the thrill of building something from nothing—and knowing it actually helps someone.
           </p>
         </div>
@@ -35,10 +35,10 @@ const About = () => {
             }`}
           >
             <div className="space-y-4">
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-foreground/80 leading-relaxed">
                 I'm a pre-final year Computer Science student at IIT Mandi who finds joy in turning ideas into working systems. I enjoy building things with code, especially projects that solve real problems or explore new ideas. My interests span backend systems, AI/DL, and blockchain, and I like learning by doing—whether it's through hackathons, internships, or personal projects.
               </p>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-foreground/80 leading-relaxed">
                 When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects. 
               </p>
             </div>

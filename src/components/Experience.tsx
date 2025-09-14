@@ -49,7 +49,7 @@ const Experience = () => {
           }`}
         >
           <h2 className="text-4xl lg:text-5xl font-bold font-inter mb-4">
-            <span className="bg-gradient-primary bg-clip-text text-transparent">Experience</span>
+            <span className="text-foreground">Experience</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             The Build Log
@@ -58,7 +58,7 @@ const Experience = () => {
 
         <div ref={timelineRef} className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-primary opacity-20"></div>
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-neutral-300 dark:bg-neutral-700"></div>
           
           <div className="space-y-8">
             {experiences.map((exp, index) => (

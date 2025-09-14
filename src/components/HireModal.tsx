@@ -139,16 +139,16 @@ const HireModal = ({ isOpen, onClose }: HireModalProps) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 overflow-hidden bg-background/80 backdrop-blur-sm">
+  <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 overflow-hidden bg-background/90 backdrop-blur-sm">
       {/* Backdrop */}
       <div 
-        className="absolute inset-0"
+        className="absolute inset-0 bg-black/60 dark:bg-black/80"
         onClick={handleClose}
       />
       
       {/* Modal */}
       <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto scrollbar-hide animate-fade-in-up z-10">
-        <div className="bg-card/30 backdrop-blur-glass border border-white/10 rounded-2xl p-6 shadow-elegant">
+        <div className="bg-card/90 border border-white/30 dark:border-white/20 rounded-2xl p-6 shadow-elegant">
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
             <div>
@@ -335,7 +335,7 @@ const HireModal = ({ isOpen, onClose }: HireModalProps) => {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="flex-1 bg-gradient-primary hover:shadow-glow transition-all duration-300 disabled:opacity-50"
+                className="flex-1 bg-primary text-primary-foreground font-semibold shadow-elegant hover:bg-primary/90 transition-all duration-300 disabled:opacity-60"
               >
                 {isSubmitting ? (
                   <div className="flex items-center gap-2">

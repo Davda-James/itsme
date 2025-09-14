@@ -7,7 +7,7 @@ import Experience from "@/components/Experience";
 import OpenSourceContributions from "@/components/OpenSourceContributions";
 import Achievements from "@/components/Achievements";
 import Projects from "@/components/Projects";
-import Contact from "@/components/Contact";
+// import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import HireModal from "@/components/HireModal";
 import { useElementOnScreen } from "@/hooks/useElementOnScreen";
@@ -20,7 +20,7 @@ const Index = () => {
   });
 
   return (
-    <div className="min-h-screen font-inter">
+  <div className="min-h-screen font-inter bg-background transition-colors duration-300">
       <Navigation onHireClick={() => setIsHireModalOpen(true)} showName={!isHeroVisible} />
       <main>
         <section id="home">
@@ -32,7 +32,7 @@ const Index = () => {
         <Achievements />
         <OpenSourceContributions />
         <Projects />
-        <Contact />
+  {/* <Contact /> */}
       </main>
       <Footer />
       

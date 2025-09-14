@@ -8,49 +8,49 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Modern Dark Portfolio Theme */
-    --background: 220 27% 8%;
-    --foreground: 220 15% 95%;
+  /* Modern Minimal Portfolio Theme */
+  --background: 0 0% 100%;
+  --foreground: 0 0% 10%;
 
-    --card: 220 25% 12%;
-    --card-foreground: 220 15% 95%;
+  --card: 0 0% 98%;
+  --card-foreground: 0 0% 10%;
 
-    --popover: 220 25% 12%;
-    --popover-foreground: 220 15% 95%;
+  --popover: 0 0% 98%;
+  --popover-foreground: 0 0% 10%;
 
-    --primary: 260 100% 70%;
-    --primary-foreground: 220 27% 8%;
+  --primary: 0 0% 10%;
+  --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 25% 15%;
-    --secondary-foreground: 220 15% 95%;
+  --secondary: 0 0% 90%;
+  --secondary-foreground: 0 0% 10%;
 
-    --muted: 220 25% 15%;
-    --muted-foreground: 220 10% 60%;
+  --muted: 0 0% 90%;
+  --muted-foreground: 0 0% 50%;
 
-    --accent: 300 100% 70%;
-    --accent-foreground: 220 27% 8%;
+  --accent: 0 0% 80%;
+  --accent-foreground: 0 0% 10%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 220 15% 95%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
 
-    --border: 220 25% 20%;
-    --input: 220 25% 15%;
-    --ring: 260 100% 70%;
+  --border: 0 0% 85%;
+  --input: 0 0% 90%;
+  --ring: 0 0% 10%;
 
     --radius: 1rem;
 
     /* Modern Portfolio Specific Colors */
-    --gradient-primary: linear-gradient(135deg, hsl(260 100% 70%), hsl(300 100% 70%));
-    --gradient-secondary: linear-gradient(135deg, hsl(220 25% 15%), hsl(220 25% 20%));
-    --gradient-accent: linear-gradient(135deg, hsl(260 100% 70% / 0.1), hsl(300 100% 70% / 0.1));
+  --gradient-primary: none;
+  --gradient-secondary: none;
+  --gradient-accent: none;
     
     /* Glass morphism */
     --glass-bg: hsla(220, 25%, 15%, 0.7);
     --glass-border: hsla(220, 15%, 95%, 0.1);
     
     /* Shadows */
-    --shadow-glow: 0 0 40px hsl(260 100% 70% / 0.3);
-    --shadow-elegant: 0 20px 40px hsl(220 27% 8% / 0.5);
+  --shadow-glow: 0 0 40px hsl(0 0% 0% / 0.05);
+  --shadow-elegant: 0 20px 40px hsl(0 0% 0% / 0.08);
     
     /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);

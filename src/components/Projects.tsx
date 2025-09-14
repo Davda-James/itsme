@@ -184,7 +184,7 @@ const Projects = () => {
           }`}
         >
           <h2 className="text-4xl lg:text-5xl font-bold font-inter mb-4">
-            Featured <span className="bg-gradient-primary bg-clip-text text-transparent">Projects</span>
+            Featured <span className="text-foreground">Projects</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             The Workshop
@@ -232,10 +232,10 @@ const Projects = () => {
                         {/* Glow effect */}
                         <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-accent/30 rounded-full blur-sm group-hover/award:blur-md transition-all duration-300"></div>
                         {/* Main badge */}
-                        <div className="relative bg-card/80 backdrop-blur-glass border border-primary/30 text-primary px-3 py-1.5 rounded-full text-xs font-semibold shadow-elegant hover:shadow-glow transition-all duration-300 hover:border-primary/50 hover:bg-card/90">
+                        <div className="relative bg-white/10 dark:bg-white/15 backdrop-blur border border-white/40 text-foreground px-3 py-1.5 rounded-full text-xs font-semibold shadow-elegant hover:shadow-glow transition-all duration-300 hover:border-primary/50 hover:bg-white/20">
                           <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 bg-gradient-primary rounded-full animate-pulse"></div>
-                            <span className="bg-gradient-primary bg-clip-text text-transparent font-medium">
+                            <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                            <span className="font-medium">
                               {project.award}
                             </span>
                           </div>
@@ -319,8 +319,9 @@ const Projects = () => {
                     </Button>
                     {project.live_link && (
                       <Button 
+                        variant="outline"
                         size="sm" 
-                        className="bg-gradient-primary hover:shadow-glow transition-all duration-300"
+                        className="border-neutral-300 dark:border-white/60 text-foreground bg-white/70 dark:bg-white/5 hover:bg-neutral-100 dark:hover:bg-white/10 hover:border-neutral-400 dark:hover:border-white shadow-sm font-semibold transition-all duration-300"
                         onClick={() => window.open(project.live, '_blank')}
                       >
                         <ExternalLink className="mr-2 h-4 w-4" />
@@ -333,7 +334,7 @@ const Projects = () => {
                         size="sm" 
                         className="border-red-500/50 hover:border-red-500 hover:bg-red-500/10 text-red-500 hover:text-red-400 transition-all duration-300"
                         onClick={() => window.open(project.youtube, '_blank')}
-                      >
+                      > 
                         <SiYoutube className="mr-2 h-4 w-4" />
                         Demo
                       </Button>

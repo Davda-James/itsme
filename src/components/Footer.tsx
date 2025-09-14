@@ -1,5 +1,5 @@
 import { Mail, Heart } from "lucide-react";
-import { SiGithub } from '@icons-pack/react-simple-icons';
+import { SiGithub, SiDiscord } from '@icons-pack/react-simple-icons';
 import { FaLinkedinIn } from 'react-icons/fa';
 
 const Footer = () => {
@@ -8,6 +8,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: SiGithub, href: "https:github.com/Davda-James", label: "GitHub" },
     { icon: FaLinkedinIn, href: "https://www.linkedin.com/in/james-davda", label: "LinkedIn" },
+    { icon: SiDiscord, href: "https://discord.gg/ztHthFZr", label: "Discord" },
     { icon: Mail, href: "mailto:connect@0xjames.me", label: "Email" },
   ];
 

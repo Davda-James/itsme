@@ -20,7 +20,7 @@ const Hero = ({ headingRef }: { headingRef: React.RefObject<HTMLDivElement> }) =
               <p className="text-primary font-medium tracking-wider uppercase text-sm">Hello, I'm</p>
               <div className="space-y-2">
                 <h1 ref={headingRef} className="text-5xl sm:text-6xl lg:text-7xl font-bold font-inter leading-tight">
-                  <span className="bg-gradient-primary bg-clip-text text-transparent">
+                  <span className="text-foreground">
                     James Davda
                   </span>
                 </h1>
@@ -36,7 +36,7 @@ const Hero = ({ headingRef }: { headingRef: React.RefObject<HTMLDivElement> }) =
             
             <div className="flex flex-wrap gap-4">
               <Button size="lg" 
-                className="bg-gradient-primary hover:shadow-glow transition-all duration-300 group"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 group"
                 onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 View My Work

@@ -13,28 +13,28 @@ const Skills = () => {
       title: "Frameworks and Libraries",
       description: "Modern frameworks and technologies for building scalable applications",
       skills: ["Express", "Node.js", "WebSockets", "PyTorch", "TensorFlow", "scikit-learn", "FastAPI", "ethers.js"],
-      gradient: "from-blue-500/20 to-cyan-500/20"
+  gradient: "bg-neutral-200/40 dark:bg-neutral-800/40"
     },
     {
       icon: Code,
       title: "Programming Languages",
       description: "Languages I use to bring ideas to life",
       skills: ["JavaScript", "TypeScript", "Python", "Solidity", "C++", "C"],
-      gradient: "from-purple-500/20 to-pink-500/20"
+  gradient: "bg-neutral-200/40 dark:bg-neutral-800/40"
     },
     {
       icon: Database,
       title: "Data and Analytics",
       description: "Tools for managing and analyzing data",
       skills: ["PostgreSQL", "MongoDB", "Redis", "Numpy", "Pandas", "Seaborn"],
-      gradient: "from-green-500/20 to-emerald-500/20"
+  gradient: "bg-neutral-200/40 dark:bg-neutral-800/40"
     },
     {
       icon: Wrench,
       title: "Tools and Platforms",
       description: "Development tools and platforms I use daily",
       skills: ["Git", "Docker", "Vercel", "GitHub Actions", "Supabase", "Slack", "Notion"],
-      gradient: "from-orange-500/20 to-red-500/20"
+  gradient: "bg-neutral-200/40 dark:bg-neutral-800/40"
     }
   ];
 
@@ -43,7 +43,7 @@ const Skills = () => {
       {/* Background Elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-primary opacity-[0.02] rounded-full blur-3xl"></div>
+  {/* Removed background gradient for minimal look */}
       
       <div className="container mx-auto px-6">
         <div 
@@ -53,7 +53,7 @@ const Skills = () => {
           }`}
         >
           <h2 className="text-4xl lg:text-5xl font-bold font-inter mb-4">
-            <span className="bg-gradient-primary bg-clip-text text-transparent">Skills</span>
+            <span className="font-bold text-foreground">Skills</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Technical skills and tools I use for tinkering.
@@ -73,7 +73,7 @@ const Skills = () => {
               style={{ transitionDelay: categoriesVisible ? `${categoryIndex * 0.2}s` : '0s' }}
             >
               {/* Background Gradient */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-50 group-hover:opacity-70 transition-opacity duration-500`}></div>
+              <div className={`absolute inset-0 ${category.gradient} opacity-60 group-hover:opacity-80 transition-opacity duration-500`}></div>
               
               <CardHeader className="relative">
                 <div className="flex items-center gap-3 mb-2">
@@ -95,7 +95,7 @@ const Skills = () => {
                     <Badge
                       key={skill}
                       variant="secondary"
-                      className={`bg-white/10 text-foreground border border-white/20 hover:bg-primary/20 hover:border-primary/50 hover:text-primary transition-all duration-300 ${
+                      className={`bg-neutral-100/80 dark:bg-white/10 text-foreground border border-neutral-300 dark:border-white/20 shadow-sm hover:bg-primary/10 hover:border-primary/40 hover:text-primary transition-all duration-300 ${
                         categoriesVisible ? 'animate-scale-in' : 'opacity-0 scale-90'
                       }`}
                       style={{ 

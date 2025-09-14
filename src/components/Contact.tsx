@@ -163,7 +163,7 @@ const Contact = () => {
           }`}
         >
           <h2 className="text-4xl lg:text-5xl font-bold font-inter mb-4">
-            Let's <span className="bg-gradient-primary bg-clip-text text-transparent">Connect</span>
+            Let's <span className="text-foreground">Connect</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Have a project in mind or want to collaborate? I'd love to hear from you. 

@@ -66,7 +66,7 @@ const Achievements = () => {
           }`}
         >
           <h2 className="text-4xl lg:text-5xl font-bold font-inter mb-4">
-            <span className="bg-gradient-primary bg-clip-text text-transparent">Achievements</span>
+            <span className="text-foreground">Achievements</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Recognition and certifications earned along the way.
@@ -79,8 +79,8 @@ const Achievements = () => {
             achievementsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             <div className="flex items-center gap-3 mb-8">
-              <div className="p-3 bg-primary/20 rounded-lg">
-                <Trophy className="h-6 w-6 text-primary" />
+              <div className="p-3 bg-neutral-700 rounded-lg">
+                <Trophy className="h-6 w-6 text-neutral-100" />
               </div>
               <h3 className="text-2xl lg:text-3xl font-bold font-inter">Hackathon Wins</h3>
             </div>
@@ -111,9 +111,9 @@ const Achievements = () => {
                           href={hackathon.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-2 bg-primary/10 hover:bg-primary/20 rounded-lg transition-colors group/link"
+                          className="p-2 bg-neutral-700 text-neutral-100 hover:bg-neutral-800 hover:text-neutral-50 rounded-full transition-colors group/link"
                         >
-                          <ExternalLink className="h-4 w-4 text-primary group-hover/link:scale-110 transition-transform" />
+                          <ExternalLink className="h-4 w-4 group-hover/link:scale-110 transition-transform" />
                         </a>
                       )}
                     </div>
@@ -167,13 +167,12 @@ const Achievements = () => {
             achievementsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`} style={{ transitionDelay: '0.5s' }}>
             <div className="flex items-center gap-3 mb-8">
-              <div className="p-3 bg-accent/20 rounded-lg">
-                <Award className="h-6 w-6 text-accent" />
+              <div className="p-3 bg-neutral-700 rounded-lg">
+                <Award className="h-6 w-6 text-neutral-100" />
               </div>
               <h3 className="text-2xl lg:text-3xl font-bold font-inter">Certifications</h3>
             </div>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
               {certifications.map((cert, index) => (
                 <Card
                   key={cert.title}
@@ -185,7 +184,7 @@ const Achievements = () => {
                   <CardHeader>
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
-                        <CardTitle className="text-lg lg:text-xl font-bold group-hover:text-accent transition-colors">
+                        <CardTitle className="text-lg lg:text-xl font-bold group-hover:text-primary transition-colors">
                           {cert.title}
                         </CardTitle>
                         <CardDescription className="text-base font-semibold text-foreground/80 mt-1">
@@ -197,14 +196,13 @@ const Achievements = () => {
                           href={cert.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-2 bg-accent/10 hover:bg-accent/20 rounded-lg transition-colors group/link"
+                          className="p-2 bg-neutral-700 text-neutral-100 hover:bg-neutral-800 hover:text-neutral-50 rounded-full transition-colors group/link"
                         >
-                          <ExternalLink className="h-4 w-4 text-accent group-hover/link:scale-110 transition-transform" />
+                          <ExternalLink className="h-4 w-4 group-hover/link:scale-110 transition-transform" />
                         </a>
                       )}
                     </div>
                   </CardHeader>
-                  
                   <CardContent className="space-y-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                       <div className="space-y-2">
@@ -223,15 +221,14 @@ const Achievements = () => {
                         </div>
                       </div>
                     </div>
-                    
                     <div className="space-y-2">
-                      <h4 className="font-semibold text-sm">Skills Covered</h4>
+                      <h4 className="font-semibold text-sm text-foreground">Skills Covered</h4>
                       <div className="flex flex-wrap gap-1">
                         {cert.skills.map((skill) => (
                           <Badge
                             key={skill}
-                            variant="outline"
-                            className="text-xs bg-accent/10 border-accent/30 text-accent"
+                            variant="secondary"
+                            className="text-xs bg-neutral-200 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 border border-neutral-300 dark:border-neutral-700 font-semibold"
                           >
                             {skill}
                           </Badge>

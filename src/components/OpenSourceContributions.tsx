@@ -69,15 +69,15 @@ export default function OpenSourceContributions() {
 
 	return (
 	<section id="open-source" className="relative py-16 px-4 md:px-8 lg:px-24 overflow-hidden scroll-mt-28">
-			{/* Violet circular gradient accent (moved to right for consistency) */}
-			<div
-				aria-hidden
-				className="pointer-events-none absolute -top-32 right-0 translate-x-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-[#a259ff33] via-[#6a4cff22] to-transparent blur-3xl opacity-60 z-0"
-			/>
+					{/* Neutral/white circular gradient accent for consistency */}
+					<div
+						aria-hidden
+						className="pointer-events-none absolute -top-32 right-0 translate-x-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-white/20 via-white/10 to-transparent blur-3xl opacity-60 z-0"
+					/>
 			<div className="relative max-w-4xl mx-auto z-10">
-				<h2 className="text-center text-4xl md:text-5xl font-bold mb-2 font-inter bg-gradient-primary bg-clip-text text-transparent">
-					Open Source Contributions
-				</h2>
+				   <h2 className="text-center text-4xl md:text-5xl font-bold mb-2 font-inter text-foreground">
+					   Open Source Contributions
+				   </h2>
 				<p className="text-center text-muted-foreground mb-10 text-lg max-w-2xl mx-auto">
 					Code contributions to the open source community.
 				</p>
@@ -123,9 +123,25 @@ export default function OpenSourceContributions() {
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								<Button className="bg-gradient-primary hover:shadow-glow px-8 py-2 text-lg font-semibold">
+								{/* <Button className="bg-card/50 backdrop-blur-glass border border-white/10 text-foreground hover:bg-card/70 hover:shadow-elegant px-8 py-2 text-lg font-semibold transition-all duration-300 transform-gpu hover:scale-[1.04] focus:scale-[1.04] focus-visible:ring-2 focus-visible:ring-primary/40">
 									View All
-								</Button>
+								</Button> */}
+								<Button className="
+									bg-card/40 backdrop-blur-sm 
+									border border-white/8 
+									text-foreground/90 
+									hover:bg-card/60 hover:text-foreground hover:border-white/12
+									hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] 
+									px-8 py-2 text-lg font-medium 
+									transition-all duration-500 ease-out
+									hover:scale-[1.02] active:scale-[0.98]
+									focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-0
+									relative overflow-hidden
+									before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/5 before:to-transparent
+									before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700 before:ease-out
+									">
+									View All
+									</Button>
 							</a>
 						</div>
 					</div>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import ThemeToggle from "./ThemeToggle";
 import { Menu, X } from "lucide-react";
 
 interface NavigationProps {
@@ -38,7 +39,7 @@ const Navigation = ({ onHireClick, showName }: NavigationProps) => {
     { name: "Achievements", href: "#achievements" },
     { name: "Open Source", href: "#open-source" },
     { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+  // { name: "Contact", href: "#contact" },
   ];
 
   return (
@@ -54,11 +55,11 @@ const Navigation = ({ onHireClick, showName }: NavigationProps) => {
           {/* Logo - Fixed width to prevent layout shift */}
           <button 
             onClick={() => scrollToSection('#home')} 
-            className="text-2xl font-bold font-inter bg-transparent border-none cursor-pointer w-20 text-left"
+            className="text-2xl font-bold font-inter bg-transparent border-none cursor-pointer pl-2 pr-4 text-left"
+            style={{ minWidth: 72 }}
           >
-            <span className={`bg-gradient-primary bg-clip-text text-transparent transition-opacity duration-300 ${
-              showName ? 'opacity-100' : 'opacity-0'
-            }`}>
+            <span className={`transition-opacity duration-300 ${showName ? 'opacity-100' : 'opacity-0'} text-foreground`}
+              style={{ letterSpacing: '0.05em' }}>
               James
             </span>
           </button>
@@ -77,8 +78,9 @@ const Navigation = ({ onHireClick, showName }: NavigationProps) => {
             ))}
           </div>
           
-          {/* CTA Button */}
-          <div className="hidden lg:block">
+          {/* CTA Button & Theme Toggle */}
+          <div className="hidden lg:flex items-center gap-4">
+            <ThemeToggle />
             <Button 
               variant="outline" 
               className="border-primary/50 hover:border-primary hover:bg-primary/10 transition-all duration-300 text-primary hover:text-primary focus:text-primary active:text-primary"
