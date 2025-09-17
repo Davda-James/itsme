@@ -69,11 +69,7 @@ export default function OpenSourceContributions() {
 
 	return (
 	<section id="open-source" className="relative py-16 px-4 md:px-8 lg:px-24 overflow-hidden scroll-mt-28">
-					{/* Neutral/white circular gradient accent for consistency */}
-					<div
-						aria-hidden
-						className="pointer-events-none absolute -top-32 right-0 translate-x-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-white/20 via-white/10 to-transparent blur-3xl opacity-60 z-0"
-					/>
+		<div aria-hidden className="hidden" />
 			<div className="relative max-w-4xl mx-auto z-10">
 				   <h2 className="text-center text-4xl md:text-5xl font-bold mb-2 font-inter text-foreground">
 					   Open Source Contributions
@@ -94,7 +90,7 @@ export default function OpenSourceContributions() {
 									`group rounded-2xl bg-card/30 backdrop-blur-glass border border-white/10 shadow-elegant p-6 flex flex-col gap-2 will-change-transform focus:outline-none focus:ring-2 focus:ring-primary/40 cursor-pointer ` +
 									(isVisible ? 'opacity-100 translate-y-0 transition-opacity transition-transform duration-700' : 'opacity-0 translate-y-8 transition-opacity transition-transform duration-700') +
 									' hover:scale-[1.025] hover:shadow-glow hover:border-primary/30 hover:bg-card/50 transition-[box-shadow,border,background,transform] duration-170'
-								}
+								}	
 								style={{ transitionDelay: `${idx * 80}ms` }}
 							>
 								<div className="flex items-center gap-2 mb-1">

@@ -40,7 +40,7 @@ export default function ThemeToggle() {
   return (
     <button
       aria-label="Toggle theme"
-      className={`relative w-16 h-9 flex items-center rounded-full border border-border shadow-elegant transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/40 ${theme === "dark" ? "bg-neutral-900" : "bg-neutral-100"}`}
+      className={`relative w-16 h-9 flex items-center rounded-full border border-border shadow-elegant transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/40 ${theme === "dark" ? "bg-black" : "bg-neutral-100"}`}
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       style={{ minWidth: 64 }}
     >

@@ -172,10 +172,6 @@ const Projects = () => {
 
   return (
     <section id="projects" className="py-20 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
-      
       <div className="container mx-auto px-6">
         <div 
           ref={headerRef}

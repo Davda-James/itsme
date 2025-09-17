@@ -36,11 +36,7 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
-      
+    <section id="experience" className="py-20 relative overflow-hidden">      
       <div className="container mx-auto px-6">
         <div 
           ref={headerRef}

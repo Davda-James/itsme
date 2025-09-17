@@ -7,10 +7,7 @@ import heroImage from "@/assets/hero-image.jpg";
 const Hero = ({ headingRef }: { headingRef: React.RefObject<HTMLDivElement> }) => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 sm:pt-16 md:pt-8">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-card"></div>
-      <div className="absolute top-20 left-20 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute inset-0 bg-background"></div>
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -62,20 +59,21 @@ const Hero = ({ headingRef }: { headingRef: React.RefObject<HTMLDivElement> }) =
           </div>
           
           {/* Image */}
-          <div className="flex justify-center lg:justify-end animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+          {/* <div className="flex justify-center lg:justify-end animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-primary rounded-3xl blur-2xl opacity-30 animate-glow-pulse"></div>
-              <div className="relative bg-card/30 backdrop-blur-glass border border-white/10 rounded-3xl p-8 shadow-elegant">
+            <div className="absolute inset-0 bg-gradient-primary rounded-3xl blur-2xl opacity-30 animate-glow-pulse"></div>
+            <div className="relative bg-card/30 backdrop-blur-glass border border-white/10 rounded-3xl p-8 shadow-elegant">
                 <img 
                   src={heroImage} 
                   alt="James Davda"
                   className="w-80 h-80 object-cover rounded-2xl"
-                />
-              </div>
-            </div>
+                  />
+                  </div>
+                  </div>
+                  </div>
+                  </div> */}
           </div>
         </div>
-      </div>
       
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">

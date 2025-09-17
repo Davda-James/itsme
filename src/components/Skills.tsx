@@ -40,11 +40,6 @@ const Skills = () => {
 
   return (
     <section id="skills" className="py-20 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
-  {/* Removed background gradient for minimal look */}
-      
       <div className="container mx-auto px-6">
         <div 
           ref={headerRef}
