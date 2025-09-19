@@ -6,7 +6,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   const socialLinks = [
-    { icon: SiGithub, href: "https:github.com/Davda-James", label: "GitHub" },
+    { icon: SiGithub, href: "https://github.com/Davda-James", label: "GitHub" },
     { icon: FaLinkedinIn, href: "https://www.linkedin.com/in/james-davda", label: "LinkedIn" },
     { icon: SiDiscord, href: "https://discord.gg/ztHthFZr", label: "Discord" },
     { icon: Mail, href: "mailto:connect@0xjames.me", label: "Email" },
@@ -22,7 +22,7 @@ const Footer = () => {
               <span className="bg-gradient-primary bg-clip-text text-transparent">James Davda</span>
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Developer passionate about creating exceptional digital experiences.
+              A boy who tinkers.
             </p>
           </div>
           
