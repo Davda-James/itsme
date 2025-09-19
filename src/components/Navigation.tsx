@@ -52,53 +52,55 @@ const Navigation = ({ onHireClick, showName }: NavigationProps) => {
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo - Fixed width to prevent layout shift */}
-          <button 
-            onClick={() => scrollToSection('#home')} 
-            className="text-2xl font-bold font-inter bg-transparent border-none cursor-pointer pl-2 pr-4 text-left"
-            style={{ minWidth: 72 }}
-          >
-            <span className={`transition-opacity duration-300 ${showName ? 'opacity-100' : 'opacity-0'} text-foreground`}
-              style={{ letterSpacing: '0.05em' }}>
-              James
-            </span>
-          </button>
-          
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className="text-muted-foreground hover:text-primary transition-colors duration-300 relative group bg-transparent border-none cursor-pointer"
-              >
-                {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300"></span>
-              </button>
-            ))}
-          </div>
-          
-          {/* CTA Button & Theme Toggle */}
-          <div className="hidden lg:flex items-center gap-4">
-            <ThemeToggle />
-            <Button 
-              variant="outline" 
-              className="border-primary/50 hover:border-primary hover:bg-primary/10 transition-all duration-300 text-primary hover:text-primary focus:text-primary active:text-primary"
-              onClick={onHireClick}
+          <div className="flex items-center w-full justify-between">
+            {/* Logo - Fixed width to prevent layout shift */}
+            <button 
+              onClick={() => scrollToSection('#home')} 
+              className="text-2xl font-bold font-inter bg-transparent border-none cursor-pointer pl-2 pr-4 text-left"
+              style={{ minWidth: 72 }}
             >
-              Hire Me
-            </Button>
+              <span className={`transition-opacity duration-300 ${showName ? 'opacity-100' : 'opacity-0'} text-foreground`}
+                style={{ letterSpacing: '0.05em' }}>
+                James
+              </span>
+            </button>
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center space-x-8">
+              {navItems.map((item) => (
+                <button
+                  key={item.name}
+                  onClick={() => scrollToSection(item.href)}
+                  className="text-muted-foreground hover:text-primary transition-colors duration-300 relative group bg-transparent border-none cursor-pointer"
+                >
+                  {item.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300"></span>
+                </button>
+              ))}
+            </div>
+            {/* CTA Button & Theme Toggle (desktop only) */}
+            <div className="hidden lg:flex items-center gap-4">
+              <ThemeToggle />
+              <Button 
+                variant="outline" 
+                className="border-primary/50 hover:border-primary hover:bg-primary/10 transition-all duration-300 text-primary hover:text-primary focus:text-primary active:text-primary"
+                onClick={onHireClick}
+              >
+                Hire Me
+              </Button>
+            </div>
+            {/* ThemeToggle for mobile (always visible at top right) */}
+            <div className="flex lg:hidden items-center">
+              <ThemeToggle />
+              <Button
+                variant="ghost"
+                size="sm"
+                className="ml-2"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              >
+                {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </Button>
+            </div>
           </div>
-          
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="sm"
-            className="lg:hidden"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
         </div>
         
         {/* Mobile Navigation */}
