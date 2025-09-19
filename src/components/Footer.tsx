@@ -18,11 +18,8 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 items-center">
           {/* Logo & Description */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold font-inter">
-              <span className="bg-gradient-primary bg-clip-text text-transparent">James Davda</span>
-            </h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              A boy who tinkers.
+              A boy who loves tinkering.
             </p>
           </div>
           
