@@ -9,7 +9,7 @@ import Achievements from "@/components/Achievements";
 import Projects from "@/components/Projects";
 // import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import HireModal from "@/components/HireModal";
+// import HireModal from "@/components/HireModal";
 import { useElementOnScreen } from "@/hooks/useElementOnScreen";
 
 const Index = () => {
@@ -21,7 +21,8 @@ const Index = () => {
 
   return (
   <div className="min-h-screen font-inter bg-background transition-colors duration-300">
-      <Navigation onHireClick={() => setIsHireModalOpen(true)} showName={!isHeroVisible} />
+      {/* <Navigation onHireClick={() => setIsHireModalOpen(true)} showName={!isHeroVisible} /> */}
+      <Navigation showName={!isHeroVisible} />
       <main>
         <section id="home">
           <Hero headingRef={heroHeadingRef}/>
@@ -37,10 +38,10 @@ const Index = () => {
       <Footer />
       
       {/* Global Hire Modal */}
-      <HireModal 
+      {/* <HireModal 
         isOpen={isHireModalOpen} 
         onClose={() => setIsHireModalOpen(false)} 
-      />
+      /> */}
     </div>
   );
 };

@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowDown, Mail } from "lucide-react";
 import { SiGithub } from '@icons-pack/react-simple-icons';
 import { FaLinkedinIn } from 'react-icons/fa';
-import heroImage from "@/assets/hero-image.jpg";
+// import heroImage from "@/assets/hero-image.jpg";
 
 const Hero = ({ headingRef }: { headingRef: React.RefObject<HTMLDivElement> }) => {
   return (

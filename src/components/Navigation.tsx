@@ -4,11 +4,12 @@ import ThemeToggle from "./ThemeToggle";
 import { Menu, X } from "lucide-react";
 
 interface NavigationProps {
-  onHireClick: () => void;
+  // onHireClick: () => void;
   showName?: boolean;
 }
 
-const Navigation = ({ onHireClick, showName }: NavigationProps) => {
+// add onHireClick prop if required later
+const Navigation = ({ showName }: NavigationProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -80,13 +81,13 @@ const Navigation = ({ onHireClick, showName }: NavigationProps) => {
             {/* CTA Button & Theme Toggle (desktop only) */}
             <div className="hidden lg:flex items-center gap-4">
               <ThemeToggle />
-              <Button 
+              {/* <Button 
                 variant="outline" 
                 className="border-primary/50 hover:border-primary hover:bg-primary/10 transition-all duration-300 text-primary hover:text-primary focus:text-primary active:text-primary"
                 onClick={onHireClick}
               >
                 Hire Me
-              </Button>
+              </Button> */}
             </div>
             {/* ThemeToggle for mobile (always visible at top right) */}
             <div className="flex lg:hidden items-center">
@@ -119,7 +120,7 @@ const Navigation = ({ onHireClick, showName }: NavigationProps) => {
                   {item.name}
                 </button>
               ))}
-              <Button 
+              {/* <Button 
                 className="bg-gradient-primary hover:shadow-glow transition-all duration-300 mt-4 text-white hover:text-white focus:text-white active:text-white"
                 onClick={() => {
                   setIsMobileMenuOpen(false);
@@ -127,7 +128,7 @@ const Navigation = ({ onHireClick, showName }: NavigationProps) => {
                 }}
               >
                 Hire Me
-              </Button>
+              </Button> */}
             </div>
           </div>
         )}

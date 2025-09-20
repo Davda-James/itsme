@@ -17,7 +17,7 @@ export default function ThemeToggle() {
   return (
     <button
       aria-label="Toggle theme"
-  className={`relative w-11 h-11 flex items-center justify-center rounded-full bg-transparent shadow-lg transition-all duration-400 outline-none focus:outline-none focus:ring-0 border-0 ${theme === "dark" ? "hover:bg-zinc-800/70" : "hover:bg-zinc-200/70"}`}
+  className={`relative w-11 h-11 flex items-center justify-center rounded-full bg-transparent shadow-lg transition-all duration-300 outline-none focus:outline-none focus:ring-0 border-0 ${theme === "dark" ? "hover:bg-zinc-800/70" : "hover:bg-zinc-200/70"}`}
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       style={{ minWidth: 44 }}
     >
