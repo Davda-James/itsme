@@ -50,7 +50,7 @@ const Projects = () => {
       live_link: false,
       // youtube: "",
       date: "May 2025",
-      award: "3rd Position in CrowdFlow PS",
+      award: "2nd Position in CrowdFlow PS",
       achievements: [
         "Fine Tuned the YoLov8 and YoLov11 model for dense traffic detection",
         "Understands the flow of dense traffic real time",
