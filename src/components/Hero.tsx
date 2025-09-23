@@ -27,14 +27,22 @@ const Hero = ({ headingRef }: { headingRef: React.RefObject<HTMLDivElement> }) =
               </div>
             </div>
             
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-md">
-              I like building things that work well and matter. Whether it's code or architecture, I focus on making it clear, simple, and useful.
-            </p>
+            <div className="space-y-4 max-w-lg">
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                I'm a pre-final year Computer Science student at <span className="text-primary font-medium">IIT Mandi</span> who finds joy in turning ideas into working systems.
+              </p>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                I enjoy building things with code, especially projects that solve real problems or explore new ideas. My interests span <span className="text-primary font-medium">backend systems</span>, <span className="text-primary font-medium">AI/ML</span>, and <span className="text-primary font-medium">blockchain</span>.
+              </p>
+              <p className="text-sm text-muted-foreground/80 leading-relaxed">
+                What drives me is the thrill of building something from nothing—and knowing it actually helps someone.
+              </p>
+            </div>
             
             <div className="flex flex-wrap gap-4">
               <Button size="lg" 
                 className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 group"
-                onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 View My Work
                 <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
