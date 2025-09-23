@@ -3,11 +3,17 @@ import { useEffect, useState } from "react";
 import { Sun, Moon } from "lucide-react";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<"light" | "dark">(() => {
+  // const [theme, setTheme] = useState<"light" | "dark">(() => {
+    // if (typeof window !== "undefined") {
+    //   return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    // }
+    // return "light";
+  // });
+  const [ theme, setTheme ]= useState<"light" | "dark">(()=>{
     if (typeof window !== "undefined") {
-      return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      return localStorage.getItem("theme") as "light" | "dark" || "light";
     }
-    return "light";
+    return  "light";
   });
 
   useEffect(() => {
@@ -17,9 +23,8 @@ export default function ThemeToggle() {
   return (
     <button
       aria-label="Toggle theme"
-  className={`relative w-11 h-11 flex items-center justify-center rounded-full bg-transparent shadow-lg transition-all duration-300 outline-none focus:outline-none focus:ring-0 border-0 ${theme === "dark" ? "hover:bg-zinc-800/70" : "hover:bg-zinc-200/70"}`}
+      className={`relative w-10 h-10 flex items-center justify-center rounded-full bg-transparent transition-all duration-300 outline-none focus:outline-none focus:ring-0 border-0 ${theme === "dark" ? "hover:bg-zinc-800/50" : "hover:bg-zinc-200/50"}`}
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      style={{ minWidth: 44 }}
     >
       <span className="flex items-center justify-center w-full h-full">
         {/* Animate icon change with scale and fade */}
