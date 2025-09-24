@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Mail } from "lucide-react";
-import { SiGithub } from '@icons-pack/react-simple-icons';
+import { SiX,SiGithub } from '@icons-pack/react-simple-icons';
 import { FaLinkedinIn } from 'react-icons/fa';
 // import heroImage from "@/assets/hero-image.jpg";
 
@@ -54,6 +54,9 @@ const Hero = ({ headingRef }: { headingRef: React.RefObject<HTMLDivElement> }) =
               </a>
               <a href="mailto:connect@0xjames.me" className="p-3 rounded-full bg-card/50 backdrop-blur-glass border border-white/10 hover:bg-primary/20 hover:shadow-glow transition-all duration-300 group">
                 <Mail className="h-5 w-5 group-hover:scale-110 transition-transform" />
+              </a>
+              <a href="https://x.com/0xbondj" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-card/50 backdrop-blur-glass border border-white/10 hover:bg-primary/20 hover:shadow-glow transition-all duration-300 group">
+                <SiX className="h-5 w-5 group-hover:scale-110 transition-transform" />
               </a>
             </div>
           </div>
