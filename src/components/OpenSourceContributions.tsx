@@ -17,19 +17,26 @@ const contributions = [
         
     },
 	{
-		repo: "Apache/Beam",
-        title: "feat: added support for duration/timeout in test_pipeline",
-        url: "https://github.com/apache/beam/pull/35831",
-        status: "merged",   
-        date: "Aug 12, 2025"
-	},	
-	{
 		repo: "OWASP/Nettacker",
 		title: "fix: issue of select all profiles button",
 		url: "https://github.com/OWASP/Nettacker/pull/1117",
 		status: "merged",
 		date: "August 9, 2025"
 	},
+	{
+		repo: "browser-use/browser-use",
+		title: "fixed the bug of only web in gmail_2fa_integration.py",
+		url: "https://github.com/browser-use/browser-use/pull/2685",
+		status: "merged",
+		date: "September 6, 2025"
+	},
+	{
+		repo: "Apache/Beam",
+        title: "feat: added support for duration/timeout in test_pipeline",
+        url: "https://github.com/apache/beam/pull/35831",
+        status: "merged",   
+        date: "Aug 12, 2025"
+	},	
     {
         repo: "msoedov/agentic-security",
         title: "fix: dockerfile error of setuptools and wheel",

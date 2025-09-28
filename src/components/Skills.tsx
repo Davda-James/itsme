@@ -10,6 +10,9 @@ import {
   SiTensorflow,
   SiPytorch,
   SiKeras,
+  SiScikitlearn,
+  SiBun,
+  SiSolidity,
 } from '@icons-pack/react-simple-icons';
 import { Hash } from "lucide-react";
 
@@ -20,11 +23,14 @@ const skills = [
   { name: "Tensorflow", icon: SiTensorflow },
   { name: "Keras" , icon: SiKeras },
   { name: "PyTorch", icon: SiPytorch },
+  { name: "Scikit-learn", icon: SiScikitlearn },
   { name: "Node.js", icon: SiNodedotjs },
   { name: "Express.js", icon: SiExpress },
+  { name: "bun", icon: SiBun },
   { name: "PostgreSQL", icon: SiPostgresql },
   { name: "Prisma", icon: SiPrisma },
   { name: "Docker", icon: SiDocker },
+  { name: "Solidity", icon: SiSolidity },
 ];
 
 const Skills = () => {
@@ -33,7 +39,7 @@ const Skills = () => {
       <div className="flex flex-col items-start">
         <h2 className="text-2xl font-bold flex items-center gap-2 mb-6 transition-colors cursor-pointer hover:text-primary/70" id="skills">
           <a href="#skills" className="hover:text-primary/70 transition-colors" onClick={e => { e.preventDefault(); document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' }); }}>
-            Tech-Stack
+            Skills
           </a>
         </h2>
         <div className="flex flex-wrap gap-3">

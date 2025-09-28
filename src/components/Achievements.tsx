@@ -25,9 +25,6 @@ const Achievements = () => (
 						key={idx}
 						className="relative group transition-all duration-300 ease-out cursor-pointer hover:-translate-y-1"
 					>
-						<div className="absolute inset-0 pointer-events-none">
-							<span className="block w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-lightSweep rounded-md" />
-						</div>
 						<div className="relative z-10 p-2">
 							<div className="font-semibold text-lg mb-1 text-foreground">
 								{item.title}

@@ -24,6 +24,7 @@ const Index = () => {
         <OpenSourceContributions />
         {/* <Projects /> */}
         <BottomBar />
+        <div className="h-16" />
       </div>
     </div>
   );
