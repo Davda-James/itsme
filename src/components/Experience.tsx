@@ -13,7 +13,7 @@ const experiences = [
 		company: "GirlScript Summer of Code (GSSoC)",
 		role: "Remote · June 2024 - July 2024",
 		description:
-			"First open source contribution: Standardized dependency versions, implemented Frequency vs Energy plot for real-time audio using Fourier Coefficients, and integrated it into the existing GUI.",
+			"First open source contribution: Standardized dependency versions, implemented Frequency vs Energy plot for real-time audio using Fourier Coefficients, and integrated it into the existing GUI",
 		technologies: [
 			"Python",
 			"Mathematical Modelling",
@@ -46,7 +46,38 @@ const Experience = () => {
 							<span className="text-muted-foreground text-base text-right group-hover:text-zinc-500 group-active:text-zinc-400 transition-colors duration-200">{exp.role}</span>
 						</div>
 						<p className="text-zinc-700 dark:text-zinc-200 text-sm leading-relaxed max-w-3xl group-hover:text-zinc-500 group-active:text-zinc-400 dark:group-hover:text-zinc-300 dark:group-active:text-zinc-400 transition-colors duration-200">
-							{exp.description}
+							{exp.company === "GirlScript Summer of Code (GSSoC)" ? (
+								<>
+									First open source contribution: Standardized dependency versions, implemented Frequency vs Energy plot for real-time audio using Fourier Coefficients, and integrated it into the existing GUI
+									<a
+										href="https://github.com/Soumya-Kushwaha/SoundScape/pull/94"
+										target="_blank"
+										rel="noopener noreferrer"
+										onClick={e => e.stopPropagation()}
+										className="text-primary underline ml-1"
+									>
+										#PR94
+									</a>
+									<a
+										href="https://github.com/python-geeks/Automation-scripts/pull/991"
+										target="_blank"
+										rel="noopener noreferrer"
+										onClick={e => e.stopPropagation()}
+										className="text-primary underline ml-1"
+									>
+										#PR991
+									</a>
+									<a
+										href="https://github.com/python-geeks/Automation-scripts/pull/963"
+										target="_blank"
+										rel="noopener noreferrer"
+										onClick={e => e.stopPropagation()}
+										className="text-primary underline ml-1"
+									>
+										#PR963
+									</a>
+								</>
+							) : exp.description}
 						</p>
 						<div className="flex flex-wrap gap-2 mt-2">
 							{exp.technologies.map((tech) => (
