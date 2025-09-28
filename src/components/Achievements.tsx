@@ -1,244 +1,46 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Trophy, Award, Calendar, ExternalLink, CheckCircle } from "lucide-react";
+import React from "react";
 
-const Achievements = () => {
-  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
-  const { ref: achievementsRef, isVisible: achievementsVisible } = useScrollAnimation({ rootMargin: '0px 0px -100px 0px' });
+const achievements = [
+	{
+		title: "Move Spheron Tour",
+		description: "Won 1st place and 500 USD, developed a decentralized supply chain management system"
+	},
+  {
+    title: "HCLTech Hackathon",
+    description: "Won 2nd place in CrowdFlow track; built a deep-learning based app for real-time crowd analysis and alerts; tl;dr: fine-tuned YOLOv11-nano, FastAPI backend, and Flutter frontend"
+  }
+];
 
-  const hackathonWins = [
-    {
-      title: "Move Spheron Tour",
-      position: "1st Place",
-      description: "Develop a decentralized application to track end to end supply chain from manufacturer to consumer using Aptos Chain",
-      date: "September 2024",
-      prize: "$500",
-      participants: "Intra-IIT Hackathon",
-      technologies: ["Python", "TensorFlow", "OpenCV", "React", "Node.js"],
-      link: "https://github.com/example/smart-city"
-    },
-    {
-      title: "HCLTech Hackathon",
-      position: "3rd Place in CrowdFlow PS",
-      description: "Built a solution using deep learning and computer vision for CrowdFlow problem statement",
-      date: "May 2025",
-      prize: "Certificate of Excellence",
-      participants: "150+ teams",
-      technologies: ["Solidity", "Web3.js", "React", "MongoDB"],
-      link: "https://github.com/example/fintech-platform"
-    },
-  ];
-
-  const certifications = [
-    {
-      title: "Postman API Fundamentals Student Expert",
-      issuer: "Postman",
-      date: "July 2024",
-      credentialId: "66a607451ea7d93715e037ad",
-      validUntil: "Lifetime",
-      skills: ["RESTAPIs", "Postman"],
-      link: "https://badgr.com/public/assertions/cUBB2F4vRWef_9MeEtkIQw?identity__email=jrdavda007%40gmail.com"
-    },
-    {
-      title: "Brandquezt",
-      issuer: "Naukri.com",
-      date: "Jun 2025",
-      credentialId: "68590dac6c1aa41e163befc1",
-      validUntil: "Lifetime",
-      skills: ["Branding"],
-      link: "https://drive.google.com/file/d/1iwWcMBkJ1pyJ7zPmw71-oxymhV9edEU_/view?usp=sharing"
-    }
-  ];
-
-  return (
-    <section id="achievements" className="py-20 relative overflow-hidden">
-      <div className="container mx-auto px-6">
-        <div 
-          ref={headerRef}
-          className={`text-center mb-16 transition-all duration-1000 ${
-            headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <h2 className="text-4xl lg:text-5xl font-bold font-inter mb-4">
-            <span className="text-foreground">Achievements</span>
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Recognition and certifications earned along the way.
-          </p>
-        </div>
-
-        <div ref={achievementsRef} className="space-y-16">
-          {/* Hackathon Wins Section */}
-          <div className={`transition-all duration-1000 ${
-            achievementsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="p-3 bg-neutral-700 rounded-lg">
-                <Trophy className="h-6 w-6 text-neutral-100" />
-              </div>
-              <h3 className="text-2xl lg:text-3xl font-bold font-inter">Hackathon Wins</h3>
-            </div>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-              {hackathonWins.map((hackathon, index) => (
-                <Card
-                  key={hackathon.title}
-                  className={`group bg-card/30 backdrop-blur-glass border border-white/10 hover:bg-card/50 hover:shadow-elegant transition-all duration-500 ${
-                    achievementsVisible ? 'animate-scale-in' : 'opacity-0 scale-90'
-                  }`}
-                  style={{ animationDelay: achievementsVisible ? `${index * 0.2}s` : '0s' }}
-                >
-                  <CardHeader>
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex-1">
-                        <CardTitle className="text-lg lg:text-xl font-bold group-hover:text-primary transition-colors">
-                          {hackathon.title}
-                        </CardTitle>
-                        <div className="flex items-center gap-2 mt-2">
-                          <Badge variant="secondary" className="bg-primary/20 text-primary border border-primary/30">
-                            {hackathon.position}
-                          </Badge>
-                        </div>
-                      </div>
-                      {hackathon.link && (
-                        <a
-                          href={hackathon.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-2 bg-neutral-700 text-neutral-100 hover:bg-neutral-800 hover:text-neutral-50 rounded-full transition-colors group/link"
-                        >
-                          <ExternalLink className="h-4 w-4 group-hover/link:scale-110 transition-transform" />
-                        </a>
-                      )}
-                    </div>
-                  </CardHeader>
-                  
-                  <CardContent className="space-y-4">
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {hackathon.description}
-                    </p>
-                    
-                    <div className="grid grid-cols-2 gap-4 text-sm">
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2 text-muted-foreground">
-                          <Calendar className="h-3 w-3" />
-                          <span>{hackathon.date}</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-muted-foreground">
-                          <Trophy className="h-3 w-3" />
-                          <span>{hackathon.prize}</span>
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-muted-foreground">
-                          {hackathon.participants}
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-sm">Technologies</h4>
-                      <div className="flex flex-wrap gap-1">
-                        {hackathon.technologies.map((tech, techIndex) => (
-                          <Badge
-                            key={tech}
-                            variant="outline"
-                            className="text-xs bg-secondary/50 border-secondary"
-                          >
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          {/* Certifications Section */}
-          <div className={`transition-all duration-1000 ${
-            achievementsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`} style={{ transitionDelay: '0.5s' }}>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="p-3 bg-neutral-700 rounded-lg">
-                <Award className="h-6 w-6 text-neutral-100" />
-              </div>
-              <h3 className="text-2xl lg:text-3xl font-bold font-inter">Certifications</h3>
-            </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-              {certifications.map((cert, index) => (
-                <Card
-                  key={cert.title}
-                  className={`group bg-card/30 backdrop-blur-glass border border-white/10 hover:bg-card/50 hover:shadow-elegant transition-all duration-500 ${
-                    achievementsVisible ? 'animate-scale-in' : 'opacity-0 scale-90'
-                  }`}
-                  style={{ animationDelay: achievementsVisible ? `${0.5 + (index * 0.2)}s` : '0s' }}
-                >
-                  <CardHeader>
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex-1">
-                        <CardTitle className="text-lg lg:text-xl font-bold group-hover:text-primary transition-colors">
-                          {cert.title}
-                        </CardTitle>
-                        <CardDescription className="text-base font-semibold text-foreground/80 mt-1">
-                          {cert.issuer}
-                        </CardDescription>
-                      </div>
-                      {cert.link && (
-                        <a
-                          href={cert.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-2 bg-neutral-700 text-neutral-100 hover:bg-neutral-800 hover:text-neutral-50 rounded-full transition-colors group/link"
-                        >
-                          <ExternalLink className="h-4 w-4 group-hover/link:scale-110 transition-transform" />
-                        </a>
-                      )}
-                    </div>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2 text-muted-foreground">
-                          <Calendar className="h-3 w-3" />
-                          <span>Issued: {cert.date}</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-muted-foreground">
-                          <CheckCircle className="h-3 w-3" />
-                          <span>Valid until: {cert.validUntil}</span>
-                        </div>
-                      </div>
-                      <div className="text-right sm:text-left">
-                        <div className="text-xs text-muted-foreground">
-                          ID: {cert.credentialId}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-sm text-foreground">Skills Covered</h4>
-                      <div className="flex flex-wrap gap-1">
-                        {cert.skills.map((skill) => (
-                          <Badge
-                            key={skill}
-                            variant="secondary"
-                            className="text-xs bg-neutral-200 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 border border-neutral-300 dark:border-neutral-700 font-semibold"
-                          >
-                            {skill}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
+const Achievements = () => (
+	<section id="achievements" className="py-8 mb-6">
+		<div className="flex flex-col items-start">
+			<h2 className="text-2xl font-bold mb-6 transition-colors cursor-pointer hover:text-primary/70" id="achievements">
+				<a href="#achievements" className="hover:text-primary/70 transition-colors" onClick={e => { e.preventDefault(); document.getElementById('achievements')?.scrollIntoView({ behavior: 'smooth' }); }}>
+					Achievements
+				</a>
+			</h2>
+			<div className="flex flex-col gap-4 w-full max-w-2xl pl-2">
+				{achievements.map((item, idx) => (
+					<div
+						key={idx}
+						className="relative group transition-all duration-300 ease-out cursor-pointer hover:-translate-y-1"
+					>
+						<div className="absolute inset-0 pointer-events-none">
+							<span className="block w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-lightSweep rounded-md" />
+						</div>
+						<div className="relative z-10 p-2">
+							<div className="font-semibold text-lg mb-1 text-foreground">
+								{item.title}
+							</div>
+							<div className="text-muted-foreground text-base">
+								{item.description}
+							</div>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+);
 
 export default Achievements;

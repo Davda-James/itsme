@@ -1,3 +1,12 @@
+@keyframes lightSweep {
+  0% { transform: translateX(-100%); opacity: 0.2; }
+  50% { transform: translateX(0%); opacity: 0.5; }
+  100% { transform: translateX(100%); opacity: 0.2; }
+}
+.animate-lightSweep {
+  animation: lightSweep 0.8s linear;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;

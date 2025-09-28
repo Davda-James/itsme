@@ -1,46 +1,30 @@
-import { useState } from "react";
-import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import OpenSourceContributions from "@/components/OpenSourceContributions";
-import Achievements from "@/components/Achievements";
-import Projects from "@/components/Projects";
-// import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-import HireModal from "@/components/HireModal";
+// import Projects from "@/components/Projects";
+import BottomBar from "@/components/BottomBar";
 import { useElementOnScreen } from "@/hooks/useElementOnScreen";
+import Achievements from "@/components/Achievements";
 
 const Index = () => {
-  const [isHireModalOpen, setIsHireModalOpen] = useState(false);
-
   const { ref: heroHeadingRef, isVisible: isHeroVisible } = useElementOnScreen({
     threshold: 0.1,
   });
 
   return (
-  <div className="min-h-screen font-inter bg-background transition-colors duration-300">
-      <Navigation onHireClick={() => setIsHireModalOpen(true)} showName={!isHeroVisible} />
-      <main>
+    <div className="min-h-screen flex items-center justify-center bg-background">
+      <div className="w-full max-w-[800px] px-8 py-12 flex flex-col relative">
         <section id="home">
           <Hero headingRef={heroHeadingRef}/>
         </section>
-        <About />
-        <Skills />
         <Experience />
+        <Skills />
         <Achievements />
         <OpenSourceContributions />
-        <Projects />
-  {/* <Contact /> */}
-      </main>
-      <Footer />
-      
-      {/* Global Hire Modal */}
-      <HireModal 
-        isOpen={isHireModalOpen} 
-        onClose={() => setIsHireModalOpen(false)} 
-      />
+        {/* <Projects /> */}
+        <BottomBar />
+      </div>
     </div>
   );
 };
