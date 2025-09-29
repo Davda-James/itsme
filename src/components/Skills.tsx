@@ -57,6 +57,9 @@ const Skills = () => {
           })}
         </div>
       </div>
+      <div className="text-muted-foreground text-base mt-5">
+        Learning <span className="font-semibold text-primary">Rust</span> and <span className="font-semibold text-primary">Solana</span>
+      </div>
     </section>
   );
 };
