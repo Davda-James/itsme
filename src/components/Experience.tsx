@@ -2,16 +2,8 @@ import { Badge } from "@/components/ui/badge";
 
 const experiences = [
 	{
-		company: "Hacktoberfest2024",
-		role: "Remote · October 2024 (1 Month)",
-		description:
-			"Open Source Contributions: Added an AI Bot Script using Google Gemini API, built a Weather Notifier GUI app in Python, and translated/documented Travelling Salesman Problem (C) for global accessibility.",
-		technologies: ["Python", "Gemini", "Tkinter", "OpenWeatherMap API"],
-		url: "https://www.holopin.io/@neuron#",
-	},
-	{
 		company: "GirlScript Summer of Code (GSSoC)",
-		role: "Remote · June 2024 - July 2024",
+		role: "Remote · June 2023 - July 2023",
 		description:
 			"First open source contribution: Standardized dependency versions, implemented Frequency vs Energy plot for real-time audio using Fourier Coefficients, and integrated it into the existing GUI",
 		technologies: [
@@ -22,6 +14,14 @@ const experiences = [
 		],
 		url: "https://gssoc.girlscript.tech/",
 	},
+	{
+		company: "Hacktoberfest2024",
+		role: "Remote · October 2024 (1 Month)",
+		description:
+			"Open Source Contributions: Added an AI Bot Script using Google Gemini API, built a Weather Notifier GUI app in Python, and translated/documented Travelling Salesman Problem for global accessibility.",
+		technologies: ["Python", "Gemini", "Tkinter", "OpenWeatherMap API"],
+		url: "https://www.holopin.io/@neuron#",
+	}
 ];
 
 const Experience = () => {
@@ -48,7 +48,8 @@ const Experience = () => {
 						<p className="text-zinc-700 dark:text-zinc-200 text-sm leading-relaxed max-w-3xl group-hover:text-zinc-500 group-active:text-zinc-400 dark:group-hover:text-zinc-300 dark:group-active:text-zinc-400 transition-colors duration-200">
 							{exp.company === "GirlScript Summer of Code (GSSoC)" ? (
 								<>
-									First open source contribution: Standardized dependency versions, implemented Frequency vs Energy plot for real-time audio using Fourier Coefficients, and integrated it into the existing GUI
+									{exp.description}
+
 									<a
 										href="https://github.com/Soumya-Kushwaha/SoundScape/pull/94"
 										target="_blank"
@@ -56,8 +57,13 @@ const Experience = () => {
 										onClick={e => e.stopPropagation()}
 										className="text-primary underline ml-1"
 									>
-										#PR94
+										#PR991
 									</a>
+								</>
+							) : exp.company === "Hacktoberfest2024" ? (
+								<>	
+									{exp.description}
+
 									<a
 										href="https://github.com/python-geeks/Automation-scripts/pull/991"
 										target="_blank"
