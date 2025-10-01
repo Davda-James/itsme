@@ -66,6 +66,7 @@ const statusColor = {
 export default function OpenSourceContributions() {
 	const [showModal, setShowModal] = useState(false);
 	const featured = contributions.slice(0, 4);
+	const { ref, isVisible } = useScrollAnimation({ rootMargin: '0px 0px -80px 0px' });
 
 	return (
 	<section id="open-source" className="relative py-16 px-4 md:px-8 lg:px-24 overflow-hidden scroll-mt-28">
@@ -78,13 +79,11 @@ export default function OpenSourceContributions() {
 					Code contributions to the open source community.
 				</p>
 				{/* Featured PRs Grid */}
-				<div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10">
+				<div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10">
 					{featured.map((pr, idx) => {
-						const { ref, isVisible } = useScrollAnimation({ rootMargin: '0px 0px -80px 0px' });
 						return (
 							<div
 								key={idx}
-								ref={ref}
 								tabIndex={0}
 								className={
 									`group rounded-2xl bg-card/30 backdrop-blur-glass border border-white/10 shadow-elegant p-6 flex flex-col gap-2 will-change-transform focus:outline-none focus:ring-2 focus:ring-primary/40 cursor-pointer ` +
