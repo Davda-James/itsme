@@ -6,6 +6,30 @@ import { ExternalLink, X } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const contributions = [
+	{	
+		repo: "cocoindex-io/cocoindex",
+		title: "feat: support binding classes on Pydantic Models to CocoIndex Struct",
+		url: "https://github.com/cocoindex-io/cocoindex/pull/1072",
+		status: "merged",
+		date: "Oct 1, 2025",
+		description: "Support binding classes on Pydantic Models to CocoIndex Struct"
+	},
+	{
+		repo: "cocoindex-io/cocoindex",
+		title: "refactor: updated existing tests for split_recursively.rs to be based on public",
+		url: "https://github.com/cocoindex-io/cocoindex/pull/1073",
+		status: "merged",
+		date: "Oct 1, 2025",
+		description: "Updated existing tests for split_recursively.rs to be based on public APIs"
+	},
+	{
+		repo: "gradio-app/gradio",
+		title: "feat: gr.load_chat supports optional textbox= argument",
+		url: "https://github.com/gradio-app/gradio/pull/11998",
+		status: "merged",
+		date: "Oct 1, 2025",
+		description: "gr.load_chat accepts optional textbox argument"
+	},
 	{
 		repo: "Avaiga/taipy",
 		title: "improvement: pressing enter selects all filtered/remaining contents in selector",
@@ -13,48 +37,7 @@ const contributions = [
 		status: "merged",
 		date: "Aug 22, 2025",
 		description: "Pressing enter selects all the filtered/remaining elements in selector automatically"
-	},
-	{
-		repo: "Soumya-Kushwaha/SoundScape",	
-        title: "feat: added feature of Frequency Vs Energy Plot of real time audio",
-        url: "https://github.com/Soumya-Kushwaha/SoundScape/pull/94",
-        status: "merged",   
-        date: "July 13, 2025",
-        description: "Added feature of Frequency Vs Energy Plot of real time audio using Fourier Coefficients method implemented in existing GUI"
-        
-    },
-	{
-		repo: "Apache/Beam",
-        title: "feat: added support for duration/timeout in test_pipeline",
-        url: "https://github.com/apache/beam/pull/35831",
-        status: "merged",   
-        date: "Aug 12, 2025",
-        description: "Added support for duration/timeout in test_pipeline so that test does not wait infinitely, and after certain time raise error"
-	},	
-	{
-		repo: "OWASP/Nettacker",
-		title: "fix: issue of select all profiles button",
-		url: "https://github.com/OWASP/Nettacker/pull/1117",
-		status: "merged",
-		date: "August 9, 2025",
-		description: "Select all profiles was selecting every scan methods instead of all profiles",
-	},
-    // {
-    //     repo: "msoedov/agentic-security",
-    //     title: "fix: dockerfile error of setuptools and wheel",
-    //     url: "https://github.com/msoedov/agentic_security/pull/215",
-    //     status: "merged",
-    //     date: "April 9, 2025",
-    //     description: " Installation of the setuptools and wheel command were missing and they are required for fire"
-    // },
-    // {
-    //     repo: "python-geeks/Automation-scripts",
-    //     title: "feat: added the AI Bot Script (Gemini) ",
-    //     url: "https://github.com/python-geeks/Automation-scripts/pull/991",
-    //     status: "merged",
-    //     date: "October 13, 2025",
-    //     description: "Python script designed to interact with users and generate responses using the Google Generative AI API. This script allows users to input queries or prompts and receive contextual and coherent responses from the AI mode"
-    // },
+	}
 ];
 
 const statusColor = {
