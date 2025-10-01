@@ -1,6 +1,38 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const contributions = [
+	{	
+		repo: "cocoindex-io/cocoindex",
+		title: "feat: support binding classes on Pydantic Models to CocoIndex Struct",
+		url: "https://github.com/cocoindex-io/cocoindex/pull/1072",
+		status: "merged",
+		date: "Oct 1, 2025",
+		description: "Support binding classes on Pydantic Models to CocoIndex Struct"
+	},
+	{
+		repo: "cocoindex-io/cocoindex",
+		title: "refactor: updated existing tests for split_recursively.rs to be based on public",
+		url: "https://github.com/cocoindex-io/cocoindex/pull/1073",
+		status: "merged",
+		date: "Oct 1, 2025",
+		description: "Updated existing tests for split_recursively.rs to be based on public APIs"
+	},
+	{
+		repo: "cocoindex-io/cocoindex",
+		title: "refactor: refactored functions module in python sdk to subpackage",
+		url: "https://github.com/cocoindex-io/cocoindex/pull/1082",
+		status: "merged",
+		date: "Oct 2, 2025",
+		description: "Refactored functions module in python sdk to subpackage"
+	},
+	{
+		repo: "cocoindex-io/cocoindex",
+		title: "refactor: sources moved to sources subpackage in python sdk",
+		url: "https://github.com/cocoindex-io/cocoindex/pull/1081",
+		status: "merged",
+		date: "Oct 2, 2025",
+		description: "Sources moved to sources subpackage in python sdk"
+	},
 	{
 		repo: "gradio-app/gradio",
 		title: "feat: gr.load_chat supports optional textbox= argument",
@@ -29,13 +61,6 @@ const contributions = [
 		url: "https://github.com/OWASP/Nettacker/pull/1117",
 		status: "merged",
 		date: "August 9, 2025"
-	},
-	{
-		repo: "browser-use/browser-use",
-		title: "fixed the bug of only web in gmail_2fa_integration.py",
-		url: "https://github.com/browser-use/browser-use/pull/2685",
-		status: "merged",
-		date: "September 6, 2025"
 	},
 	{
 		repo: "Apache/Beam",
