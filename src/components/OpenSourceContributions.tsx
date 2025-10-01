@@ -2,6 +2,13 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const contributions = [
 	{
+		repo: "gradio-app/gradio",
+		title: "feat: gr.load_chat supports optional textbox= argument",
+		url: "https://github.com/gradio-app/gradio/pull/11998",
+		status: "merged",
+		date: "Oct 1, 2025",
+	},
+	{
 		repo: "Avaiga/taipy",
 		title: "improvement: pressing enter selects all filtered/remaining contents in selector",
 		url: "https://github.com/Avaiga/taipy/pull/2710",
@@ -37,13 +44,6 @@ const contributions = [
         status: "merged",   
         date: "Aug 12, 2025"
 	},	
-    {
-        repo: "msoedov/agentic-security",
-        title: "fix: dockerfile error of setuptools and wheel",
-        url: "https://github.com/msoedov/agentic_security/pull/215",
-        status: "merged",
-        date: "April 9, 2025"
-    },
     {
         repo: "python-geeks/Automation-scripts",
         title: "feat: added the AI Bot Script (Gemini) ",

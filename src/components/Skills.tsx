@@ -14,7 +14,6 @@ import {
   SiBun,
   SiSolidity,
 } from '@icons-pack/react-simple-icons';
-import { Hash } from "lucide-react";
 
 const skills = [
   { name: "JavaScript", icon: SiJavascript },
