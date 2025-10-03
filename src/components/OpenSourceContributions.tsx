@@ -7,7 +7,6 @@ const contributions = [
 		url: "https://github.com/cocoindex-io/cocoindex/pull/1072",
 		status: "merged",
 		date: "Oct 1, 2025",
-		description: "Support binding classes on Pydantic Models to CocoIndex Struct"
 	},
 	{
 		repo: "cocoindex-io/cocoindex",
@@ -15,7 +14,6 @@ const contributions = [
 		url: "https://github.com/cocoindex-io/cocoindex/pull/1073",
 		status: "merged",
 		date: "Oct 1, 2025",
-		description: "Updated existing tests for split_recursively.rs to be based on public APIs"
 	},
 	{
 		repo: "cocoindex-io/cocoindex",
@@ -23,7 +21,6 @@ const contributions = [
 		url: "https://github.com/cocoindex-io/cocoindex/pull/1082",
 		status: "merged",
 		date: "Oct 2, 2025",
-		description: "Refactored functions module in python sdk to subpackage"
 	},
 	{
 		repo: "cocoindex-io/cocoindex",
@@ -31,7 +28,6 @@ const contributions = [
 		url: "https://github.com/cocoindex-io/cocoindex/pull/1081",
 		status: "merged",
 		date: "Oct 2, 2025",
-		description: "Sources moved to sources subpackage in python sdk"
 	},
 	{
 		repo: "gradio-app/gradio",
