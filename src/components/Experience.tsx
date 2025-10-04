@@ -24,10 +24,12 @@ const experiences = [
 		url: "https://www.holopin.io/@neuron#",
 		links: [
 			{ alias: "#PR1072", url: "https://github.com/cocoindex-io/cocoindex/pull/1072", repo: "cocoindex" },
-      { alias: "#PR1073", url: "https://github.com/cocoindex-io/cocoindex/pull/1073", repo: "cocoindex" },
-      { alias: "#PR1082", url: "https://github.com/cocoindex-io/cocoindex/pull/1082", repo: "cocoindex" },
-      { alias: "#PR1081", url: "https://github.com/cocoindex-io/cocoindex/pull/1081", repo: "cocoindex" },
-      { alias: "#PR11998", url: "https://github.com/gradio-app/gradio/pull/11998", repo: "gradio" },
+			{ alias: "#PR1105", url: "https://github.com/cocoindex-io/cocoindex/pull/1105", repo: "cocoindex" },
+			{ alias: "#PR1120", url: "https://github.com/cocoindex-io/cocoindex/pull/1120", repo: "cocoindex" },
+			{ alias: "#PR1073", url: "https://github.com/cocoindex-io/cocoindex/pull/1073", repo: "cocoindex" },
+			{ alias: "#PR1082", url: "https://github.com/cocoindex-io/cocoindex/pull/1082", repo: "cocoindex" },
+			{ alias: "#PR1081", url: "https://github.com/cocoindex-io/cocoindex/pull/1081", repo: "cocoindex" },
+			{ alias: "#PR11998", url: "https://github.com/gradio-app/gradio/pull/11998", repo: "gradio" },
 			{ alias: "#PR12000", url: "https://github.com/gradio-app/gradio/pull/12000", repo: "gradio" },
 			{ alias: "#PR991", url: "https://github.com/python-geeks/Automation-scripts/pull/991", repo: "Automation-scripts" },
 			{ alias: "#PR963", url: "https://github.com/python-geeks/Automation-scripts/pull/963", repo: "Automation-scripts" }

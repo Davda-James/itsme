@@ -1,76 +1,78 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const contributions = [
-	{	
+	{		
 		repo: "cocoindex-io/cocoindex",
 		title: "feat: support binding classes on Pydantic Models to CocoIndex Struct",
 		url: "https://github.com/cocoindex-io/cocoindex/pull/1072",
-		status: "merged",
 		date: "Oct 1, 2025",
+		timestamp: 1764642480000
+	},
+	{
+		repo: "cocoindex-io/cocoindex",
+		title: "feat: collect additional counter for number of rows that are being processed for stats",
+		url: "https://github.com/cocoindex-io/cocoindex/pull/1105",
+		date: "Oct 4, 2025",
+	},
+	{
+		repo: "cocoindex-io/cocoindex",
+		title: "feat: split convert.py into 2 modules engine_object and engine_value along with splitting of tests",
+		url: "https://github.com/cocoindex-io/cocoindex/pull/1120",
+		date: "Oct 4, 2025",
 	},
 	{
 		repo: "cocoindex-io/cocoindex",
 		title: "refactor: updated existing tests for split_recursively.rs to be based on public",
 		url: "https://github.com/cocoindex-io/cocoindex/pull/1073",
-		status: "merged",
 		date: "Oct 1, 2025",
 	},
 	{
 		repo: "cocoindex-io/cocoindex",
 		title: "refactor: refactored functions module in python sdk to subpackage",
 		url: "https://github.com/cocoindex-io/cocoindex/pull/1082",
-		status: "merged",
 		date: "Oct 2, 2025",
 	},
 	{
 		repo: "cocoindex-io/cocoindex",
 		title: "refactor: sources moved to sources subpackage in python sdk",
 		url: "https://github.com/cocoindex-io/cocoindex/pull/1081",
-		status: "merged",
 		date: "Oct 2, 2025",
 	},
 	{
 		repo: "gradio-app/gradio",
 		title: "feat: gr.load_chat supports optional textbox= argument",
 		url: "https://github.com/gradio-app/gradio/pull/11998",
-		status: "merged",
 		date: "Oct 1, 2025",
 	},
 	{
 		repo: "Avaiga/taipy",
 		title: "improvement: pressing enter selects all filtered/remaining contents in selector",
 		url: "https://github.com/Avaiga/taipy/pull/2710",
-		status: "merged",
 		date: "Aug 22, 2025",
 	},
 	{
 		repo: "Soumya-Kushwaha/SoundScape",	
         title: "feat: added feature of Frequency Vs Energy Plot of real time audio",
         url: "https://github.com/Soumya-Kushwaha/SoundScape/pull/94",
-        status: "merged",   
-        date: "July 13, 2025"
-        
-    },
+        date: "July 13, 2025",
+	},
 	{
 		repo: "OWASP/Nettacker",
 		title: "fix: issue of select all profiles button",
 		url: "https://github.com/OWASP/Nettacker/pull/1117",
-		status: "merged",
-		date: "August 9, 2025"
+		date: "August 9, 2025",
 	},
 	{
 		repo: "Apache/Beam",
         title: "feat: added support for duration/timeout in test_pipeline",
         url: "https://github.com/apache/beam/pull/35831",
-        status: "merged",   
-        date: "Aug 12, 2025"
+        date: "Aug 12, 2025",
 	},	
     {
         repo: "python-geeks/Automation-scripts",
         title: "feat: added the AI Bot Script (Gemini) ",
         url: "https://github.com/python-geeks/Automation-scripts/pull/991",
-        status: "merged",
-        date: "October 13, 2025"
+        date: "October 13, 2025",
     },
 ];
 
