@@ -17,10 +17,10 @@ const experiences = [
 		]
 	},
 	{
-		company: "Hacktoberfest2024",
+		company: "Hacktoberfest 2024 & 2025",
 		role: "October 2024 & October 2025",
-		description: "2024: Contributions to various projects, PRs linked below",
-		technologies: ["Python", "Gemini", "Tkinter", "OpenWeatherMap API"],
+		description: "Contributions to various projects, PRs linked below",
+		technologies: ["Rust","Python", "Gemini", "Tkinter", "OpenWeatherMap API"],
 		url: "https://www.holopin.io/@neuron#",
 		links: [
 			{ alias: "#PR1072", url: "https://github.com/cocoindex-io/cocoindex/pull/1072", repo: "cocoindex" },
@@ -33,7 +33,7 @@ const experiences = [
 			{ alias: "#PR12000", url: "https://github.com/gradio-app/gradio/pull/12000", repo: "gradio" },
 			{ alias: "#PR991", url: "https://github.com/python-geeks/Automation-scripts/pull/991", repo: "Automation-scripts" },
 			{ alias: "#PR963", url: "https://github.com/python-geeks/Automation-scripts/pull/963", repo: "Automation-scripts" }
-		]
+		]	
 	}
 ];
 
