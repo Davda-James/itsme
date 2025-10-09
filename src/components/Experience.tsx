@@ -12,14 +12,15 @@ const Experience = () => {
       role: "Hacktoberfest2024",
       company: "DigitalOcean",
       location: "Remote",
-      period: "October 2024- 1 Month",
-      description: "Open Source Contributions",
+      period: "October 2024 & 2025",
+      description: "Open Source Contributions (check out the open source section to view all contributions), Super contributor in 2k25",
       achievements: [
-        "Added an AI Bot Script using Google Gemini API for conversational and creative response generation [PR #991](https://github.com/python-geeks/Automation-scripts/pull/991)",
-        "Built a Weather Notifier GUI app in Python using Tkinter and OpenWeatherMap API [PR #963](https://github.com/python-geeks/Automation-scripts/pull/963)",
-        "Translated and documented the Travelling Salesman Problem (C) to English for better global accessibility [PR #359](https://github.com/kelvins/algorithms-and-data-structures/pull/359)"
+		"Support binding classes on Pydantic Models to CocoIndex Struct [PR #1072](https://github.com/cocoindex-io/cocoindex/pull/1072)",
+		"updated existing tests for split_recursively.rs to be based on public APIs [PR #1075](https://github.com/cocoindex-io/cocoindex/pull/1075)",
+		"generate full CLI docs from click's metadata and also added it in precommit hooks [PR #1096](https://github.com/cocoindex-io/cocoindex/pull/1096)",
+		"Built a Weather Notifier GUI app in Python using Tkinter and OpenWeatherMap API [PR #963](https://github.com/python-geeks/Automation-scripts/pull/963)",
       ],
-      technologies: ["Python", "Gemini", "Tkinter", "OpenWeatherMap API" ]
+      technologies: ["Rust","Python", "Gemini", "Tkinter", "OpenWeatherMap API" ]
     },
       {
       role: "GirlScript Summer of Code (GSSoC)",
