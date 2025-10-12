@@ -1,6 +1,25 @@
 import { Badge } from "@/components/ui/badge";
 
 const experiences = [
+  {
+    company: "Hacktoberfest 2024 & 2025",
+    role: "October 2024 & October 2025",
+    description: "Contributions to various projects, Super Contributor 2k25, ",
+    technologies: ["Rust","Python", "Gemini", "Tkinter", "OpenWeatherMap API"],
+    url: "https://www.holopin.io/@neuron#badges",
+    links: [
+      { alias: "#PR1072", url: "https://github.com/cocoindex-io/cocoindex/pull/1072", repo: "cocoindex" },
+      { alias: "#PR1105", url: "https://github.com/cocoindex-io/cocoindex/pull/1105", repo: "cocoindex" },
+      { alias: "#PR1120", url: "https://github.com/cocoindex-io/cocoindex/pull/1120", repo: "cocoindex" },
+      { alias: "#PR1073", url: "https://github.com/cocoindex-io/cocoindex/pull/1073", repo: "cocoindex" },
+      { alias: "#PR1082", url: "https://github.com/cocoindex-io/cocoindex/pull/1082", repo: "cocoindex" },
+      { alias: "#PR1081", url: "https://github.com/cocoindex-io/cocoindex/pull/1081", repo: "cocoindex" },
+      { alias: "#PR11998", url: "https://github.com/gradio-app/gradio/pull/11998", repo: "gradio" },
+      { alias: "#PR12000", url: "https://github.com/gradio-app/gradio/pull/12000", repo: "gradio" },
+      { alias: "#PR991", url: "https://github.com/python-geeks/Automation-scripts/pull/991", repo: "Automation-scripts" },
+      { alias: "#PR963", url: "https://github.com/python-geeks/Automation-scripts/pull/963", repo: "Automation-scripts" }
+    ]	
+  },
 	{
 		company: "GirlScript Summer of Code (GSSoC)",
 		role: "June 2023 - July 2023",
@@ -15,25 +34,6 @@ const experiences = [
 		links: [
 			{ alias: "#PR94", url: "https://github.com/Soumya-Kushwaha/SoundScape/pull/94", repo: "SoundScape" }
 		]
-	},
-	{
-		company: "Hacktoberfest 2024 & 2025",
-		role: "October 2024 & October 2025",
-		description: "Contributions to various projects, PRs linked below",
-		technologies: ["Rust","Python", "Gemini", "Tkinter", "OpenWeatherMap API"],
-		url: "https://www.holopin.io/@neuron#",
-		links: [
-			{ alias: "#PR1072", url: "https://github.com/cocoindex-io/cocoindex/pull/1072", repo: "cocoindex" },
-			{ alias: "#PR1105", url: "https://github.com/cocoindex-io/cocoindex/pull/1105", repo: "cocoindex" },
-			{ alias: "#PR1120", url: "https://github.com/cocoindex-io/cocoindex/pull/1120", repo: "cocoindex" },
-			{ alias: "#PR1073", url: "https://github.com/cocoindex-io/cocoindex/pull/1073", repo: "cocoindex" },
-			{ alias: "#PR1082", url: "https://github.com/cocoindex-io/cocoindex/pull/1082", repo: "cocoindex" },
-			{ alias: "#PR1081", url: "https://github.com/cocoindex-io/cocoindex/pull/1081", repo: "cocoindex" },
-			{ alias: "#PR11998", url: "https://github.com/gradio-app/gradio/pull/11998", repo: "gradio" },
-			{ alias: "#PR12000", url: "https://github.com/gradio-app/gradio/pull/12000", repo: "gradio" },
-			{ alias: "#PR991", url: "https://github.com/python-geeks/Automation-scripts/pull/991", repo: "Automation-scripts" },
-			{ alias: "#PR963", url: "https://github.com/python-geeks/Automation-scripts/pull/963", repo: "Automation-scripts" }
-		]	
 	}
 ];
 
