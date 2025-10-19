@@ -13,28 +13,28 @@ const Skills = () => {
       title: "Frameworks and Libraries",
       description: "Modern frameworks and technologies for building scalable applications",
       skills: ["Express", "Node.js", "WebSockets", "PyTorch", "TensorFlow", "scikit-learn", "FastAPI", "ethers.js"],
-  gradient: "bg-neutral-200/40 dark:bg-neutral-800/40"
+      gradient: "bg-neutral-200/40 dark:bg-neutral-800/40"
     },
     {
       icon: Code,
       title: "Programming Languages",
       description: "Languages I use to bring ideas to life",
-      skills: ["JavaScript", "TypeScript", "Python", "Solidity", "C++", "C"],
-  gradient: "bg-neutral-200/40 dark:bg-neutral-800/40"
+      skills: ["JavaScript", "TypeScript", "Python", "Rust", "Solidity", "C++"],
+      gradient: "bg-neutral-200/40 dark:bg-neutral-800/40"
     },
     {
       icon: Database,
       title: "Data and Analytics",
       description: "Tools for managing and analyzing data",
       skills: ["PostgreSQL", "MongoDB", "Redis", "Numpy", "Pandas", "Seaborn"],
-  gradient: "bg-neutral-200/40 dark:bg-neutral-800/40"
+      gradient: "bg-neutral-200/40 dark:bg-neutral-800/40"
     },
     {
       icon: Wrench,
       title: "Tools and Platforms",
       description: "Development tools and platforms I use daily",
       skills: ["Git", "Docker", "Vercel", "GitHub Actions", "Supabase", "Slack", "Notion"],
-  gradient: "bg-neutral-200/40 dark:bg-neutral-800/40"
+      gradient: "bg-neutral-200/40 dark:bg-neutral-800/40"
     }
   ];
 

@@ -1,7 +1,9 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Calendar, MapPin, Briefcase } from "lucide-react";
+import { Calendar, MapPin, Briefcase, CompassIcon } from "lucide-react";
+import { Description } from "@radix-ui/react-toast";
+import Achievements from "./Achievements";
 
 const Experience = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
@@ -22,18 +24,29 @@ const Experience = () => {
       ],
       technologies: ["Rust","Python", "Gemini", "Tkinter", "OpenWeatherMap API" ]
     },
-      {
-      role: "GirlScript Summer of Code (GSSoC)",
-      company: "GirlScript Foundation",
-      location: "Remote",
-      period: "June 2024 - July 2024",
-      description: "First open source contribution",
-      achievements: [
-        "Standardized dependency versions in `requirements.txt` to prevent compatibility issues and streamline the setup process for new contributors [PR #95](https://github.com/Soumya-Kushwaha/SoundScape/pull/95)",
-        "Implemented \"Frequency vs Energy\" plot for real-time audio using Fourier Coefficients, and integrated it into the existing GUI to maintain UX consistency [PR #94](https://github.com/Soumya-Kushwaha/SoundScape/pull/94)",
-      ],
-      technologies: ["Python", "Mathematical Modelling", "Fourier Transform", "Data Visualization"]
-    }
+	{
+		role: "School of Solana",
+		company: "Compass",
+		location: "Remote",
+		period: "Ongoing",
+		description: "Learning solana blockchain development",
+		achievements: [
+			"Learning basics of Rust programming and Solana blockchain development through hands-on projects and mentorship"
+		],
+		technologies: ["Rust","Solana","Blockchain Development"]
+	},
+	{
+		role: "GirlScript Summer of Code (GSSoC)",
+		company: "GirlScript Foundation",
+		location: "Remote",
+		period: "June 2024 - July 2024",
+		description: "First open source contribution",
+		achievements: [
+		"Standardized dependency versions in `requirements.txt` to prevent compatibility issues and streamline the setup process for new contributors [PR #95](https://github.com/Soumya-Kushwaha/SoundScape/pull/95)",
+		"Implemented \"Frequency vs Energy\" plot for real-time audio using Fourier Coefficients, and integrated it into the existing GUI to maintain UX consistency [PR #94](https://github.com/Soumya-Kushwaha/SoundScape/pull/94)",
+		],
+		technologies: ["Python", "Mathematical Modelling", "Fourier Transform", "Data Visualization"]
+	}
   ];
 
   return (
