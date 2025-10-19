@@ -80,7 +80,7 @@ export default function OpenSourceContributions() {
 	const { ref, isVisible } = useScrollAnimation();
 
 	return (
-		<section id="open-source" className="py-8 mb-6">
+		<section id="open-source" className="py-4 mb-4">
 			<div className="flex flex-col items-start w-full max-w-2xl">
 				<h2 className="text-2xl font-bold mb-6 transition-colors cursor-pointer hover:text-primary/70" id="open-source">
 					<a href="#open-source" className="hover:text-primary/70 transition-colors" onClick={e => { e.preventDefault(); document.getElementById('open-source')?.scrollIntoView({ behavior: 'smooth' }); }}>

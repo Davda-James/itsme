@@ -12,7 +12,7 @@ const achievements = [
 ];
 
 const Achievements = () => (
-	<section id="achievements" className="py-8 mb-6">
+	<section id="achievements" className="py-4 mb-4">
 		<div className="flex flex-col items-start">
 			<h2 className="text-2xl font-bold mb-6 transition-colors cursor-pointer hover:text-primary/70" id="achievements">
 				<a href="#achievements" className="hover:text-primary/70 transition-colors" onClick={e => { e.preventDefault(); document.getElementById('achievements')?.scrollIntoView({ behavior: 'smooth' }); }}>

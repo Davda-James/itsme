@@ -13,6 +13,7 @@ import {
   SiScikitlearn,
   SiBun,
   SiSolidity,
+  SiRust,
 } from '@icons-pack/react-simple-icons';
 
 const skills = [
@@ -30,11 +31,12 @@ const skills = [
   { name: "Prisma", icon: SiPrisma },
   { name: "Docker", icon: SiDocker },
   { name: "Solidity", icon: SiSolidity },
+  { name: "Rust", icon: SiRust }
 ];
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-8 mb-6">
+    <section id="skills" className="py-4 mb-4">
       <div className="flex flex-col items-start">
         <h2 className="text-2xl font-bold flex items-center gap-2 mb-6 transition-colors cursor-pointer hover:text-primary/70" id="skills">
           <a href="#skills" className="hover:text-primary/70 transition-colors" onClick={e => { e.preventDefault(); document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' }); }}>
