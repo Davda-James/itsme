@@ -25,7 +25,7 @@ const Experience = () => {
       technologies: ["Rust","Python", "Gemini", "Tkinter", "OpenWeatherMap API" ]
     },
 	{
-		role: "School of Solana",
+		role: "School of Solana Season 8",
 		company: "Compass",
 		location: "Remote",
 		period: "Ongoing",
