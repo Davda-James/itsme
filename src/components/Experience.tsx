@@ -23,7 +23,7 @@ const experiences = [
 		]	
 	},
 	{
-		company: "Ackee Blockchain (School of Solana)",
+		company: "Ackee Blockchain (School of Solana Season 8)",
 		role: "October 8",
 		description: "Learning Rust and solana blockchain",
 		technologies: ["Rust","Solana","Blockchain"],
