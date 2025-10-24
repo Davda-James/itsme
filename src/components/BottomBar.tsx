@@ -23,7 +23,7 @@ export default function BottomBar() {
         <a href="https://linkedin.com/in/james-davda" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
           <FaLinkedinIn className="w-5 h-5" />
         </a>
-        <a href="https://x.com/0xbondj" target="_blank" rel="noopener noreferrer" aria-label="X">
+        <a href="https://x.com/JamesDavda007" target="_blank" rel="noopener noreferrer" aria-label="X">
           <X className="w-5 h-5" />
         </a>
         <span className="h-5 w-px bg-zinc-300 dark:bg-zinc-700 mx-2" />

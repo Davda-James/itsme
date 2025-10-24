@@ -1,8 +1,3 @@
-import { Button } from "@/components/ui/button";
-import { ArrowDown, Mail } from "lucide-react";
-import { SiGithub } from '@icons-pack/react-simple-icons';
-import { FaLinkedinIn } from 'react-icons/fa';
-
 const Hero = ({ headingRef }: { headingRef: React.RefObject<HTMLDivElement> }) => {
   return (
     <header className="pb-3 border-b border-muted-foreground/20">
