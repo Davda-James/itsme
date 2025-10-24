@@ -63,7 +63,7 @@ const Hero = ({ headingRef }: { headingRef: React.RefObject<HTMLDivElement> }) =
               <a href="mailto:connect@0xjames.me" className="p-3 rounded-full bg-card/50 backdrop-blur-glass border border-white/10 hover:bg-primary/20 hover:shadow-glow transition-all duration-300 group">
                 <Mail className="h-5 w-5 group-hover:scale-110 transition-transform" />
               </a>
-              <a href="https://x.com/0xbondj" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-card/50 backdrop-blur-glass border border-white/10 hover:bg-primary/20 hover:shadow-glow transition-all duration-300 group">
+              <a href="https://x.com/JamesDavda007" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-card/50 backdrop-blur-glass border border-white/10 hover:bg-primary/20 hover:shadow-glow transition-all duration-300 group">
                 <SiX className="h-5 w-5 group-hover:scale-110 transition-transform" />
               </a>
             </div>

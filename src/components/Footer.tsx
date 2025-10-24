@@ -10,7 +10,7 @@ const Footer = () => {
     { icon: FaLinkedinIn, href: "https://www.linkedin.com/in/james-davda", label: "LinkedIn" },
     { icon: SiDiscord, href: "https://discord.gg/ztHthFZr", label: "Discord" },
     { icon: Mail, href: "mailto:connect@0xjames.me", label: "Email" },
-    { icon: SiX, href: "https://x.com/0xbondj", label: "X" },
+    { icon: SiX, href: "https://x.com/JamesDavda007", label: "X" },
   ];
 
   return (

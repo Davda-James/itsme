@@ -26,9 +26,9 @@ const Experience = () => {
     },
 	{
 		role: "School of Solana Season 8",
-		company: "Compass",
+		company: "Ackee Blockchain",
 		location: "Remote",
-		period: "Ongoing",
+		period: "October - December 2025",
 		description: "Learning solana blockchain development",
 		achievements: [
 			"Learning basics of Rust programming and Solana blockchain development through hands-on projects and mentorship"
