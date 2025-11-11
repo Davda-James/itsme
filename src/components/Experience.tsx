@@ -56,18 +56,21 @@ const Experience = () => {
 			</h2>
 			<div className="flex flex-col gap-4">
 				{experiences.map((exp, idx) => (
-					<a
+					<div
 						key={idx}
-						href={exp.url}
-						target="_blank"
-						rel="noopener noreferrer"
-						className="block rounded-lg transition-colors duration-200 group px-2 py-2"
+						role="link"
+						tabIndex={0}
+						onKeyDown={(e) => {
+							if (e.key === 'Enter') window.open(exp.url, '_blank', 'noopener');
+						}}
+						onClick={() => window.open(exp.url, '_blank', 'noopener')}
+						className="block rounded-lg transition-colors duration-200 group px-2 py-2 cursor-pointer"
 					>
 						<div className="flex items-center mb-1">
 							<span className="font-semibold text-lg flex-1 group-hover:text-zinc-500 group-active:text-zinc-400 transition-colors duration-200">{exp.company}</span>
 							<span className="text-muted-foreground text-base text-right group-hover:text-zinc-500 group-active:text-zinc-400 transition-colors duration-200">{exp.role}</span>
 						</div>
-						<p className="text-zinc-700 dark:text-zinc-200 text-sm leading-relaxed max-w-3xl group-hover:text-zinc-500 group-active:text-zinc-400 dark:group-hover:text-zinc-300 dark:group-active:text-zinc-400 transition-colors duration-200">
+						<div className="text-zinc-700 dark:text-zinc-200 text-sm leading-relaxed max-w-3xl group-hover:text-zinc-500 group-active:text-zinc-400 dark:group-hover:text-zinc-300 dark:group-active:text-zinc-400 transition-colors duration-200">
 							{exp.description}
 							{exp.links && exp.links.map((link, linkIdx) => (
 								<span key={linkIdx} className="relative inline-block ml-1 group/tooltip">
@@ -89,7 +92,7 @@ const Experience = () => {
 									</div>
 								</span>
 							))}
-						</p>
+						</div>
 						<div className="flex flex-wrap gap-2 mt-2">
 							{exp.technologies.map((tech) => (
 								<span
@@ -100,7 +103,7 @@ const Experience = () => {
 								</span>
 							))}
 						</div>
-					</a>
+					</div>
 				))}
 			</div>
 		</section>

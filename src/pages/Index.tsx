@@ -6,6 +6,7 @@ import OpenSourceContributions from "@/components/OpenSourceContributions";
 import BottomBar from "@/components/BottomBar";
 import { useElementOnScreen } from "@/hooks/useElementOnScreen";
 import Achievements from "@/components/Achievements";
+import GithubContributions from "@/components/GithubContributionGraph";
 
 const Index = () => {
   const { ref: heroHeadingRef, isVisible: isHeroVisible } = useElementOnScreen({
@@ -23,6 +24,7 @@ const Index = () => {
         <Achievements />
         <OpenSourceContributions />
         {/* <Projects /> */}
+        <GithubContributions />
         <BottomBar />
         <div className="h-16" />
       </div>

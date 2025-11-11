@@ -1,10 +1,15 @@
 import { Home, X , Sun, Moon } from "lucide-react";
 import {  SiGithub } from '@icons-pack/react-simple-icons';
 import { FaLinkedinIn } from 'react-icons/fa';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function BottomBar() {
   const [dark, setDark] = useState(false);
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      setDark(document.documentElement.classList.contains('dark'));
+    }
+  }, []);
 
   return (
     <div className="fixed left-1/2 bottom-8 z-50 -translate-x-1/2">
