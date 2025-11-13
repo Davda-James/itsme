@@ -45,6 +45,12 @@ const contributions = [
 		date: "Oct 1, 2025",
 	},
 	{
+		repo: "SolixDB/package",
+		title: "feat(storage): add redis adapter for real-time data streaming",
+		url: "https://github.com/SolixDB/pulls/7",
+		date: "Nov 12, 2025",
+	},
+	{
 		repo: "Avaiga/taipy",
 		title: "improvement: pressing enter selects all filtered/remaining contents in selector",
 		url: "https://github.com/Avaiga/taipy/pull/2710",
