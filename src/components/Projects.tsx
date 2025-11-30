@@ -5,13 +5,13 @@
 // import { SiGithub , SiYoutube } from '@icons-pack/react-simple-icons'; 
 // import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 // import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-// import project1Image from "@/assets/project1.png";
-// import project2Image from "@/assets/project2.jpg";
-// import project3Image from "@/assets/project3.jpg";
-// import project4Image from "@/assets/project4.jpg";
-// import project5Image from "@/assets/project5.jpg";
-// import project6Image from "@/assets/project6.jpg"; 
-// import project7Image from "@/assets/project7.jpg";
+// import project1Image from "@/assets/projets/project1.png";
+// import project2Image from "@/assets/projets/project2.jpg";
+// import project3Image from "@/assets/projets/project3.jpg";
+// import project4Image from "@/assets/projets/project4.jpg";
+// import project5Image from "@/assets/projets/project5.jpg";
+// import project6Image from "@/assets/projets/project6.jpg"; 
+// import project7Image from "@/assets/projets/project7.jpg";
 // import project8Image from "@/assets/project8.png";
 
 // const Projects = () => {

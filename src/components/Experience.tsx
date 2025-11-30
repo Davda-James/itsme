@@ -1,10 +1,14 @@
 import { Badge } from "@/components/ui/badge";
 import { Description } from "@radix-ui/react-toast";
 import { TextCursor } from "lucide-react";
+import gssocImage from "@/assets/experiences/gssoc.jpg";
+import ackeeImage from "@/assets/experiences/ackee.png";
+import hacktoberfestImage from "@/assets/experiences/hacktoberfest.jpg";
 
 const experiences = [
 	{
 		company: "Hacktoberfest 2024 & 2025",
+		logo: hacktoberfestImage,
 		role: "October 2024 & October 2025",
 		description: "Contributions to various projects, Super Contributor 2k25, ",
 		technologies: ["Rust","Python", "Gemini", "Tkinter", "OpenWeatherMap API"],
@@ -24,14 +28,17 @@ const experiences = [
 	},
 	{
 		company: "Ackee Blockchain (School of Solana Season 8)",
-		role: "October 8",
-		description: "Learning Rust and solana blockchain",
+		// logo: "@/assets/experiences/ackee.png",
+		logo: ackeeImage,
+		role: "October - December 2025",
+		description: "Learnt solana blockchain",
 		technologies: ["Rust","Solana","Blockchain"],
 		url: "https://ackee.xyz",
 	},
 	{
 		company: "GirlScript Summer of Code (GSSoC)",
-		role: "June 2023 - July 2023",
+		logo: gssocImage,
+		role: "June 2023",
 		description: "First open source contribution: Standardized dependency versions, implemented Frequency vs Energy plot for real-time audio using Fourier Coefficients, and integrated it into the existing GUI",
 		technologies: [
 			"Python",
@@ -45,6 +52,16 @@ const experiences = [
 		]
 	}
 ];
+
+// Utility to compute the initial for a fallback avatar
+const getInitial = (name: string) => {
+	const trimmed = (name || "").trim();
+	if (!trimmed) return "";
+	// pick the first alphanumeric character from the first word
+	const firstWord = trimmed.split(/\s+/)[0];
+	const match = firstWord.match(/[A-Za-z0-9]/);
+	return (match ? match[0] : firstWord[0]).toUpperCase();
+};
 
 const Experience = () => {
 	return (
@@ -66,7 +83,23 @@ const Experience = () => {
 						onClick={() => window.open(exp.url, '_blank', 'noopener')}
 						className="block rounded-lg transition-colors duration-200 group px-2 py-2 cursor-pointer"
 					>
-						<div className="flex items-center mb-1">
+						<div className="flex items-center mb-1 gap-3">
+							{exp.logo ? (
+								<img
+									src={exp.logo}
+									alt={`${exp.company} logo`}
+									className="w-10 h-10 rounded-full object-cover"
+									onContextMenu={(e) => e.preventDefault()}
+								/>
+							) : (
+								<div
+									role="img"
+									aria-label={`${exp.company} logo initial`}
+									className="w-10 h-10 rounded-full flex items-center justify-center bg-zinc-100 dark:bg-zinc-800 text-muted-foreground dark:text-zinc-200 font-semibold"
+								>
+									{getInitial(exp.company)}
+								</div>
+							)}
 							<span className="font-semibold text-lg flex-1 group-hover:text-zinc-500 group-active:text-zinc-400 transition-colors duration-200">{exp.company}</span>
 							<span className="text-muted-foreground text-base text-right group-hover:text-zinc-500 group-active:text-zinc-400 transition-colors duration-200">{exp.role}</span>
 						</div>
