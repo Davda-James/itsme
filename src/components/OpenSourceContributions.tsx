@@ -1,12 +1,17 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const contributions = [
+	{
+		repo: "langchain-ai/langchain",
+		title: "feat(core): add 'approximate' alias in place of count_tokens_approximately",
+		url: "https://github.com/langchain-ai/langchain/pull/33045",
+		date: "Dec 20, 2025",
+	},
 	{		
 		repo: "cocoindex-io/cocoindex",
 		title: "feat: support binding classes on Pydantic Models to CocoIndex Struct",
 		url: "https://github.com/cocoindex-io/cocoindex/pull/1072",
 		date: "Oct 1, 2025",
-		timestamp: 1764642480000
 	},
 	{
 		repo: "cocoindex-io/cocoindex",
@@ -74,12 +79,6 @@ const contributions = [
         url: "https://github.com/apache/beam/pull/35831",
         date: "Aug 12, 2025",
 	},	
-    {
-        repo: "python-geeks/Automation-scripts",
-        title: "feat: added the AI Bot Script (Gemini) ",
-        url: "https://github.com/python-geeks/Automation-scripts/pull/991",
-        date: "October 13, 2025",
-    },
 ];
 
 export default function OpenSourceContributions() {
