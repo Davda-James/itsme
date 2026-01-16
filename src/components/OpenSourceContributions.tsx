@@ -1,17 +1,12 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const contributions = [
-	{
-		repo: "langchain-ai/langchain",
-		title: "feat(core): add 'approximate' alias in place of count_tokens_approximately",
-		url: "https://github.com/langchain-ai/langchain/pull/33045",
-		date: "Dec 20, 2025",
-	},
 	{		
 		repo: "cocoindex-io/cocoindex",
 		title: "feat: support binding classes on Pydantic Models to CocoIndex Struct",
 		url: "https://github.com/cocoindex-io/cocoindex/pull/1072",
 		date: "Oct 1, 2025",
+		timestamp: 1764642480000
 	},
 	{
 		repo: "cocoindex-io/cocoindex",
@@ -79,48 +74,75 @@ const contributions = [
         url: "https://github.com/apache/beam/pull/35831",
         date: "Aug 12, 2025",
 	},	
+  {
+      repo: "python-geeks/Automation-scripts",
+      title: "feat: added the AI Bot Script (Gemini) ",
+      url: "https://github.com/python-geeks/Automation-scripts/pull/991",
+      date: "October 13, 2025",
+  },
 ];
 
-export default function OpenSourceContributions() {
-	const { ref, isVisible } = useScrollAnimation();
+const OpenSourceContributions = () => {
+  const { ref, isVisible } = useScrollAnimation();
 
-	return (
-		<section id="open-source" className="py-4 mb-4">
-			<div className="flex flex-col items-start w-full max-w-2xl">
-				<h2 className="text-2xl font-bold mb-6 transition-colors cursor-pointer hover:text-primary/70" id="open-source">
-					<a href="#open-source" className="hover:text-primary/70 transition-colors" onClick={e => { e.preventDefault(); document.getElementById('open-source')?.scrollIntoView({ behavior: 'smooth' }); }}>
-						Open Source Contributions
-					</a>
-				</h2>
-				<p className="text-muted-foreground mb-6 text-base">Code contributions to the open source community.</p>
-				<div ref={ref} className={`flex flex-col gap-3 w-full max-w-2xl pl-2 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-					{contributions.map((pr, idx) => (
-						<a
-							key={idx}
-							href={pr.url}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="group border border-zinc-200 dark:border-zinc-700 rounded-md px-3 py-2 transition-shadow hover:shadow-md"
-						>
-							<span className="font-semibold text-lg mb-1 group-hover:text-primary transition-colors">{pr.title}</span>
-							<div className="flex justify-between w-full text-xs text-muted-foreground">
-								<span>{pr.repo}</span>
-								<span>{pr.date}</span>
-							</div>
-						</a>
-					))}
-				</div>
-				<div className="mt-8">
-					<a
-						href="https://github.com/search?q=is%3Apr+author%3ADavda-James+is%3Amerged&type=PullRequests"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="inline-block px-6 py-2 rounded-md bg-card/40 border border-zinc-200 dark:border-zinc-700 text-foreground font-medium shadow-sm hover:bg-card/60 hover:shadow-md transition-all duration-300"
-					>
-						View All
-					</a>
-				</div>
-			</div>	
-		</section>
-	);
-}
+  return (
+    <section id="open-source" className="py-4 mb-4">
+      <div className="flex flex-col items-start w-full max-w-3xl">
+        <h2
+          className="text-2xl font-bold mb-6 transition-colors cursor-pointer hover:text-primary/70"
+          id="open-source"
+        >
+          <a
+            href="#open-source"
+            className="hover:text-primary/70 transition-colors"
+            onClick={(e) => {
+              e.preventDefault();
+              document
+                .getElementById("open-source")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            Open Source Contributions
+          </a>
+        </h2>
+        <p className="text-muted-foreground mb-6 text-base">
+          Code contributions to the open source community.
+        </p>
+        <div
+          ref={ref}
+          className={`flex flex-col gap-3 w-full max-w-3xl pl-2 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+        >
+          {contributions.map((pr, idx) => (
+            <a
+              key={idx}
+              href={pr.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group border border-zinc-200 dark:border-zinc-700 rounded-md px-3 py-2 transition-shadow hover:shadow-md"
+            >
+              <span className="font-semibold text-lg mb-1 group-hover:text-primary transition-colors">
+                {pr.title}
+              </span>
+              <div className="flex justify-between w-full text-xs text-muted-foreground">
+                <span>{pr.repo}</span>
+                <span>{pr.date}</span>
+              </div>
+            </a>
+          ))}
+        </div>
+        <div className="mt-8">
+          <a
+            href="https://github.com/search?q=is%3Apr+author%3ADavda-James+is%3Amerged&type=PullRequests"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-6 py-2 rounded-md bg-card/40 border border-zinc-200 dark:border-zinc-700 text-foreground font-medium shadow-sm hover:bg-card/60 hover:shadow-md transition-all duration-300"
+          >
+            View All
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default OpenSourceContributions;

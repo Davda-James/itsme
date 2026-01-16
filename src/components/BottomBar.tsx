@@ -1,13 +1,13 @@
-import { Home, X , Sun, Moon } from "lucide-react";
-import {  SiGithub } from '@icons-pack/react-simple-icons';
-import { FaLinkedinIn } from 'react-icons/fa';
+import { Home, X, Sun, Moon } from "lucide-react";
+import { SiGithub } from "@icons-pack/react-simple-icons";
+import { FaLinkedinIn } from "react-icons/fa";
 import { useState, useEffect } from "react";
 
-export default function BottomBar() {
+const BottomBar = () => {
   const [dark, setDark] = useState(false);
   useEffect(() => {
-    if (typeof document !== 'undefined') {
-      setDark(document.documentElement.classList.contains('dark'));
+    if (typeof document !== "undefined") {
+      setDark(document.documentElement.classList.contains("dark"));
     }
   }, []);
 
@@ -22,13 +22,28 @@ export default function BottomBar() {
           <BookText className="w-5 h-5" />
         </a> */}
         <span className="h-5 w-px bg-zinc-300 dark:bg-zinc-700 mx-2" />
-        <a href="https://github.com/Davda-James" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <a
+          href="https://github.com/Davda-James"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
           <SiGithub className="w-5 h-5" />
         </a>
-        <a href="https://linkedin.com/in/james-davda" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <a
+          href="https://linkedin.com/in/james-davda"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
           <FaLinkedinIn className="w-5 h-5" />
         </a>
-        <a href="https://x.com/JamesDavda007" target="_blank" rel="noopener noreferrer" aria-label="X">
+        <a
+          href="https://x.com/JamesDavda007"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="X"
+        >
           <X className="w-5 h-5" />
         </a>
         <span className="h-5 w-px bg-zinc-300 dark:bg-zinc-700 mx-2" />
@@ -44,4 +59,6 @@ export default function BottomBar() {
       </div>
     </div>
   );
-}
+};
+
+export default BottomBar;

@@ -66,6 +66,7 @@ const getInitial = (name: string) => {
 const Experience = () => {
 	return (
 		<section id="experience" className="py-4 mb-4">
+		<div className="w-full max-w-3xl mx-auto">
 			<h2 className="text-2xl font-bold mb-3 transition-colors cursor-pointer hover:text-primary/70" id="experience">
 				<a href="#experience" className="hover:text-primary/70 transition-colors" onClick={e => { e.preventDefault(); document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' }); }}>
 					Experiences
@@ -130,7 +131,7 @@ const Experience = () => {
 							{exp.technologies.map((tech) => (
 								<span
 									key={tech}
-									className="px-2 py-1 bg-zinc-100 dark:bg-zinc-800 rounded text-xs text-muted-foreground border border-zinc-200 dark:border-zinc-700 group-hover:text-zinc-500 group-active:text-zinc-400 dark:group-hover:text-zinc-300 dark:group-active:text-zinc-400"
+									className="px-2 py-1 text-xs"
 								>
 									{tech}
 								</span>
@@ -139,7 +140,8 @@ const Experience = () => {
 					</div>
 				))}
 			</div>
-		</section>
+		</div>
+	</section>
 	);
 };
 

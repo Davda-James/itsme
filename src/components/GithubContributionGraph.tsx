@@ -23,7 +23,7 @@ const GithubContributions = () => {
     }, []);
     return(
         <section id="contribution-graph" className="py-8 mb-6">
-            <div className="flex flex-col items-start w-full max-w-2xl">
+            <div className="flex flex-col items-start w-full max-w-3xl">
                 <h2 className="text-2xl font-bold mb-6 transition-colors cursor-pointer hover:text-primary/70" id="contribution-graph">
                     <a href="#contribution-graph" className="hover:text-primary/70 transition-colors" onClick={e => { e.preventDefault(); document.getElementById('contribution-graph')?.scrollIntoView({ behavior: 'smooth' }); }}>
                         My GitHub Contributions

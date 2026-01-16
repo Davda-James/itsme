@@ -20,18 +20,17 @@ const skills = [
   { name: "JavaScript", icon: SiJavascript },
   { name: "TypeScript", icon: SiTypescript },
   { name: "Python", icon: SiPython },
-  { name: "Tensorflow", icon: SiTensorflow },
-  { name: "Keras" , icon: SiKeras },
   { name: "PyTorch", icon: SiPytorch },
+  { name: "Solidity", icon: SiSolidity },
+  { name: "Rust", icon: SiRust },
+  { name: "Tensorflow", icon: SiTensorflow },
   { name: "Scikit-learn", icon: SiScikitlearn },
   { name: "Node.js", icon: SiNodedotjs },
-  { name: "Express.js", icon: SiExpress },
   { name: "bun", icon: SiBun },
+  { name: "Express.js", icon: SiExpress },
   { name: "PostgreSQL", icon: SiPostgresql },
   { name: "Prisma", icon: SiPrisma },
   { name: "Docker", icon: SiDocker },
-  { name: "Solidity", icon: SiSolidity },
-  { name: "Rust", icon: SiRust }
 ];
 
 const Skills = () => {
