@@ -1,11 +1,17 @@
-const Hero = ({ headingRef }: { headingRef: React.RefObject<HTMLDivElement> }) => {
+const Hero = ({
+  headingRef,
+}: {
+  headingRef: React.RefObject<HTMLDivElement>;
+}) => {
   return (
-    <header className="pb-3 border-b border-muted-foreground/20">
+    <header className="pb-4 border-b border-muted-foreground/20">
       <div className="flex flex-col gap-2">
-        <h1 ref={headingRef} className="text-3xl sm:text-4xl font-bold text-foreground">
-          James Davda
+        <h1
+          ref={headingRef}
+          className="text-3xl sm:text-4xl font-semibold leading-tight text-foreground"
+        >
+          hi <span>👋</span> I'm james
         </h1>
-        <p className="text-lg text-muted-foreground">Engineer</p>
       </div>
     </header>
   );
