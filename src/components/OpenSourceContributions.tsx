@@ -1,4 +1,5 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Button } from "@/components/ui/button";
 
 const contributions = [
   {
@@ -141,15 +142,16 @@ const OpenSourceContributions = () => {
             </a>
           ))}
         </div>
-        <div className="mt-8">
-          <a
-            href="https://github.com/search?q=is%3Apr+author%3ADavda-James+is%3Amerged&type=PullRequests"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-6 py-2 rounded-md bg-card/40 border border-zinc-200 dark:border-zinc-700 text-foreground font-medium shadow-sm hover:bg-card/60 hover:shadow-md transition-all duration-300"
-          >
-            View All
-          </a>
+        <div className="mt-6 flex justify-center">
+          <Button asChild variant="outline" size="sm">
+            <a
+              href="https://github.com/search?q=is%3Apr+author%3ADavda-James+is%3Amerged&type=PullRequests"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View All
+            </a>
+          </Button>
         </div>
       </div>
     </section>
