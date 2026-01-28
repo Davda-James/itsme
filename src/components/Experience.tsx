@@ -1,6 +1,6 @@
+import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
-import { Description } from "@radix-ui/react-toast";
-import { TextCursor } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import gssocImage from "@/assets/experiences/gssoc.jpg";
 import ackeeImage from "@/assets/experiences/ackee.png";
 import hacktoberfestImage from "@/assets/experiences/hacktoberfest.jpg";
@@ -129,44 +129,105 @@ const Experience = () => {
             Experiences
           </a>
         </h2>
-        <div className="flex flex-col gap-4">
-          {experiences.map((exp, idx) => (
-            <div
-              key={idx}
-              role="link"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter")
-                  window.open(exp.url, "_blank", "noopener");
-              }}
-              onClick={() => window.open(exp.url, "_blank", "noopener")}
-              className="block rounded-lg transition-colors duration-200 group px-2 py-2 cursor-pointer"
-            >
-              <div className="flex items-center mb-1 gap-3">
-                {exp.logo ? (
-                  <img
-                    src={exp.logo}
-                    alt={`${exp.company} logo`}
-                    className="w-10 h-10 rounded-full object-cover"
-                    onContextMenu={(e) => e.preventDefault()}
-                  />
-                ) : (
-                  <div
-                    role="img"
-                    aria-label={`${exp.company} logo initial`}
-                    className="w-10 h-10 rounded-full flex items-center justify-center bg-zinc-100 dark:bg-zinc-800 text-muted-foreground dark:text-zinc-200 font-semibold"
+        <ExperienceList />
+      </div>
+    </section>
+  );
+};
+
+// Separate component to manage expand/collapse state cleanly
+const ExperienceList = () => {
+  const [openStates, setOpenStates] = useState<boolean[]>(
+    new Array(experiences.length).fill(false)
+  );
+
+  const toggle = (i: number) => {
+    setOpenStates((s) => {
+      const next = [...s];
+      next[i] = !next[i];
+      return next;
+    });
+  };
+
+  return (
+    <div className="flex flex-col">
+      {experiences.map((exp, idx) => {
+        const open = openStates[idx];
+
+        return (
+          <div
+            key={idx}
+            role="button"
+            tabIndex={0}
+            onClick={() => toggle(idx)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                toggle(idx);
+              }
+            }}
+            className={`group rounded-lg transition-colors duration-200 bg-transparent cursor-pointer`}
+          >
+            <div className="flex items-center gap-3 px-2 py-3">
+              {exp.logo ? (
+                <img
+                  src={exp.logo}
+                  alt={`${exp.company} logo`}
+                  className="w-10 h-10 rounded-full object-cover"
+                  onContextMenu={(e) => e.preventDefault()}
+                />
+              ) : (
+                <div
+                  role="img"
+                  aria-label={`${exp.company} logo initial`}
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-zinc-100 dark:bg-zinc-800 text-muted-foreground dark:text-zinc-200 font-semibold"
+                >
+                  {getInitial(exp.company)}
+                </div>
+              )}
+
+              <div className="flex-1 flex items-center gap-2">
+                <div className="flex items-center gap-2">
+                  <span className="font-semibold text-lg transition-colors duration-200">
+                    {exp.company}
+                  </span>
+
+                  {/* Chevron — visible on hover or when open */}
+                  <button
+                    type="button"
+                    aria-expanded={open}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      toggle(idx);
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        toggle(idx);
+                      }
+                    }}
+                    className={`ml-1 inline-flex items-center justify-center w-6 h-6 p-1 rounded-md text-muted-foreground hover:text-zinc-600 focus:outline-none transition-all duration-200 ${
+                      open ? "opacity-100 rotate-90" : "opacity-0 group-hover:opacity-100 group-hover:-rotate-6"
+                    }`}
                   >
-                    {getInitial(exp.company)}
-                  </div>
-                )}
-                <span className="font-semibold text-lg flex-1 group-hover:text-zinc-500 group-active:text-zinc-400 transition-colors duration-200">
-                  {exp.company}
-                </span>
-                <span className="text-muted-foreground text-base text-right group-hover:text-zinc-500 group-active:text-zinc-400 transition-colors duration-200">
+                    <ChevronRight className={`w-4 h-4 transition-transform duration-300`} />
+                  </button>
+                </div>
+
+                <div className="ml-auto text-muted-foreground text-sm text-right">
                   {exp.role}
-                </span>
+                </div>
               </div>
-              <div className="text-zinc-700 dark:text-zinc-200 text-sm leading-relaxed max-w-3xl group-hover:text-zinc-500 group-active:text-zinc-400 dark:group-hover:text-zinc-300 dark:group-active:text-zinc-400 transition-colors duration-200">
+            </div>
+
+            {/* Collapsible details */}
+            <div
+              className={`px-2 transition-all duration-300 ${
+                open ? "max-h-[800px] opacity-100 py-3 overflow-visible" : "max-h-0 opacity-0 overflow-hidden"
+              }`}
+            >
+              <div className="text-zinc-700 dark:text-zinc-200 text-sm leading-relaxed max-w-3xl transition-colors duration-200">
                 {exp.description}
                 {exp.links &&
                   exp.links.map((link, linkIdx) => (
@@ -183,30 +244,25 @@ const Experience = () => {
                       >
                         {link.alias}
                       </a>
-                      {/* Tooltip */}
-                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 text-xs rounded-md shadow-lg opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
+                      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 text-xs rounded-md shadow-lg opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50">
                         <div className="font-medium">{link.repo}</div>
-                        <div className="text-xs opacity-75">
-                          Click to view PR
-                        </div>
-                        {/* Tooltip arrow */}
+                        <div className="text-xs opacity-75">Click to view PR</div>
                         <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-zinc-900 dark:border-t-zinc-100"></div>
                       </div>
                     </span>
                   ))}
               </div>
-              <div className="flex flex-wrap gap-2 mt-2">
+
+              <div className="flex flex-wrap gap-2 mt-3">
                 {exp.technologies.map((tech) => (
-                  <span key={tech} className="px-2 py-1 text-xs">
-                    {tech}
-                  </span>
+                  <Badge key={tech} variant="outline" className="px-3 py-1 text-xs">{tech}</Badge>
                 ))}
               </div>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
+          </div>
+        );
+      })}
+    </div>
   );
 };
 
