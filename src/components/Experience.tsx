@@ -3,13 +3,15 @@ import { Badge } from "@/components/ui/badge";
 import { ChevronRight } from "lucide-react";
 import gssocImage from "@/assets/experiences/gssoc.jpg";
 import ackeeImage from "@/assets/experiences/ackee.png";
+import turbin3Image from "@/assets/experiences/turbin3.jpeg";
 import hacktoberfestImage from "@/assets/experiences/hacktoberfest.jpg";
 
 const experiences = [
-  {
+  { 
     company: "Hacktoberfest 2024 & 2025",
     logo: hacktoberfestImage,
-    role: "October 2024 & October 2025",
+    role: "Open Source Contributor",
+    timeline: "October 2024 & October 2025",
     description: "Contributions to various projects, Super Contributor 2k25, ",
     technologies: ["Rust", "Python", "Gemini", "Tkinter", "OpenWeatherMap API"],
     url: "https://www.holopin.io/@neuron#badges",
@@ -67,10 +69,19 @@ const experiences = [
     ],
   },
   {
-    company: "Ackee Blockchain (School of Solana Season 8)",
-    // logo: "@/assets/experiences/ackee.png",
+    company: "Turbin3",
+    logo: turbin3Image,
+    timeline: "January - Feb 2026",
+    role: "Async Builder",  
+    description: "Async Builders Q1 2026, 6 week cohort focused on building on solana",
+    technologies: ["Rust", "Solana", "Blockchain"],
+    url: "https://www.turbin3.org/"
+  },
+  {
+    company: "Ackee Blockchain",
     logo: ackeeImage,
-    role: "October - December 2025",
+    role: "School of Solana Season 8",
+    timeline: "October - December 2025",
     description: "Learnt solana blockchain",
     technologies: ["Rust", "Solana", "Blockchain"],
     url: "https://ackee.xyz",
@@ -78,7 +89,8 @@ const experiences = [
   {
     company: "GirlScript Summer of Code (GSSoC)",
     logo: gssocImage,
-    role: "June 2023",
+    role: "Open Source Contributor",
+    timeline: "June 2023",
     description:
       "First open source contribution: Standardized dependency versions, implemented Frequency vs Energy plot for real-time audio using Fourier Coefficients, and integrated it into the existing GUI",
     technologies: [
@@ -168,7 +180,7 @@ const ExperienceList = () => {
             }}
             className={`group rounded-lg transition-colors duration-200 bg-transparent cursor-pointer`}
           >
-            <div className="flex items-center gap-3 px-2 py-3">
+            <div className="flex items-start gap-3 px-2 py-3">
               {exp.logo ? (
                 <img
                   src={exp.logo}
@@ -186,13 +198,12 @@ const ExperienceList = () => {
                 </div>
               )}
 
-              <div className="flex-1 flex items-center gap-2">
+              <div className="flex-1 flex flex-col -mt-1">
                 <div className="flex items-center gap-2">
                   <span className="font-semibold text-lg transition-colors duration-200">
                     {exp.company}
                   </span>
-
-                  {/* Chevron — visible on hover or when open */}
+                  {/* Chevron */}
                   <button
                     type="button"
                     aria-expanded={open}
@@ -214,10 +225,13 @@ const ExperienceList = () => {
                     <ChevronRight className={`w-4 h-4 transition-transform duration-300`} />
                   </button>
                 </div>
-
-                <div className="ml-auto text-muted-foreground text-sm text-right">
+                <span className="text-sm text-muted-foreground">
                   {exp.role}
-                </div>
+                </span>
+              </div>
+
+              <div className="ml-auto text-muted-foreground text-sm whitespace-nowrap">
+                {exp.timeline}
               </div>
             </div>
 
