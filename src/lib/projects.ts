@@ -5,6 +5,7 @@ import quest_genie from "@/assets/projects/quest_genie.jpg";
 import freelancehub from "@/assets/projects/freelancehub.png";
 import garud from "@/assets/projects/garud.jpg";
 import gitdash from "@/assets/projects/GitDash.jpg";
+import dhirajayuacademy from "@/assets/projects/dhirajayuacademy.jpeg";
 
 export type Project = {
   title: string;
@@ -19,6 +20,15 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    title: "Dhiraj Ayu Academy",
+    image: dhirajayuacademy,
+    date: "March 2025",
+    description:
+      "A Flutter Android app for Dhiraj Ayu Academy that helps Ayurveda students prepare for competitive exams like AIAPGET etc., made for professor of Nobel University. Its currently in alpha track in closed testing on play store (play console), will share link as soon we release it publicly.",
+    tags: ["Flutter", "Android", "Razorpay", "Node", "Express", "CMS"],
+    website: "https://dhirajayuacademy.xyz",
+  },
   {
     title: "GitDash",
     image: gitdash,
