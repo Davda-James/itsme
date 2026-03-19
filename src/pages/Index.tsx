@@ -16,9 +16,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="w-full max-w-[800px] px-8 py-12 flex flex-col relative">
+      <div className="w-full max-w-[800px] px-4 sm:px-6 md:px-8 py-8 sm:py-12 flex flex-col relative">
         <section id="home">
-          <Hero headingRef={heroHeadingRef}/>
+          <Hero headingRef={heroHeadingRef} />
         </section>
         <Experience />
         <Skills />
@@ -27,7 +27,7 @@ const Index = () => {
         <Projects />
         <GithubContributions />
         <BottomBar />
-        <div className="h-16" />
+        <div className="h-24 sm:h-20" />
       </div>
     </div>
   );

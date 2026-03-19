@@ -7,11 +7,11 @@ import turbin3Image from "@/assets/experiences/turbin3.jpeg";
 import hacktoberfestImage from "@/assets/experiences/hacktoberfest.jpg";
 
 const experiences = [
-  { 
+  {
     company: "Hacktoberfest 2024 & 2025",
     logo: hacktoberfestImage,
     role: "Open Source Contributor",
-    timeline: "October 2024 & October 2025",
+    timeline: "October 2024 & 2025",
     description: "Contributions to various projects, Super Contributor 2k25, ",
     technologies: ["Rust", "Python", "Gemini", "Tkinter", "OpenWeatherMap API"],
     url: "https://www.holopin.io/@neuron#badges",
@@ -72,10 +72,11 @@ const experiences = [
     company: "Turbin3",
     logo: turbin3Image,
     timeline: "January - Feb 2026",
-    role: "Async Builder",  
-    description: "Async Builders Q1 2026, 6 week cohort focused on building on solana",
+    role: "Async Builder",
+    description:
+      "Async Builders Q1 2026, 6 week cohort focused on building on solana",
     technologies: ["Rust", "Solana", "Blockchain"],
-    url: "https://www.turbin3.org/"
+    url: "https://www.turbin3.org/",
   },
   {
     company: "Ackee Blockchain",
@@ -147,10 +148,9 @@ const Experience = () => {
   );
 };
 
-// Separate component to manage expand/collapse state cleanly
 const ExperienceList = () => {
   const [openStates, setOpenStates] = useState<boolean[]>(
-    new Array(experiences.length).fill(false)
+    new Array(experiences.length).fill(false),
   );
 
   const toggle = (i: number) => {
@@ -198,47 +198,53 @@ const ExperienceList = () => {
                 </div>
               )}
 
-              <div className="flex-1 flex flex-col -mt-1">
-                <div className="flex items-center gap-2">
-                  <span className="font-semibold text-lg transition-colors duration-200">
-                    {exp.company}
-                  </span>
-                  {/* Chevron */}
-                  <button
-                    type="button"
-                    aria-expanded={open}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      toggle(idx);
-                    }}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter" || e.key === " ") {
-                        e.preventDefault();
+              <div className="flex-1 flex flex-col -mt-1 min-w-0">
+                <div className="flex items-start justify-between gap-2">
+                  <div className="flex items-center gap-1 min-w-0">
+                    <span className="font-semibold text-base sm:text-lg transition-colors duration-200 leading-snug">
+                      {exp.company}
+                    </span>
+                    <button
+                      type="button"
+                      aria-expanded={open}
+                      onClick={(e) => {
                         e.stopPropagation();
                         toggle(idx);
-                      }
-                    }}
-                    className={`ml-1 inline-flex items-center justify-center w-6 h-6 p-1 rounded-md text-muted-foreground hover:text-zinc-600 focus:outline-none transition-all duration-200 ${
-                      open ? "opacity-100 rotate-90" : "opacity-0 group-hover:opacity-100 group-hover:-rotate-6"
-                    }`}
-                  >
-                    <ChevronRight className={`w-4 h-4 transition-transform duration-300`} />
-                  </button>
+                      }}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          toggle(idx);
+                        }
+                      }}
+                      className={`ml-1 inline-flex items-center justify-center w-6 h-6 p-1 rounded-md text-muted-foreground hover:text-zinc-600 focus:outline-none transition-all duration-200 flex-shrink-0 ${
+                        open
+                          ? "opacity-100 rotate-90"
+                          : "opacity-0 group-hover:opacity-100 group-hover:-rotate-6"
+                      }`}
+                    >
+                      <ChevronRight
+                        className={`w-4 h-4 transition-transform duration-300`}
+                      />
+                    </button>
+                  </div>
+                  <span className="text-muted-foreground text-xs sm:text-sm flex-shrink-0 text-right leading-snug mt-0.5">
+                    {exp.timeline}
+                  </span>
                 </div>
                 <span className="text-sm text-muted-foreground">
                   {exp.role}
                 </span>
-              </div>
-
-              <div className="ml-auto text-muted-foreground text-sm whitespace-nowrap">
-                {exp.timeline}
               </div>
             </div>
 
             {/* Collapsible details */}
             <div
               className={`px-2 transition-all duration-300 ${
-                open ? "max-h-[800px] opacity-100 py-3 overflow-visible" : "max-h-0 opacity-0 overflow-hidden"
+                open
+                  ? "max-h-[800px] opacity-100 py-3 overflow-visible"
+                  : "max-h-0 opacity-0 overflow-hidden"
               }`}
             >
               <div className="text-zinc-700 dark:text-zinc-200 text-sm leading-relaxed max-w-3xl transition-colors duration-200">
@@ -260,7 +266,9 @@ const ExperienceList = () => {
                       </a>
                       <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 text-xs rounded-md shadow-lg opacity-0 group-hover/tooltip:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50">
                         <div className="font-medium">{link.repo}</div>
-                        <div className="text-xs opacity-75">Click to view PR</div>
+                        <div className="text-xs opacity-75">
+                          Click to view PR
+                        </div>
                         <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-zinc-900 dark:border-t-zinc-100"></div>
                       </div>
                     </span>
@@ -269,7 +277,13 @@ const ExperienceList = () => {
 
               <div className="flex flex-wrap gap-2 mt-3">
                 {exp.technologies.map((tech) => (
-                  <Badge key={tech} variant="outline" className="px-3 py-1 text-xs">{tech}</Badge>
+                  <Badge
+                    key={tech}
+                    variant="outline"
+                    className="px-3 py-1 text-xs"
+                  >
+                    {tech}
+                  </Badge>
                 ))}
               </div>
             </div>

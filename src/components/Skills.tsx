@@ -14,7 +14,7 @@ import {
   SiBun,
   SiSolidity,
   SiRust,
-} from '@icons-pack/react-simple-icons';
+} from "@icons-pack/react-simple-icons";
 
 const skills = [
   { name: "JavaScript", icon: SiJavascript },
@@ -37,18 +37,30 @@ const Skills = () => {
   return (
     <section id="skills" className="py-4 mb-4">
       <div className="flex flex-col items-start">
-        <h2 className="text-2xl font-bold flex items-center gap-2 mb-6 transition-colors cursor-pointer hover:text-primary/70" id="skills">
-          <a href="#skills" className="hover:text-primary/70 transition-colors" onClick={e => { e.preventDefault(); document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' }); }}>
+        <h2
+          className="text-2xl font-bold flex items-center gap-2 mb-6 transition-colors cursor-pointer hover:text-primary/70"
+          id="skills"
+        >
+          <a
+            href="#skills"
+            className="hover:text-primary/70 transition-colors"
+            onClick={(e) => {
+              e.preventDefault();
+              document
+                .getElementById("skills")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
             Skills
           </a>
         </h2>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-2 sm:gap-3">
           {skills.map((skill) => {
             const Icon = skill.icon;
             return (
               <span
                 key={skill.name}
-                className="inline-flex items-center gap-2 px-3 py-1 border border-muted-foreground/30 bg-white dark:bg-zinc-900 rounded-md text-base font-medium shadow-sm h-8 min-h-0"
+                className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 border border-muted-foreground/30 bg-white dark:bg-zinc-900 rounded-md text-sm sm:text-base font-medium shadow-sm h-7 sm:h-8 min-h-0"
               >
                 <Icon className="w-5 h-5" />
                 {skill.name}
@@ -57,8 +69,9 @@ const Skills = () => {
           })}
         </div>
       </div>
-      <div className="text-muted-foreground text-base mt-5">
-        Learning <span className="font-semibold text-primary">Rust</span> and <span className="font-semibold text-primary">Solana</span>
+      <div className="text-muted-foreground text-sm sm:text-base mt-4 sm:mt-5">
+        Learning <span className="font-semibold text-primary">Rust</span> and{" "}
+        <span className="font-semibold text-primary">Solana</span>
       </div>
     </section>
   );

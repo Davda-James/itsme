@@ -117,9 +117,7 @@ const OpenSourceContributions = () => {
             Open Source Contributions
           </a>
         </h2>
-        <p className="text-muted-foreground mb-6 text-base">
-          Code contributions to the open source community.
-        </p>
+
         <div
           ref={ref}
           className={`flex flex-col gap-3 w-full max-w-3xl pl-2 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
@@ -130,14 +128,16 @@ const OpenSourceContributions = () => {
               href={pr.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group border border-zinc-200 dark:border-zinc-700 rounded-md px-3 py-2 transition-shadow hover:shadow-md"
+              className="group border border-zinc-200 dark:border-zinc-700 rounded-md px-3 py-2.5 sm:px-4 transition-shadow hover:shadow-md"
             >
-              <span className="font-semibold text-lg mb-1 group-hover:text-primary transition-colors">
+              <span className="block font-semibold text-base mb-1 group-hover:text-primary transition-colors leading-snug">
                 {pr.title}
               </span>
-              <div className="flex justify-between w-full text-xs text-muted-foreground">
-                <span>{pr.repo}</span>
-                <span>{pr.date}</span>
+              <div className="flex flex-wrap justify-between gap-x-4 gap-y-0.5 w-full text-xs text-muted-foreground">
+                <span className="truncate max-w-[60%] sm:max-w-none">
+                  {pr.repo}
+                </span>
+                <span className="flex-shrink-0">{pr.date}</span>
               </div>
             </a>
           ))}
