@@ -13,6 +13,7 @@ const achievements = [
     title: "Conflux Expert Agent Bounty",
     description:
       "Won $1,200 Conflux Blockchain Expert Agent bounty by building a RAG powered AI agent that scrapes GitHub repositories and ingests the data into Pinecone vector DB (nvidia/llama-text-embed-v2) via an admin CLI/frontend pipeline, and implements LLM native MCP tool calling using a custom MCP client to interact with the Conflux Blockchain MCP server for retrieving live on chain data, powered by Gemini 2.5 Flash (all llm supported by google-genai).",
+    link: "https://github.com/conflux-fans/conflux-bounties/pull/36",
   },
 ];
 
@@ -37,11 +38,12 @@ const Achievements = () => (
         </a>
       </h2>
       <div className="flex flex-col gap-4 w-full max-w-3xl pl-2">
-        {achievements.map((item, idx) => (
-          <div
-            key={idx}
-            className="relative group transition-all duration-300 ease-out cursor-pointer hover:-translate-y-1"
-          >
+        {achievements.map((item, idx) => {
+          const cardClass =
+            "relative group transition-all duration-300 ease-out hover:-translate-y-1" +
+            (item.link ? " cursor-pointer" : "");
+
+          const inner = (
             <div className="relative z-10 p-2">
               <div className="font-semibold text-lg mb-1 text-foreground">
                 {item.title}
@@ -50,8 +52,23 @@ const Achievements = () => (
                 {item.description}
               </div>
             </div>
-          </div>
-        ))}
+          );
+
+          return item.link ? (
+            <a
+              key={idx}
+              href={item.link}
+              rel="noopener noreferrer"
+              className={cardClass}
+            >
+              {inner}
+            </a>
+          ) : (
+            <div key={idx} className={cardClass}>
+              {inner}
+            </div>
+          );
+        })}
       </div>
     </div>
   </section>
