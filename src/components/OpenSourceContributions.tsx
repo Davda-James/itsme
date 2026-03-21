@@ -3,6 +3,13 @@ import { Button } from "@/components/ui/button";
 
 const contributions = [
   {
+    repo: "cocoindex-io/cocoindex",
+    title:
+      "feat: Batched functions support additional arguments",
+    url: "https://github.com/cocoindex-io/cocoindex/pull/1766",
+    date: "March 21, 2026",
+  },
+  {
     repo: "langchain-ai/langchain",
     title:
       "feat(core): add 'approximate' alias in place of count_tokens_approximately",
@@ -21,13 +28,6 @@ const contributions = [
     title:
       "feat: collect additional counter for number of rows that are being processed for stats",
     url: "https://github.com/cocoindex-io/cocoindex/pull/1105",
-    date: "Oct 4, 2025",
-  },
-  {
-    repo: "cocoindex-io/cocoindex",
-    title:
-      "feat: split convert.py into 2 modules engine_object and engine_value along with splitting of tests",
-    url: "https://github.com/cocoindex-io/cocoindex/pull/1120",
     date: "Oct 4, 2025",
   },
   {
