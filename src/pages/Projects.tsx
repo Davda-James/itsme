@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 import { projects } from "@/lib/projects";
 import ProjectCard from "@/components/ProjectCard";
 import { Link } from "react-router-dom";
 
 const ProjectsPage = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-background">
       <div className="w-full max-w-3xl px-4 sm:px-6 py-8 sm:py-12 flex flex-col">

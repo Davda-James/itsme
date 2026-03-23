@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const blogs = [
@@ -9,6 +10,10 @@ const blogs = [
 ];
 
 const Blog = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <div className="w-full max-w-3xl mx-auto px-6 pt-12 pb-8 flex flex-col">
