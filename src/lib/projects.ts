@@ -14,6 +14,7 @@ export type Project = {
   description: string;
   tags: string[];
   website?: string;
+  app?: string;
   source?: string;
   video?: string;
   highlight?: string;
@@ -25,9 +26,10 @@ export const projects: Project[] = [
     image: dhirajayuacademy,
     date: "March 2025",
     description:
-      "A Flutter Android app for Dhiraj Ayu Academy that helps Ayurveda students prepare for competitive exams like AIAPGET etc., made for professor of Nobel University. Its currently in alpha track in closed testing on play store (play console), will share link as soon we release it publicly.",
+      "A Flutter Android app for Dhiraj Ayu Academy that helps Ayurveda students prepare for competitive exams like AIAPGET, GPSC etc., made for professor of Nobel University. You can download the app by visiting the landing page given below (website) or otherwise directly from app.",
     tags: ["Flutter", "Android", "Razorpay", "Node", "Express", "CMS"],
     website: "https://dhirajayuacademy.xyz",
+    app: "https://play.google.com/store/apps/details?id=com.dhirajayu.academy",
   },
   {
     title: "GitDash",

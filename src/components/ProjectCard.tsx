@@ -1,7 +1,7 @@
 import React from "react";
 import type { Project } from "@/lib/projects";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Play } from "lucide-react";
+import { ExternalLink, Play, Smartphone } from "lucide-react";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 
 type Props = {
@@ -52,17 +52,32 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
           ))}
         </div>
 
-        {(project.website || project.source || project.video) && (
+        {(project.website ||
+          project.app ||
+          project.source ||
+          project.video) && (
           <div className="mt-auto flex items-center flex-wrap gap-2 sm:gap-3">
             {project.website && (
               <a
                 href={project.website}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-md bg-card/40 border border-zinc-200 dark:border-zinc-700 text-xs sm:text-sm transition"
+                className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-md bg-card/40 border border-zinc-200 dark:border-zinc-700 text-xs sm:text-sm transition hover:bg-zinc-100 dark:hover:bg-zinc-800/60"
               >
                 <ExternalLink className="w-4 h-4" />
                 <span>Website</span>
+              </a>
+            )}
+
+            {project.app && (
+              <a
+                href={project.app}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-md border border-emerald-300 dark:border-emerald-700 text-emerald-700 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 text-xs sm:text-sm transition"
+              >
+                <Smartphone className="w-4 h-4" />
+                <span>App</span>
               </a>
             )}
 
@@ -71,7 +86,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
                 href={project.source}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-md bg-card/20 border border-zinc-200 dark:border-zinc-700 text-xs sm:text-sm transition"
+                className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-md bg-card/20 border border-zinc-200 dark:border-zinc-700 text-xs sm:text-sm transition hover:bg-zinc-100 dark:hover:bg-zinc-800/60"
               >
                 <SiGithub className="w-4 h-4" />
                 <span>Source</span>
@@ -84,7 +99,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={`Watch demo of ${project.title}`}
-                className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-md border border-red-200 text-red-600 hover:bg-red-50 dark:border-red-700 dark:bg-red-900/10 transition"
+                className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-md border border-red-200 text-red-600 hover:bg-red-50 dark:border-red-700 dark:text-red-400 dark:bg-red-900/10 dark:hover:bg-red-900/25 transition"
               >
                 <span className="inline-flex items-center justify-center w-5 h-5 rounded-sm bg-red-600 text-white">
                   <Play className="w-3 h-3" />
