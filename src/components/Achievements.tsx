@@ -1,5 +1,11 @@
 const achievements = [
   {
+    title: "Conflux Expert Agent Bounty",
+    description:
+      "Won $1,200 Conflux Blockchain Expert Agent bounty by building a RAG powered AI agent that scrapes GitHub repositories and ingests the data into Pinecone vector DB (nvidia/llama-text-embed-v2) via an admin CLI/frontend pipeline, and implements LLM native MCP tool calling using a custom MCP client to interact with the Conflux Blockchain MCP server for retrieving live on chain data, powered by Gemini 2.5 Flash (all llm supported by google-genai).",
+    link: "https://github.com/conflux-fans/conflux-bounties/pull/36",
+  },
+  {
     title: "Move Spheron Tour",
     description:
       "Won 1st place and 500 USD, developed a decentralized supply chain management system",
@@ -8,12 +14,6 @@ const achievements = [
     title: "HCLTech Hackathon",
     description:
       "Won 2nd place in CrowdFlow track; built a deep-learning based app for real-time crowd analysis and alerts; tl;dr: fine-tuned YOLOv11-nano, FastAPI backend, and Flutter frontend",
-  },
-  {
-    title: "Conflux Expert Agent Bounty",
-    description:
-      "Won $1,200 Conflux Blockchain Expert Agent bounty by building a RAG powered AI agent that scrapes GitHub repositories and ingests the data into Pinecone vector DB (nvidia/llama-text-embed-v2) via an admin CLI/frontend pipeline, and implements LLM native MCP tool calling using a custom MCP client to interact with the Conflux Blockchain MCP server for retrieving live on chain data, powered by Gemini 2.5 Flash (all llm supported by google-genai).",
-    link: "https://github.com/conflux-fans/conflux-bounties/pull/36",
   },
 ];
 
