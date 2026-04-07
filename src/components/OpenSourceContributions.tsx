@@ -3,6 +3,12 @@ import { Button } from "@/components/ui/button";
 
 const contributions = [
   {
+    repo: "Tracer-Cloud/opensre",
+    title: "feat: add the health check fastapi endpoint for hosted deployments",
+    url: "https://github.com/Tracer-Cloud/opensre/pull/340",
+    date: "April 5, 2026",
+  },
+  {
     repo: "cocoindex-io/cocoindex",
     title:
       "feat: Batched functions support additional arguments",
@@ -85,13 +91,7 @@ const contributions = [
     title: "feat: added support for duration/timeout in test_pipeline",
     url: "https://github.com/apache/beam/pull/35831",
     date: "Aug 12, 2025",
-  },
-  {
-    repo: "python-geeks/Automation-scripts",
-    title: "feat: added the AI Bot Script (Gemini) ",
-    url: "https://github.com/python-geeks/Automation-scripts/pull/991",
-    date: "October 13, 2025",
-  },
+  }
 ];
 
 const OpenSourceContributions = () => {
