@@ -4,9 +4,28 @@ import { ChevronRight } from "lucide-react";
 import gssocImage from "@/assets/experiences/gssoc.jpg";
 import ackeeImage from "@/assets/experiences/ackee.png";
 import turbin3Image from "@/assets/experiences/turbin3.jpeg";
+import rektoffImage from "@/assets/experiences/rektoff.png";
 import hacktoberfestImage from "@/assets/experiences/hacktoberfest.jpg";
 
 const experiences = [
+  {
+    company: "Rektoff",
+    logo: rektoffImage,
+    timeline: "January - February 2026",
+    role: "Bootcamp Fellow",
+    description: "Selected among 125 students for a 6 week Solana Security Bootcamp.",
+    technologies: ["Rust", "Solana", "Security", "Auditing"],
+    url: "https://www.rektoff.xyz/",
+  },{
+    company: "Turbin3",
+    logo: turbin3Image,
+    timeline: "January - February 2026",
+    role: "Async Builder",
+    description:
+      "Async Builders Q1 2026, 6 week cohort focused on building on solana",
+    technologies: ["Rust", "Solana", "Blockchain"],
+    url: "https://www.turbin3.org/",
+  },
   {
     company: "Hacktoberfest 2024 & 2025",
     logo: hacktoberfestImage,
@@ -67,16 +86,6 @@ const experiences = [
         repo: "Automation-scripts",
       },
     ],
-  },
-  {
-    company: "Turbin3",
-    logo: turbin3Image,
-    timeline: "January - Feb 2026",
-    role: "Async Builder",
-    description:
-      "Async Builders Q1 2026, 6 week cohort focused on building on solana",
-    technologies: ["Rust", "Solana", "Blockchain"],
-    url: "https://www.turbin3.org/",
   },
   {
     company: "Ackee Blockchain",
