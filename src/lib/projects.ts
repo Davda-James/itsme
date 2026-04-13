@@ -26,7 +26,7 @@ export const projects: Project[] = [
     image: dhirajayuacademy,
     date: "March 2025",
     description:
-      "A Flutter Android app for Dhiraj Ayu Academy that helps Ayurveda students prepare for competitive exams like AIAPGET, GPSC etc., made for professor of Nobel University. You can download the app by visiting the landing page given below (website) or otherwise directly from app.",
+      "A Flutter Android app for Dhiraj Ayu Academy that helps Ayurveda students prepare for competitive exams like AIAPGET, GPSC etc., made for professor of Nobel University. You can download the app by visiting the landing page given below (website) or directly from app. Currently there is 72+ downloads on play store.",
     tags: ["Flutter", "Android", "Razorpay", "Node", "Express", "CMS"],
     website: "https://dhirajayuacademy.xyz",
     app: "https://play.google.com/store/apps/details?id=com.dhirajayu.academy",
