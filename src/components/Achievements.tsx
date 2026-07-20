@@ -1,3 +1,5 @@
+import SectionHeading from "@/components/SectionHeading";
+
 const achievements = [
   {
     title: "Conflux Expert Agent Bounty",
@@ -15,62 +17,49 @@ const achievements = [
     description:
       "Won 2nd place in CrowdFlow track; built a deep-learning based app for real-time crowd analysis and alerts; tl;dr: fine-tuned YOLOv11-nano, FastAPI backend, and Flutter frontend",
   },
-];
+] as const;
 
 const Achievements = () => (
-  <section id="achievements" className="py-4 mb-4">
-    <div className="flex flex-col items-start">
-      <h2
-        className="text-2xl font-bold mb-6 transition-colors cursor-pointer hover:text-primary/70"
-        id="achievements"
-      >
-        <a
-          href="#achievements"
-          className="hover:text-primary/70 transition-colors"
-          onClick={(e) => {
-            e.preventDefault();
-            document
-              .getElementById("achievements")
-              ?.scrollIntoView({ behavior: "smooth" });
-          }}
-        >
-          Achievements
-        </a>
-      </h2>
-      <div className="flex flex-col gap-4 w-full max-w-3xl pl-2">
-        {achievements.map((item, idx) => {
-          const cardClass =
-            "relative group transition-all duration-300 ease-out hover:-translate-y-1" +
-            (item.link ? " cursor-pointer" : "");
+  <section
+    id="achievements"
+    className="py-6 sm:py-8"
+    aria-labelledby="achievements-heading"
+  >
+    <SectionHeading id="achievements">
+      <span id="achievements-heading">Achievements</span>
+    </SectionHeading>
 
-          const inner = (
-            <div className="relative z-10 p-2">
-              <div className="font-semibold text-lg mb-1 text-foreground">
-                {item.title}
-              </div>
-              <div className="text-muted-foreground text-base">
-                {item.description}
-              </div>
-            </div>
-          );
+    <ul className="flex flex-col gap-5 sm:gap-6 list-none p-0 m-0">
+      {achievements.map((item) => {
+        const content = (
+          <>
+            <h3 className="font-semibold text-base sm:text-lg text-foreground mb-1">
+              {item.title}
+            </h3>
+            <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+              {item.description}
+            </p>
+          </>
+        );
 
-          return item.link ? (
-            <a
-              key={idx}
-              href={item.link}
-              rel="noopener noreferrer"
-              className={cardClass}
-            >
-              {inner}
-            </a>
-          ) : (
-            <div key={idx} className={cardClass}>
-              {inner}
-            </div>
-          );
-        })}
-      </div>
-    </div>
+        return (
+          <li key={item.title}>
+            {"link" in item && item.link ? (
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-md transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              >
+                {content}
+              </a>
+            ) : (
+              <div>{content}</div>
+            )}
+          </li>
+        );
+      })}
+    </ul>
   </section>
 );
 

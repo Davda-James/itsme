@@ -1,5 +1,5 @@
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
+import SectionHeading from "@/components/SectionHeading";
 
 const contributions = [
   {
@@ -10,8 +10,7 @@ const contributions = [
   },
   {
     repo: "cocoindex-io/cocoindex",
-    title:
-      "feat: Batched functions support additional arguments",
+    title: "feat: Batched functions support additional arguments",
     url: "https://github.com/cocoindex-io/cocoindex/pull/1766",
     date: "March 21, 2026",
   },
@@ -91,68 +90,51 @@ const contributions = [
     title: "feat: added support for duration/timeout in test_pipeline",
     url: "https://github.com/apache/beam/pull/35831",
     date: "Aug 12, 2025",
-  }
-];
+  },
+] as const;
 
 const OpenSourceContributions = () => {
-  const { ref, isVisible } = useScrollAnimation();
-
   return (
-    <section id="open-source" className="py-4 mb-4">
-      <div className="flex flex-col items-start w-full max-w-3xl">
-        <h2
-          className="text-2xl font-bold mb-6 transition-colors cursor-pointer hover:text-primary/70"
-          id="open-source"
-        >
-          <a
-            href="#open-source"
-            className="hover:text-primary/70 transition-colors"
-            onClick={(e) => {
-              e.preventDefault();
-              document
-                .getElementById("open-source")
-                ?.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            Open Source Contributions
-          </a>
-        </h2>
+    <section
+      id="open-source"
+      className="py-6 sm:py-8"
+      aria-labelledby="open-source-heading"
+    >
+      <SectionHeading id="open-source">
+        <span id="open-source-heading">Open Source Contributions</span>
+      </SectionHeading>
 
-        <div
-          ref={ref}
-          className={`flex flex-col gap-3 w-full max-w-3xl pl-2 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-        >
-          {contributions.map((pr, idx) => (
+      <ul className="flex flex-col gap-2.5 sm:gap-3 list-none p-0 m-0">
+        {contributions.map((pr) => (
+          <li key={pr.url}>
             <a
-              key={idx}
               href={pr.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group border border-zinc-200 dark:border-zinc-700 rounded-md px-3 py-2.5 sm:px-4 transition-shadow hover:shadow-md"
+              className="group block rounded-md border border-border px-3 py-2.5 sm:px-4 transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
-              <span className="block font-semibold text-base mb-1 group-hover:text-primary transition-colors leading-snug">
+              <span className="block font-semibold text-sm sm:text-base mb-1 leading-snug group-hover:text-primary transition-colors">
                 {pr.title}
               </span>
-              <div className="flex flex-wrap justify-between gap-x-4 gap-y-0.5 w-full text-xs text-muted-foreground">
-                <span className="truncate max-w-[60%] sm:max-w-none">
-                  {pr.repo}
-                </span>
-                <span className="flex-shrink-0">{pr.date}</span>
+              <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-0.5 text-xs text-muted-foreground">
+                <span className="truncate min-w-0">{pr.repo}</span>
+                <span className="shrink-0">{pr.date}</span>
               </div>
             </a>
-          ))}
-        </div>
-        <div className="mt-6 flex justify-center">
-          <Button asChild variant="outline" size="sm">
-            <a
-              href="https://github.com/search?q=is%3Apr+author%3ADavda-James+is%3Amerged&type=PullRequests"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View All
-            </a>
-          </Button>
-        </div>
+          </li>
+        ))}
+      </ul>
+
+      <div className="mt-6 flex justify-center">
+        <Button asChild variant="outline" size="sm">
+          <a
+            href="https://github.com/search?q=is%3Apr+author%3ADavda-James+is%3Amerged&type=PullRequests"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View All
+          </a>
+        </Button>
       </div>
     </section>
   );
