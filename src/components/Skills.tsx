@@ -9,12 +9,12 @@ import {
   SiDocker,
   SiTensorflow,
   SiPytorch,
-  SiKeras,
   SiScikitlearn,
   SiBun,
   SiSolidity,
   SiRust,
 } from "@icons-pack/react-simple-icons";
+import SectionHeading from "@/components/SectionHeading";
 
 const skills = [
   { name: "JavaScript", icon: SiJavascript },
@@ -31,48 +31,34 @@ const skills = [
   { name: "PostgreSQL", icon: SiPostgresql },
   { name: "Prisma", icon: SiPrisma },
   { name: "Docker", icon: SiDocker },
-];
+] as const;
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-4 mb-4">
-      <div className="flex flex-col items-start">
-        <h2
-          className="text-2xl font-bold flex items-center gap-2 mb-6 transition-colors cursor-pointer hover:text-primary/70"
-          id="skills"
-        >
-          <a
-            href="#skills"
-            className="hover:text-primary/70 transition-colors"
-            onClick={(e) => {
-              e.preventDefault();
-              document
-                .getElementById("skills")
-                ?.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            Skills
-          </a>
-        </h2>
-        <div className="flex flex-wrap gap-2 sm:gap-3">
-          {skills.map((skill) => {
-            const Icon = skill.icon;
-            return (
-              <span
-                key={skill.name}
-                className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 border border-muted-foreground/30 bg-white dark:bg-zinc-900 rounded-md text-sm sm:text-base font-medium shadow-sm h-7 sm:h-8 min-h-0"
-              >
-                <Icon className="w-5 h-5" />
-                {skill.name}
-              </span>
-            );
-          })}
-        </div>
-      </div>
-      <div className="text-muted-foreground text-sm sm:text-base mt-4 sm:mt-5">
-        Learning <span className="font-semibold text-primary">Rust</span> and{" "}
-        <span className="font-semibold text-primary">Solana</span>
-      </div>
+    <section id="skills" className="py-6 sm:py-8" aria-labelledby="skills-heading">
+      <SectionHeading id="skills">
+        <span id="skills-heading">Skills</span>
+      </SectionHeading>
+
+      <ul className="flex flex-wrap gap-2 sm:gap-2.5 list-none p-0 m-0">
+        {skills.map((skill) => {
+          const Icon = skill.icon;
+          return (
+            <li
+              key={skill.name}
+              className="inline-flex items-center gap-1.5 sm:gap-2 h-8 px-2.5 sm:px-3 border border-border bg-card rounded-md text-sm font-medium"
+            >
+              <Icon className="size-4 sm:size-5 shrink-0" aria-hidden />
+              <span>{skill.name}</span>
+            </li>
+          );
+        })}
+      </ul>
+
+      <p className="text-muted-foreground text-sm sm:text-base mt-4 sm:mt-5">
+        Learning <span className="font-semibold text-foreground">Rust</span> and{" "}
+        <span className="font-semibold text-foreground">Solana</span>
+      </p>
     </section>
   );
 };

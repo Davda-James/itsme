@@ -1,4 +1,3 @@
-import React from "react";
 import type { Project } from "@/lib/projects";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Play, Smartphone } from "lucide-react";
@@ -8,46 +7,48 @@ type Props = {
   project: Project;
 };
 
-const ProjectCard: React.FC<Props> = ({ project }) => {
+const linkClass =
+  "inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md border border-border text-xs sm:text-sm transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
+
+const ProjectCard = ({ project }: Props) => {
   return (
-    <article className="rounded-2xl overflow-hidden border border-zinc-800/40 bg-card shadow-md flex flex-col h-full">
-      <div className="relative h-40 md:h-44 w-full bg-zinc-100 dark:bg-zinc-900">
+    <article className="rounded-2xl overflow-hidden border border-border bg-card shadow-sm flex flex-col h-full">
+      <div className="relative aspect-[16/9] w-full bg-muted">
         <img
           src={project.image as string}
           alt={`${project.title} preview`}
-          className="w-full h-full object-cover"
+          className="absolute inset-0 size-full object-cover"
+          loading="lazy"
+          decoding="async"
         />
 
         {project.highlight && (
-          <div className="absolute left-3 top-3 inline-flex items-center gap-3 rounded-md px-3 py-1 bg-white/80 border border-zinc-200 text-sm text-zinc-800 shadow-sm dark:bg-zinc-900/60 dark:border-zinc-700 dark:text-zinc-200">
-            <span className="w-2 h-2 rounded-full bg-zinc-800 dark:bg-zinc-200" />
-            <span className="truncate max-w-[160px] text-sm">
-              {project.highlight}
-            </span>
+          <div className="absolute left-2.5 top-2.5 inline-flex max-w-[calc(100%-1.25rem)] items-center gap-2 rounded-md px-2.5 py-1 bg-background/85 border border-border text-xs sm:text-sm text-foreground shadow-sm backdrop-blur-sm">
+            <span
+              className="size-1.5 shrink-0 rounded-full bg-foreground"
+              aria-hidden
+            />
+            <span className="truncate">{project.highlight}</span>
           </div>
         )}
       </div>
 
-      <div className="p-4 sm:p-6 flex flex-col h-full">
-        <div className="flex items-start justify-between gap-4">
-          <div className="min-w-0">
-            <h3 className="text-base sm:text-lg font-semibold truncate">
-              {project.title}
-            </h3>
-            <div className="text-sm text-muted-foreground mt-1">
-              {project.date}
-            </div>
-          </div>
+      <div className="p-4 sm:p-5 flex flex-col flex-1">
+        <div className="min-w-0">
+          <h3 className="text-base sm:text-lg font-semibold leading-snug">
+            {project.title}
+          </h3>
+          <p className="text-sm text-muted-foreground mt-0.5">{project.date}</p>
         </div>
 
-        <p className="mt-3 sm:mt-4 text-sm leading-relaxed text-muted-foreground">
+        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
           {project.description}
         </p>
 
-        <div className="mt-3 sm:mt-4 mb-4 sm:mb-6 flex flex-wrap items-center gap-1.5 sm:gap-2">
-          {project.tags.map((t) => (
-            <Badge key={t} variant="outline" className="px-2 py-1 text-xs">
-              {t}
+        <div className="mt-3 mb-4 flex flex-wrap gap-1.5">
+          {project.tags.map((tag) => (
+            <Badge key={tag} variant="outline" className="px-2 py-0.5 text-xs">
+              {tag}
             </Badge>
           ))}
         </div>
@@ -56,16 +57,16 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
           project.app ||
           project.source ||
           project.video) && (
-          <div className="mt-auto flex items-center flex-wrap gap-2 sm:gap-3">
+          <div className="mt-auto flex flex-wrap items-center gap-2">
             {project.website && (
               <a
                 href={project.website}
                 target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-md bg-card/40 border border-zinc-200 dark:border-zinc-700 text-xs sm:text-sm transition hover:bg-zinc-100 dark:hover:bg-zinc-800/60"
+                rel="noopener noreferrer"
+                className={linkClass}
               >
-                <ExternalLink className="w-4 h-4" />
-                <span>Website</span>
+                <ExternalLink className="size-3.5" aria-hidden />
+                Website
               </a>
             )}
 
@@ -73,11 +74,11 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
               <a
                 href={project.app}
                 target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-md border border-emerald-300 dark:border-emerald-700 text-emerald-700 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 text-xs sm:text-sm transition"
+                rel="noopener noreferrer"
+                className={`${linkClass} border-emerald-300 text-emerald-700 dark:border-emerald-700 dark:text-emerald-400`}
               >
-                <Smartphone className="w-4 h-4" />
-                <span>App</span>
+                <Smartphone className="size-3.5" aria-hidden />
+                App
               </a>
             )}
 
@@ -85,11 +86,11 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
               <a
                 href={project.source}
                 target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-md bg-card/20 border border-zinc-200 dark:border-zinc-700 text-xs sm:text-sm transition hover:bg-zinc-100 dark:hover:bg-zinc-800/60"
+                rel="noopener noreferrer"
+                className={linkClass}
               >
-                <SiGithub className="w-4 h-4" />
-                <span>Source</span>
+                <SiGithub className="size-3.5" aria-hidden />
+                Source
               </a>
             )}
 
@@ -97,14 +98,14 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
               <a
                 href={project.video}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label={`Watch demo of ${project.title}`}
-                className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-md border border-red-200 text-red-600 hover:bg-red-50 dark:border-red-700 dark:text-red-400 dark:bg-red-900/10 dark:hover:bg-red-900/25 transition"
+                className={`${linkClass} border-red-200 text-red-600 dark:border-red-700 dark:text-red-400`}
               >
-                <span className="inline-flex items-center justify-center w-5 h-5 rounded-sm bg-red-600 text-white">
-                  <Play className="w-3 h-3" />
+                <span className="inline-flex size-4 items-center justify-center rounded-sm bg-red-600 text-white">
+                  <Play className="size-2.5" aria-hidden />
                 </span>
-                <span className="text-xs sm:text-sm font-medium">Demo</span>
+                Demo
               </a>
             )}
           </div>
