@@ -1,7 +1,7 @@
 import type { Project } from "@/lib/projects";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Play, Smartphone } from "lucide-react";
-import { SiGithub } from "@icons-pack/react-simple-icons";
+import { ExternalLink, Play } from "lucide-react";
+import { SiGithub, SiAndroid, SiAppstore } from "@icons-pack/react-simple-icons";
 
 type Props = {
   project: Project;
@@ -21,24 +21,27 @@ const ProjectCard = ({ project }: Props) => {
           loading="lazy"
           decoding="async"
         />
-
         {project.highlight && (
-          <div className="absolute left-2.5 top-2.5 inline-flex max-w-[calc(100%-1.25rem)] items-center gap-2 rounded-md px-2.5 py-1 bg-background/85 border border-border text-xs sm:text-sm text-foreground shadow-sm backdrop-blur-sm">
-            <span
-              className="size-1.5 shrink-0 rounded-full bg-foreground"
-              aria-hidden
-            />
+          <div className="absolute left-2.5 top-2.5 inline-flex max-w-[calc(100%-1.25rem)] items-center gap-2 rounded-md px-2.5 py-1 bg-background/85 border border-border text-xs text-foreground shadow-sm backdrop-blur-sm">
+            <span className="size-1.5 shrink-0 rounded-full bg-foreground" aria-hidden />
             <span className="truncate">{project.highlight}</span>
           </div>
         )}
       </div>
 
       <div className="p-4 sm:p-5 flex flex-col flex-1">
-        <div className="min-w-0">
-          <h3 className="text-base sm:text-lg font-semibold leading-snug">
-            {project.title}
-          </h3>
-          <p className="text-sm text-muted-foreground mt-0.5">{project.date}</p>
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0">
+            <h3 className="text-base sm:text-lg font-semibold leading-snug">
+              {project.title}
+            </h3>
+            <p className="text-sm text-muted-foreground mt-0.5">{project.date}</p>
+          </div>
+          {project.freelance && (
+            <span className="flex-shrink-0 mt-1 text-xs border border-muted-foreground/30 text-muted-foreground rounded px-2 py-0.5 leading-none">
+              Freelance
+            </span>
+          )}
         </div>
 
         <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -54,46 +57,35 @@ const ProjectCard = ({ project }: Props) => {
         </div>
 
         {(project.website ||
-          project.app ||
+          project.android ||
+          project.ios ||
           project.source ||
           project.video) && (
           <div className="mt-auto flex flex-wrap items-center gap-2">
             {project.website && (
-              <a
-                href={project.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={linkClass}
-              >
+              <a href={project.website} target="_blank" rel="noopener noreferrer" className={linkClass}>
                 <ExternalLink className="size-3.5" aria-hidden />
                 Website
               </a>
             )}
-
-            {project.app && (
-              <a
-                href={project.app}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`${linkClass} border-emerald-300 text-emerald-700 dark:border-emerald-700 dark:text-emerald-400`}
-              >
-                <Smartphone className="size-3.5" aria-hidden />
-                App
+            {project.android && (
+              <a href={project.android} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                <SiAndroid className="size-3.5" aria-hidden />
+                Android
               </a>
             )}
-
+            {project.ios && (
+              <a href={project.ios} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                <SiAppstore className="size-3.5" aria-hidden />
+                iOS
+              </a>
+            )}
             {project.source && (
-              <a
-                href={project.source}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={linkClass}
-              >
+              <a href={project.source} target="_blank" rel="noopener noreferrer" className={linkClass}>
                 <SiGithub className="size-3.5" aria-hidden />
                 Source
               </a>
             )}
-
             {project.video && (
               <a
                 href={project.video}

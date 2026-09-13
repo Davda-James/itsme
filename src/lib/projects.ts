@@ -6,6 +6,7 @@ import freelancehub from "@/assets/projects/freelancehub.png";
 import garud from "@/assets/projects/garud.jpg";
 import gitdash from "@/assets/projects/GitDash.jpg";
 import dhirajayuacademy from "@/assets/projects/dhirajayuacademy.jpeg";
+import experttalk from "@/assets/projects/experttalk.jpg";
 
 export type Project = {
   title: string;
@@ -14,10 +15,12 @@ export type Project = {
   description: string;
   tags: string[];
   website?: string;
-  app?: string;
+  android?: string;
+  ios?: string;
   source?: string;
   video?: string;
   highlight?: string;
+  freelance?: boolean;
 };
 
 export const projects: Project[] = [
@@ -29,7 +32,20 @@ export const projects: Project[] = [
       "A Flutter Android app for Dhiraj Ayu Academy that helps Ayurveda students prepare for competitive exams like AIAPGET, GPSC etc., made for professor of Nobel University. You can download the app by visiting the landing page given below (website) or directly from app. Currently there is 72+ downloads on play store.",
     tags: ["Flutter", "Android", "Razorpay", "Node", "Express", "CMS"],
     website: "https://dhirajayuacademy.xyz",
-    app: "https://play.google.com/store/apps/details?id=com.dhirajayu.academy",
+    android: "https://play.google.com/store/apps/details?id=com.dhirajayu.academy",
+    freelance: true
+  },
+  {
+    title: "Expert Talk",
+    image: experttalk,
+    date: "May 2026",
+    description:
+      "An Android/iOS app that connects mentees with mentors for one on one conversations, with per-minute billing based on the time spent chatting.",
+    tags: ["Flutter", "Android", "Razorpay", "Node", "Express"],
+    website: "https://experttalk.vercel.app",
+    android: "https://play.google.com/store/apps/details?id=com.talentexec.experttalk",
+    ios: "https://apps.apple.com/in/app/expert-talk/id6761551325",
+    freelance: true
   },
   {
     title: "GitDash",
